@@ -5,10 +5,14 @@ namespace Entidades
 {
     public static class TiendaElectronica
     {
-        static string nombreTienda;
+        #region ATRIBUTOS
+
+        private static string nombreTienda;
         static List<Vendedor> listaVendedores;
         static List<Duenio> listaDuenios;
         static List<Producto> listaProductos;
+
+        #endregion
 
         static TiendaElectronica()
         {
@@ -18,6 +22,13 @@ namespace Entidades
             listaProductos = new List<Producto>();
             HardcodearDatos();
         }
+
+        public static string Nombre
+        {
+            get { return nombreTienda; }
+        }
+
+        //public static bool Validar
 
         private static void HardcodearDatos()
         {

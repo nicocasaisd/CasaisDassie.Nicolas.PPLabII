@@ -24,5 +24,13 @@ namespace Entidades
             get { return email; }
         }
 
+        public bool CheckearPassword(string pass)
+        {
+            if(pass == this.password)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

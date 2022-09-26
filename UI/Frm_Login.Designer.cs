@@ -43,6 +43,7 @@
             this.btn_ingresar.TabIndex = 0;
             this.btn_ingresar.Text = "Ingresar";
             this.btn_ingresar.UseVisualStyleBackColor = true;
+            this.btn_ingresar.Click += new System.EventHandler(this.btn_ingresar_Click);
             // 
             // txt_password
             // 
@@ -91,6 +92,7 @@
             this.Controls.Add(this.btn_ingresar);
             this.Name = "Frm_Login";
             this.Text = "Inicio de sesión";
+            this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

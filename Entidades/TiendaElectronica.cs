@@ -23,6 +23,19 @@ namespace Entidades
         {
             HardcodearVendedores();
             HardcodearDuenios();
+            HardcodearProductos();
+        }
+
+        private static void HardcodearProductos()
+        {
+            listaProductos.Add(new Producto(
+                "Parlante Bluetooth", eCategoriaProducto.Audio, eTipoProducto.Parlante,
+                eMarcaProducto.JBL, "Parlante con bateria", 17500, 20
+                ));
+            listaProductos.Add(new Producto(
+                "Parlante Bluetooth", eCategoriaProducto.Audio, eTipoProducto.Parlante,
+                eMarcaProducto.JBL, "Parlante con bateria", 17500, 20
+                ));
         }
 
         private static void HardcodearVendedores()

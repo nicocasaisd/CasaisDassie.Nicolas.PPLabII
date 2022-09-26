@@ -5,10 +5,18 @@ namespace Entidades
 {
     public static class TiendaElectronica
     {
-        List<Vendedor> listaVendedores;
-        List<Duenio> listaDuenios;
+        static string nombreTienda;
+        static List<Vendedor> listaVendedores;
+        static List<Duenio> listaDuenios;
+        static List<Producto> listaProductos;
 
-
+        static TiendaElectronica()
+        {
+            nombreTienda = "Electrónica Casais";
+            listaVendedores = new List<Vendedor>();
+            listaDuenios = new List<Duenio>();
+            listaProductos = new List<Producto>();
+        }
         
     }
 }

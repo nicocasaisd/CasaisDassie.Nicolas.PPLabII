@@ -17,6 +17,7 @@ namespace UI
             {
                 Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
                 menuPrincipal.Show();
+                this.Hide();
             }
             
         }

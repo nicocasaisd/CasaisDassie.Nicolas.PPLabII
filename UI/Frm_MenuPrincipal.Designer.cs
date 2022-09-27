@@ -40,6 +40,7 @@
             this.btn_inventario.TabIndex = 0;
             this.btn_inventario.Text = "Inventario";
             this.btn_inventario.UseVisualStyleBackColor = true;
+            this.btn_inventario.Click += new System.EventHandler(this.btn_inventario_Click);
             // 
             // btn_ventas
             // 

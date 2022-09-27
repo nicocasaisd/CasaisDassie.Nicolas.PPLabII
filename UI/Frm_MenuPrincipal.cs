@@ -16,5 +16,11 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void btn_inventario_Click(object sender, EventArgs e)
+        {
+            Frm_AdminInventario frm_AdminInventario = new Frm_AdminInventario();
+            frm_AdminInventario.Show();
+        }
     }
 }

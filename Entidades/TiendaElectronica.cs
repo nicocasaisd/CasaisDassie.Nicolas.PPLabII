@@ -28,7 +28,17 @@ namespace Entidades
             get { return nombreTienda; }
         }
 
-        //public static bool Validar
+        public static bool LoguearDuenio(string email, string pass)
+        {
+            foreach(Duenio auxDuenio in listaDuenios)
+            {
+                if(auxDuenio.ValidarDuenio(email, pass))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         private static void HardcodearDatos()
         {

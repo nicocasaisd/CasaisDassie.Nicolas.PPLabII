@@ -24,7 +24,7 @@ namespace Entidades
             get { return email; }
         }
 
-        public bool CheckearPassword(string pass)
+        public bool ValidarPassword(string pass)
         {
             if(pass == this.password)
             {

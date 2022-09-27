@@ -13,7 +13,10 @@ namespace UI
         {
             string usuario = this.txt_usuario.Text;
             string pass = this.txt_password.Text;
+            if(TiendaElectronica.LoguearDuenio(usuario, pass))
+            {
 
+            }
             
         }
 

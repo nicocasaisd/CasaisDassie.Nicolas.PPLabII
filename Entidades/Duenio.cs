@@ -9,5 +9,13 @@
         {
         }
 
+        public bool ValidarDuenio(string usuario, string pass)
+        {
+            if(this.Email == usuario)
+            {
+                return this.ValidarPassword(pass);
+            }
+            return false;
+        }
     }
 }

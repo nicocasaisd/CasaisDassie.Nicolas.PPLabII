@@ -25,5 +25,11 @@ namespace UI
         {
             this.Text = "Inicio de sesión - " + TiendaElectronica.Nombre;
         }
+
+        private void btn_AutoCompletarDuenio_Click(object sender, EventArgs e)
+        {
+            txt_usuario.Text = "fernando@electronicacasais.com";
+            txt_password.Text = "asd123";
+        }
     }
 }

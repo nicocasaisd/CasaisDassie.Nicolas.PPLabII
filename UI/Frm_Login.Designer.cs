@@ -90,6 +90,7 @@
             this.btn_AutoCompletarDuenio.TabIndex = 5;
             this.btn_AutoCompletarDuenio.Text = "Completar Dueño";
             this.btn_AutoCompletarDuenio.UseVisualStyleBackColor = true;
+            this.btn_AutoCompletarDuenio.Click += new System.EventHandler(this.btn_AutoCompletarDuenio_Click);
             // 
             // btn_AutoCompletarVendedor
             // 

@@ -13,7 +13,7 @@ namespace UI
         {
             string usuario = this.txt_usuario.Text;
             string pass = this.txt_password.Text;
-            if(TiendaElectronica.ValidarLoginDuenio(usuario, pass))
+            if(TiendaElectronica.ValidarLoginDuenio(usuario, pass) > -1)
             {
                 Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
                 menuPrincipal.Show();

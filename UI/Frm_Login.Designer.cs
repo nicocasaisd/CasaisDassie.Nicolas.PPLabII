@@ -100,6 +100,7 @@
             this.btn_AutoCompletarVendedor.TabIndex = 6;
             this.btn_AutoCompletarVendedor.Text = "Completar Vendedor";
             this.btn_AutoCompletarVendedor.UseVisualStyleBackColor = true;
+            this.btn_AutoCompletarVendedor.Click += new System.EventHandler(this.btn_AutoCompletarVendedor_Click);
             // 
             // Frm_Login
             // 

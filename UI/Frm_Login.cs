@@ -31,5 +31,11 @@ namespace UI
             txt_usuario.Text = "fernando@electronicacasais.com";
             txt_password.Text = "asd123";
         }
+
+        private void btn_AutoCompletarVendedor_Click(object sender, EventArgs e)
+        {
+            txt_usuario.Text = "nicolas@electronicacasais.com";
+            txt_password.Text = "asd123";
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace Entidades
             get { return nombreTienda; }
         }
 
-        public static bool LoguearDuenio(string email, string pass)
+        public static bool ValidarLoginDuenio(string email, string pass)
         {
             foreach(Duenio auxDuenio in listaDuenios)
             {

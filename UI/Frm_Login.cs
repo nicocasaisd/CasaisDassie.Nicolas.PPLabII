@@ -15,7 +15,8 @@ namespace UI
             string pass = this.txt_password.Text;
             if(TiendaElectronica.LoguearDuenio(usuario, pass))
             {
-
+                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
+                menuPrincipal.Show();
             }
             
         }

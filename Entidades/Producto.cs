@@ -75,7 +75,7 @@
         // Sobrecarga de ToString
         public override string ToString()
         {
-            return this.Nombre;
+            return $"{this.Id}, {this.Nombre}, {this.Marca}" ;
         }
 
 

@@ -22,5 +22,17 @@ namespace UI
         {
             this.lst_listaProductos.DataSource = TiendaElectronica.ListaProductos;
         }
+
+        private void lst_listaProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obtener el item seleccionado actualmente
+            Producto auxProducto = (Producto) lst_listaProductos.SelectedItem;
+
+            // Seteo valores
+            lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
+            lbl_precioProducto.Text = auxProducto.Precio.ToString();
+            lbl_idProducto.Text = auxProducto.Id.ToString();
+
+        }
     }
 }

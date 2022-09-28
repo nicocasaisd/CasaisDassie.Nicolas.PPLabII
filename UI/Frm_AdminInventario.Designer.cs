@@ -31,12 +31,12 @@
             this.grp_listaProductos = new System.Windows.Forms.GroupBox();
             this.lst_listaProductos = new System.Windows.Forms.ListBox();
             this.grp_descripcion = new System.Windows.Forms.GroupBox();
+            this.lbl_idProducto = new System.Windows.Forms.Label();
+            this.lbl_precioProducto = new System.Windows.Forms.Label();
+            this.lbl_cantidadProducto = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_precio = new System.Windows.Forms.Label();
             this.lbl_cantidad = new System.Windows.Forms.Label();
-            this.lbl_cantidadProducto = new System.Windows.Forms.Label();
-            this.lbl_precioProducto = new System.Windows.Forms.Label();
-            this.lbl_idProducto = new System.Windows.Forms.Label();
             this.grp_listaProductos.SuspendLayout();
             this.grp_descripcion.SuspendLayout();
             this.SuspendLayout();
@@ -54,11 +54,14 @@
             // lst_listaProductos
             // 
             this.lst_listaProductos.FormattingEnabled = true;
+            this.lst_listaProductos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lst_listaProductos.ItemHeight = 15;
             this.lst_listaProductos.Location = new System.Drawing.Point(20, 22);
             this.lst_listaProductos.Name = "lst_listaProductos";
             this.lst_listaProductos.Size = new System.Drawing.Size(187, 214);
+            this.lst_listaProductos.Sorted = true;
             this.lst_listaProductos.TabIndex = 0;
+            this.lst_listaProductos.SelectedIndexChanged += new System.EventHandler(this.lst_listaProductos_SelectedIndexChanged);
             // 
             // grp_descripcion
             // 
@@ -74,6 +77,33 @@
             this.grp_descripcion.TabIndex = 1;
             this.grp_descripcion.TabStop = false;
             this.grp_descripcion.Text = "Descripcion";
+            // 
+            // lbl_idProducto
+            // 
+            this.lbl_idProducto.AutoSize = true;
+            this.lbl_idProducto.Location = new System.Drawing.Point(96, 102);
+            this.lbl_idProducto.Name = "lbl_idProducto";
+            this.lbl_idProducto.Size = new System.Drawing.Size(38, 15);
+            this.lbl_idProducto.TabIndex = 4;
+            this.lbl_idProducto.Text = "label1";
+            // 
+            // lbl_precioProducto
+            // 
+            this.lbl_precioProducto.AutoSize = true;
+            this.lbl_precioProducto.Location = new System.Drawing.Point(96, 62);
+            this.lbl_precioProducto.Name = "lbl_precioProducto";
+            this.lbl_precioProducto.Size = new System.Drawing.Size(38, 15);
+            this.lbl_precioProducto.TabIndex = 3;
+            this.lbl_precioProducto.Text = "label1";
+            // 
+            // lbl_cantidadProducto
+            // 
+            this.lbl_cantidadProducto.AutoSize = true;
+            this.lbl_cantidadProducto.Location = new System.Drawing.Point(96, 28);
+            this.lbl_cantidadProducto.Name = "lbl_cantidadProducto";
+            this.lbl_cantidadProducto.Size = new System.Drawing.Size(38, 15);
+            this.lbl_cantidadProducto.TabIndex = 2;
+            this.lbl_cantidadProducto.Text = "label1";
             // 
             // lbl_id
             // 
@@ -104,33 +134,6 @@
             this.lbl_cantidad.Size = new System.Drawing.Size(84, 21);
             this.lbl_cantidad.TabIndex = 0;
             this.lbl_cantidad.Text = "Cantidad: ";
-            // 
-            // lbl_cantidadProducto
-            // 
-            this.lbl_cantidadProducto.AutoSize = true;
-            this.lbl_cantidadProducto.Location = new System.Drawing.Point(96, 28);
-            this.lbl_cantidadProducto.Name = "lbl_cantidadProducto";
-            this.lbl_cantidadProducto.Size = new System.Drawing.Size(38, 15);
-            this.lbl_cantidadProducto.TabIndex = 2;
-            this.lbl_cantidadProducto.Text = "label1";
-            // 
-            // lbl_precioProducto
-            // 
-            this.lbl_precioProducto.AutoSize = true;
-            this.lbl_precioProducto.Location = new System.Drawing.Point(96, 62);
-            this.lbl_precioProducto.Name = "lbl_precioProducto";
-            this.lbl_precioProducto.Size = new System.Drawing.Size(38, 15);
-            this.lbl_precioProducto.TabIndex = 3;
-            this.lbl_precioProducto.Text = "label1";
-            // 
-            // lbl_idProducto
-            // 
-            this.lbl_idProducto.AutoSize = true;
-            this.lbl_idProducto.Location = new System.Drawing.Point(96, 102);
-            this.lbl_idProducto.Name = "lbl_idProducto";
-            this.lbl_idProducto.Size = new System.Drawing.Size(38, 15);
-            this.lbl_idProducto.TabIndex = 4;
-            this.lbl_idProducto.Text = "label1";
             // 
             // Frm_AdminInventario
             // 

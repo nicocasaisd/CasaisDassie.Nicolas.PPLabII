@@ -68,8 +68,8 @@ namespace Entidades
                 eMarcaProducto.JBL, "Parlante con bateria", 17500, 20
                 ));
             listaProductos.Add(new Producto(
-                "Parlante Bluetooth", eCategoriaProducto.Audio, eTipoProducto.Parlante,
-                eMarcaProducto.JBL, "Parlante con bateria", 17500, 20
+                "Teclado inalámbrico", eCategoriaProducto.Computacion, eTipoProducto.Teclado,
+                eMarcaProducto.Lenovo, "Teclado sensitivo", 1270, 10
                 ));
         }
 

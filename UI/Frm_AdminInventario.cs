@@ -37,9 +37,11 @@ namespace UI
 
         private void btn_cambiarPrecio_Click(object sender, EventArgs e)
         {
-            // Obtener el item seleccionado actualmente
-            Producto auxProducto = (Producto)lst_listaProductos.SelectedItem;
-
+            // Obtengo el indice del producto seleccionado
+            int indexProducto = lst_listaProductos.SelectedIndex;
+            // Instancio el form
+            Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto);
+            frm_Modificar.ShowDialog();
 
         }
     }

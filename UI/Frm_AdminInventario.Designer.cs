@@ -60,7 +60,6 @@
             this.lst_listaProductos.Location = new System.Drawing.Point(20, 22);
             this.lst_listaProductos.Name = "lst_listaProductos";
             this.lst_listaProductos.Size = new System.Drawing.Size(187, 214);
-            this.lst_listaProductos.Sorted = true;
             this.lst_listaProductos.TabIndex = 0;
             this.lst_listaProductos.SelectedIndexChanged += new System.EventHandler(this.lst_listaProductos_SelectedIndexChanged);
             // 

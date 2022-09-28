@@ -37,6 +37,7 @@
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_precio = new System.Windows.Forms.Label();
             this.lbl_cantidad = new System.Windows.Forms.Label();
+            this.btn_cambiarPrecio = new System.Windows.Forms.Button();
             this.grp_listaProductos.SuspendLayout();
             this.grp_descripcion.SuspendLayout();
             this.SuspendLayout();
@@ -135,11 +136,22 @@
             this.lbl_cantidad.TabIndex = 0;
             this.lbl_cantidad.Text = "Cantidad: ";
             // 
+            // btn_cambiarPrecio
+            // 
+            this.btn_cambiarPrecio.Location = new System.Drawing.Point(431, 249);
+            this.btn_cambiarPrecio.Name = "btn_cambiarPrecio";
+            this.btn_cambiarPrecio.Size = new System.Drawing.Size(83, 50);
+            this.btn_cambiarPrecio.TabIndex = 2;
+            this.btn_cambiarPrecio.Text = "Cambiar Precio";
+            this.btn_cambiarPrecio.UseVisualStyleBackColor = true;
+            this.btn_cambiarPrecio.Click += new System.EventHandler(this.btn_cambiarPrecio_Click);
+            // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_cambiarPrecio);
             this.Controls.Add(this.grp_descripcion);
             this.Controls.Add(this.grp_listaProductos);
             this.Name = "Frm_AdminInventario";
@@ -163,5 +175,6 @@
         private Label lbl_idProducto;
         private Label lbl_precioProducto;
         private Label lbl_cantidadProducto;
+        private Button btn_cambiarPrecio;
     }
 }

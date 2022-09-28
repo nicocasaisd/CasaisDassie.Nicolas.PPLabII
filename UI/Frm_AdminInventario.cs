@@ -34,5 +34,13 @@ namespace UI
             lbl_idProducto.Text = auxProducto.Id.ToString();
 
         }
+
+        private void btn_cambiarPrecio_Click(object sender, EventArgs e)
+        {
+            // Obtener el item seleccionado actualmente
+            Producto auxProducto = (Producto)lst_listaProductos.SelectedItem;
+
+
+        }
     }
 }

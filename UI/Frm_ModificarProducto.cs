@@ -39,6 +39,7 @@ namespace UI
             double auxPrecio;
             double.TryParse(precioComoString, out auxPrecio);
             auxProducto.Precio = auxPrecio;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }

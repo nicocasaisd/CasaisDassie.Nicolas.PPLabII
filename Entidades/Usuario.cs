@@ -12,6 +12,12 @@ namespace Entidades
         private string email;
         private string password;
 
+        public Usuario()
+        {
+            this.email = "";
+            this.password = "";
+        }
+
         public Usuario(string email, string password)
         {
             this.email = email;

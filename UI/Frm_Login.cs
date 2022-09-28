@@ -13,9 +13,13 @@ namespace UI
         {
             string usuario = this.txt_usuario.Text;
             string pass = this.txt_password.Text;
-            if(TiendaElectronica.ValidarLoginDuenio(usuario, pass) > -1)
+            int indexDuenio = TiendaElectronica.ValidarLoginDuenio(usuario, pass);
+            Duenio auxDuenio;
+
+            if( indexDuenio> -1)
             {
-                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
+                auxDuenio = TiendaElectronica.ObtenerDuenio(indexDuenio);
+                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal(auxDuenio);
                 menuPrincipal.Show();
                 this.Hide();
             }

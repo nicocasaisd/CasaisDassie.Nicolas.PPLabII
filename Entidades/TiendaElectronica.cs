@@ -43,6 +43,11 @@ namespace Entidades
             return -1;
         }
 
+        public static Duenio ObtenerDuenio(int index)
+        {
+            return listaDuenios[index];
+        }
+
 
         private static void HardcodearDatos()
         {

@@ -30,6 +30,7 @@
         {
             this.btn_inventario = new System.Windows.Forms.Button();
             this.btn_ventas = new System.Windows.Forms.Button();
+            this.lbl_nombreUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_inventario
@@ -51,16 +52,29 @@
             this.btn_ventas.Text = "Ventas";
             this.btn_ventas.UseVisualStyleBackColor = true;
             // 
+            // lbl_nombreUsuario
+            // 
+            this.lbl_nombreUsuario.AutoSize = true;
+            this.lbl_nombreUsuario.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nombreUsuario.Location = new System.Drawing.Point(62, 24);
+            this.lbl_nombreUsuario.Name = "lbl_nombreUsuario";
+            this.lbl_nombreUsuario.Size = new System.Drawing.Size(94, 40);
+            this.lbl_nombreUsuario.TabIndex = 2;
+            this.lbl_nombreUsuario.Text = "label1";
+            // 
             // Frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_nombreUsuario);
             this.Controls.Add(this.btn_ventas);
             this.Controls.Add(this.btn_inventario);
             this.Name = "Frm_MenuPrincipal";
             this.Text = "Frm_MenuPrincipal";
+            this.Load += new System.EventHandler(this.Frm_MenuPrincipal_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -68,5 +82,6 @@
 
         private Button btn_inventario;
         private Button btn_ventas;
+        private Label lbl_nombreUsuario;
     }
 }

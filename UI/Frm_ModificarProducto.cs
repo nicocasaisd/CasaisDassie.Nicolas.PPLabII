@@ -57,10 +57,21 @@ namespace UI
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            string precioComoString = txt_nuevoPrecio.Text;
-            double auxPrecio;
-            double.TryParse(precioComoString, out auxPrecio);
-            auxProducto.Precio = auxPrecio;
+            string valorComoString = txt_nuevoPrecio.Text;
+
+            if (this.opcion == ModificarProductoOpcion.CambiarPrecio)
+            {
+                double auxPrecio;
+                double.TryParse(valorComoString, out auxPrecio);
+                auxProducto.Precio = auxPrecio;
+            }
+            else if (this.opcion == ModificarProductoOpcion.CambiarCantidad)
+            {
+                int auxCantidad;
+                int.TryParse(valorComoString, out auxCantidad);
+                auxProducto.CantidadStock = auxCantidad;
+            }
+            
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

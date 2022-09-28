@@ -28,6 +28,11 @@ namespace Entidades
             get { return nombreTienda; }
         }
 
+        public static List<Producto> ListaProductos
+        {
+            get { return listaProductos; }
+        }
+
         public static int ValidarLoginDuenio(string email, string pass)
         {
             int index = 0;

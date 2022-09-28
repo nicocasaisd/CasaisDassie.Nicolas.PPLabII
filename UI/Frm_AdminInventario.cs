@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace UI
         public Frm_AdminInventario()
         {
             InitializeComponent();
+        }
+
+        private void Frm_AdminInventario_Load(object sender, EventArgs e)
+        {
+            this.lst_listaProductos.DataSource = TiendaElectronica.ListaProductos;
         }
     }
 }

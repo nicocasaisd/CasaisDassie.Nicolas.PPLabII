@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static UI.Frm_ModificarProducto;
 
 namespace UI
 {
@@ -51,7 +52,8 @@ namespace UI
             // Obtengo el indice del producto seleccionado
             int indexProducto = lst_listaProductos.SelectedIndex;
             // Instancio el form
-            Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto);
+            ModificarProductoOpcion opcion = Frm_ModificarProducto.ModificarProductoOpcion.CambiarPrecio;
+            Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto, opcion);
             
             frm_Modificar.ShowDialog();
 

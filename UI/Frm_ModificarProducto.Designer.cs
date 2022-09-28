@@ -30,9 +30,9 @@
         {
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.txt_nuevoPrecio = new System.Windows.Forms.TextBox();
-            this.lbl_nuevoPrecio = new System.Windows.Forms.Label();
-            this.lbl_precioAnterior = new System.Windows.Forms.Label();
-            this.lbl_precioAnteriorContenido = new System.Windows.Forms.Label();
+            this.lbl_nuevoCampo = new System.Windows.Forms.Label();
+            this.lbl_previoCampo = new System.Windows.Forms.Label();
+            this.lbl_previoCampoContenido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_aceptar
@@ -52,41 +52,41 @@
             this.txt_nuevoPrecio.Size = new System.Drawing.Size(100, 23);
             this.txt_nuevoPrecio.TabIndex = 2;
             // 
-            // lbl_nuevoPrecio
+            // lbl_nuevoCampo
             // 
-            this.lbl_nuevoPrecio.AutoSize = true;
-            this.lbl_nuevoPrecio.Location = new System.Drawing.Point(30, 88);
-            this.lbl_nuevoPrecio.Name = "lbl_nuevoPrecio";
-            this.lbl_nuevoPrecio.Size = new System.Drawing.Size(84, 15);
-            this.lbl_nuevoPrecio.TabIndex = 3;
-            this.lbl_nuevoPrecio.Text = "Nuevo precio: ";
+            this.lbl_nuevoCampo.AutoSize = true;
+            this.lbl_nuevoCampo.Location = new System.Drawing.Point(30, 88);
+            this.lbl_nuevoCampo.Name = "lbl_nuevoCampo";
+            this.lbl_nuevoCampo.Size = new System.Drawing.Size(84, 15);
+            this.lbl_nuevoCampo.TabIndex = 3;
+            this.lbl_nuevoCampo.Text = "Nuevo precio: ";
             // 
-            // lbl_precioAnterior
+            // lbl_previoCampo
             // 
-            this.lbl_precioAnterior.AutoSize = true;
-            this.lbl_precioAnterior.Location = new System.Drawing.Point(31, 45);
-            this.lbl_precioAnterior.Name = "lbl_precioAnterior";
-            this.lbl_precioAnterior.Size = new System.Drawing.Size(90, 15);
-            this.lbl_precioAnterior.TabIndex = 4;
-            this.lbl_precioAnterior.Text = "Precio anterior: ";
+            this.lbl_previoCampo.AutoSize = true;
+            this.lbl_previoCampo.Location = new System.Drawing.Point(31, 45);
+            this.lbl_previoCampo.Name = "lbl_previoCampo";
+            this.lbl_previoCampo.Size = new System.Drawing.Size(90, 15);
+            this.lbl_previoCampo.TabIndex = 4;
+            this.lbl_previoCampo.Text = "Precio anterior: ";
             // 
-            // lbl_precioAnteriorContenido
+            // lbl_previoCampoContenido
             // 
-            this.lbl_precioAnteriorContenido.AutoSize = true;
-            this.lbl_precioAnteriorContenido.Location = new System.Drawing.Point(142, 49);
-            this.lbl_precioAnteriorContenido.Name = "lbl_precioAnteriorContenido";
-            this.lbl_precioAnteriorContenido.Size = new System.Drawing.Size(38, 15);
-            this.lbl_precioAnteriorContenido.TabIndex = 5;
-            this.lbl_precioAnteriorContenido.Text = "label1";
+            this.lbl_previoCampoContenido.AutoSize = true;
+            this.lbl_previoCampoContenido.Location = new System.Drawing.Point(142, 49);
+            this.lbl_previoCampoContenido.Name = "lbl_previoCampoContenido";
+            this.lbl_previoCampoContenido.Size = new System.Drawing.Size(38, 15);
+            this.lbl_previoCampoContenido.TabIndex = 5;
+            this.lbl_previoCampoContenido.Text = "label1";
             // 
             // Frm_ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 216);
-            this.Controls.Add(this.lbl_precioAnteriorContenido);
-            this.Controls.Add(this.lbl_precioAnterior);
-            this.Controls.Add(this.lbl_nuevoPrecio);
+            this.Controls.Add(this.lbl_previoCampoContenido);
+            this.Controls.Add(this.lbl_previoCampo);
+            this.Controls.Add(this.lbl_nuevoCampo);
             this.Controls.Add(this.txt_nuevoPrecio);
             this.Controls.Add(this.btn_aceptar);
             this.Name = "Frm_ModificarProducto";
@@ -101,8 +101,8 @@
 
         private Button btn_aceptar;
         private TextBox txt_nuevoPrecio;
-        private Label lbl_nuevoPrecio;
-        private Label lbl_precioAnterior;
-        private Label lbl_precioAnteriorContenido;
+        private Label lbl_nuevoCampo;
+        private Label lbl_previoCampo;
+        private Label lbl_previoCampoContenido;
     }
 }

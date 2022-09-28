@@ -42,6 +42,7 @@ namespace UI
             // Instancio el form
             Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto);
             frm_Modificar.ShowDialog();
+            //lst_listaProductos.ClearSelected();
 
         }
     }

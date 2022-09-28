@@ -32,6 +32,15 @@ namespace UI
             auxProducto = TiendaElectronica.ListaProductos[indexProducto];
             lbl_precioAnteriorContenido.Text = auxProducto.Precio.ToString();
         }
+
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+            string precioComoString = txt_nuevoPrecio.Text;
+            double auxPrecio;
+            double.TryParse(precioComoString, out auxPrecio);
+            auxProducto.Precio = auxPrecio;
+            this.Close();
+        }
     }
 }
  

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_aceptar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_nuevoPrecio = new System.Windows.Forms.TextBox();
             this.lbl_nuevoPrecio = new System.Windows.Forms.Label();
             this.lbl_precioAnterior = new System.Windows.Forms.Label();
             this.lbl_precioAnteriorContenido = new System.Windows.Forms.Label();
@@ -43,13 +43,14 @@
             this.btn_aceptar.TabIndex = 0;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
-            // textBox1
+            // txt_nuevoPrecio
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
+            this.txt_nuevoPrecio.Location = new System.Drawing.Point(132, 85);
+            this.txt_nuevoPrecio.Name = "txt_nuevoPrecio";
+            this.txt_nuevoPrecio.Size = new System.Drawing.Size(100, 23);
+            this.txt_nuevoPrecio.TabIndex = 2;
             // 
             // lbl_nuevoPrecio
             // 
@@ -86,7 +87,7 @@
             this.Controls.Add(this.lbl_precioAnteriorContenido);
             this.Controls.Add(this.lbl_precioAnterior);
             this.Controls.Add(this.lbl_nuevoPrecio);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_nuevoPrecio);
             this.Controls.Add(this.btn_aceptar);
             this.Name = "Frm_ModificarProducto";
             this.Text = "Frm_ModificarProducto";
@@ -99,7 +100,7 @@
         #endregion
 
         private Button btn_aceptar;
-        private TextBox textBox1;
+        private TextBox txt_nuevoPrecio;
         private Label lbl_nuevoPrecio;
         private Label lbl_precioAnterior;
         private Label lbl_precioAnteriorContenido;

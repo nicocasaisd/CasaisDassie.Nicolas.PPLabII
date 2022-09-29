@@ -36,5 +36,10 @@ namespace UI
         {
             this.lbl_nombreUsuario.Text = "Bienvenido " + auxDuenio.Email;
         }
+
+        private void btn_ventas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -20,3 +20,9 @@ public enum eMarcaProducto
     HP, Epson,
     PlayStation, XBox
 }
+
+public enum eMedioDePago
+{
+    Efectivo,
+    Crédito
+}

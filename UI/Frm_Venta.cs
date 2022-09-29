@@ -16,5 +16,11 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void Frm_Venta_Load(object sender, EventArgs e)
+        {
+            eMedioDePago eMedio = new eMedioDePago();
+            this.cmb_medioDePago.DataSource = eMedio;
+        }
     }
 }

@@ -39,7 +39,8 @@ namespace UI
 
         private void btn_ventas_Click(object sender, EventArgs e)
         {
-
+            Frm_Venta frm_Venta = new Frm_Venta();
+            frm_Venta.Show();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Entidades
 {
@@ -82,6 +83,23 @@ namespace Entidades
         private static void HardcodearDuenios()
         {
             listaDuenios.Add(new Duenio("fernando@electronicacasais.com", "asd123"));
+        }
+
+        public static int ObtenerIndexProducto(int id)
+        {
+            int index = -1;
+            int contador = 0;
+
+            foreach(Producto item in listaProductos)
+            {
+                if(item.Id == id)
+                {
+                    index = contador;
+                }
+                contador++;
+            }
+
+            return index;
         }
     }
 }

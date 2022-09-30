@@ -199,6 +199,7 @@
             this.btn_AgregarProducto.TabIndex = 9;
             this.btn_AgregarProducto.Text = "Agregar";
             this.btn_AgregarProducto.UseVisualStyleBackColor = true;
+            this.btn_AgregarProducto.Click += new System.EventHandler(this.btn_AgregarProducto_Click);
             // 
             // btn_RemoverProducto
             // 

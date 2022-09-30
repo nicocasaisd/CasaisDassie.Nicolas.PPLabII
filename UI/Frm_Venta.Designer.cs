@@ -36,12 +36,15 @@
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gpb_detalle = new System.Windows.Forms.GroupBox();
-            this.txt_codigo = new System.Windows.Forms.TextBox();
-            this.nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.llb_AgregarProducto = new System.Windows.Forms.LinkLabel();
+            this.nud_cantidad = new System.Windows.Forms.NumericUpDown();
+            this.txt_codigo = new System.Windows.Forms.TextBox();
             this.gpb_total = new System.Windows.Forms.GroupBox();
-            this.cmb_medioDePago = new System.Windows.Forms.ComboBox();
             this.lbl_medioDePago = new System.Windows.Forms.Label();
+            this.cmb_medioDePago = new System.Windows.Forms.ComboBox();
+            this.btn_AgregarProducto = new System.Windows.Forms.Button();
+            this.btn_RemoverProducto = new System.Windows.Forms.Button();
+            this.gpb_datosFacturacion = new System.Windows.Forms.GroupBox();
             this.gpb_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.gpb_total.SuspendLayout();
@@ -51,14 +54,14 @@
             // 
             this.lst_carrito.FormattingEnabled = true;
             this.lst_carrito.ItemHeight = 15;
-            this.lst_carrito.Location = new System.Drawing.Point(34, 163);
+            this.lst_carrito.Location = new System.Drawing.Point(22, 229);
             this.lst_carrito.Name = "lst_carrito";
             this.lst_carrito.Size = new System.Drawing.Size(513, 184);
             this.lst_carrito.TabIndex = 0;
             // 
             // btn_Aceptar
             // 
-            this.btn_Aceptar.Location = new System.Drawing.Point(465, 372);
+            this.btn_Aceptar.Location = new System.Drawing.Point(453, 438);
             this.btn_Aceptar.Name = "btn_Aceptar";
             this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_Aceptar.TabIndex = 1;
@@ -67,7 +70,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(546, 372);
+            this.btn_Cancelar.Location = new System.Drawing.Point(534, 438);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 2;
@@ -116,26 +119,12 @@
             this.gpb_detalle.Controls.Add(this.txt_codigo);
             this.gpb_detalle.Controls.Add(this.lbl_codigo);
             this.gpb_detalle.Controls.Add(this.label1);
-            this.gpb_detalle.Location = new System.Drawing.Point(34, 57);
+            this.gpb_detalle.Location = new System.Drawing.Point(22, 123);
             this.gpb_detalle.Name = "gpb_detalle";
             this.gpb_detalle.Size = new System.Drawing.Size(307, 100);
             this.gpb_detalle.TabIndex = 7;
             this.gpb_detalle.TabStop = false;
             this.gpb_detalle.Text = "Detalle";
-            // 
-            // txt_codigo
-            // 
-            this.txt_codigo.Location = new System.Drawing.Point(77, 25);
-            this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(100, 23);
-            this.txt_codigo.TabIndex = 7;
-            // 
-            // nud_cantidad
-            // 
-            this.nud_cantidad.Location = new System.Drawing.Point(77, 63);
-            this.nud_cantidad.Name = "nud_cantidad";
-            this.nud_cantidad.Size = new System.Drawing.Size(100, 23);
-            this.nud_cantidad.TabIndex = 8;
             // 
             // llb_AgregarProducto
             // 
@@ -147,26 +136,32 @@
             this.llb_AgregarProducto.TabStop = true;
             this.llb_AgregarProducto.Text = "Seleccionar producto";
             // 
+            // nud_cantidad
+            // 
+            this.nud_cantidad.Location = new System.Drawing.Point(77, 63);
+            this.nud_cantidad.Name = "nud_cantidad";
+            this.nud_cantidad.Size = new System.Drawing.Size(100, 23);
+            this.nud_cantidad.TabIndex = 8;
+            // 
+            // txt_codigo
+            // 
+            this.txt_codigo.Location = new System.Drawing.Point(77, 25);
+            this.txt_codigo.Name = "txt_codigo";
+            this.txt_codigo.Size = new System.Drawing.Size(100, 23);
+            this.txt_codigo.TabIndex = 7;
+            // 
             // gpb_total
             // 
             this.gpb_total.Controls.Add(this.lbl_medioDePago);
             this.gpb_total.Controls.Add(this.cmb_medioDePago);
             this.gpb_total.Controls.Add(this.lbl_total);
             this.gpb_total.Controls.Add(this.txt_total);
-            this.gpb_total.Location = new System.Drawing.Point(34, 353);
+            this.gpb_total.Location = new System.Drawing.Point(22, 419);
             this.gpb_total.Name = "gpb_total";
             this.gpb_total.Size = new System.Drawing.Size(425, 60);
             this.gpb_total.TabIndex = 8;
             this.gpb_total.TabStop = false;
             this.gpb_total.Text = "Total";
-            // 
-            // cmb_medioDePago
-            // 
-            this.cmb_medioDePago.FormattingEnabled = true;
-            this.cmb_medioDePago.Location = new System.Drawing.Point(123, 20);
-            this.cmb_medioDePago.Name = "cmb_medioDePago";
-            this.cmb_medioDePago.Size = new System.Drawing.Size(109, 23);
-            this.cmb_medioDePago.TabIndex = 5;
             // 
             // lbl_medioDePago
             // 
@@ -177,11 +172,49 @@
             this.lbl_medioDePago.TabIndex = 6;
             this.lbl_medioDePago.Text = "Medio de pago";
             // 
+            // cmb_medioDePago
+            // 
+            this.cmb_medioDePago.FormattingEnabled = true;
+            this.cmb_medioDePago.Location = new System.Drawing.Point(123, 20);
+            this.cmb_medioDePago.Name = "cmb_medioDePago";
+            this.cmb_medioDePago.Size = new System.Drawing.Size(109, 23);
+            this.cmb_medioDePago.TabIndex = 5;
+            // 
+            // btn_AgregarProducto
+            // 
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(341, 143);
+            this.btn_AgregarProducto.Name = "btn_AgregarProducto";
+            this.btn_AgregarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btn_AgregarProducto.TabIndex = 9;
+            this.btn_AgregarProducto.Text = "Agregar";
+            this.btn_AgregarProducto.UseVisualStyleBackColor = true;
+            // 
+            // btn_RemoverProducto
+            // 
+            this.btn_RemoverProducto.Location = new System.Drawing.Point(341, 181);
+            this.btn_RemoverProducto.Name = "btn_RemoverProducto";
+            this.btn_RemoverProducto.Size = new System.Drawing.Size(75, 23);
+            this.btn_RemoverProducto.TabIndex = 10;
+            this.btn_RemoverProducto.Text = "Quitar";
+            this.btn_RemoverProducto.UseVisualStyleBackColor = true;
+            // 
+            // gpb_datosFacturacion
+            // 
+            this.gpb_datosFacturacion.Location = new System.Drawing.Point(27, 12);
+            this.gpb_datosFacturacion.Name = "gpb_datosFacturacion";
+            this.gpb_datosFacturacion.Size = new System.Drawing.Size(508, 92);
+            this.gpb_datosFacturacion.TabIndex = 11;
+            this.gpb_datosFacturacion.TabStop = false;
+            this.gpb_datosFacturacion.Text = "groupBox1";
+            // 
             // Frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 450);
+            this.ClientSize = new System.Drawing.Size(738, 495);
+            this.Controls.Add(this.gpb_datosFacturacion);
+            this.Controls.Add(this.btn_RemoverProducto);
+            this.Controls.Add(this.btn_AgregarProducto);
             this.Controls.Add(this.gpb_total);
             this.Controls.Add(this.gpb_detalle);
             this.Controls.Add(this.btn_Cancelar);
@@ -215,5 +248,8 @@
         private GroupBox gpb_total;
         private ComboBox cmb_medioDePago;
         private Label lbl_medioDePago;
+        private Button btn_AgregarProducto;
+        private Button btn_RemoverProducto;
+        private GroupBox gpb_datosFacturacion;
     }
 }

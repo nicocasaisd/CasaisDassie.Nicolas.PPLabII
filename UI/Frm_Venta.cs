@@ -19,16 +19,10 @@ namespace UI
 
         private void Frm_Venta_Load(object sender, EventArgs e)
         {
+            // Agrego data al cmb_medioDePago
             Array eMedio = Enum.GetValues(typeof(eMedioDePago));
-
             cmb_medioDePago.DataSource = eMedio;
-            //eMedioDePago eMedio = new eMedioDePago();
-            //List<string> eLista = eMedio.
-            //foreach(string item in eMedio.ToString())
-            //{
-
-            //}
-            //this.cmb_medioDePago.DataSource = eMedio;
+            
         }
     }
 }

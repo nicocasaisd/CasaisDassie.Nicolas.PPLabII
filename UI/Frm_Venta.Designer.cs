@@ -36,7 +36,7 @@
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gpb_detalle = new System.Windows.Forms.GroupBox();
-            this.llb_AgregarProducto = new System.Windows.Forms.LinkLabel();
+            this.llb_SeleccionarProducto = new System.Windows.Forms.LinkLabel();
             this.nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.gpb_total = new System.Windows.Forms.GroupBox();
@@ -123,7 +123,7 @@
             // 
             // gpb_detalle
             // 
-            this.gpb_detalle.Controls.Add(this.llb_AgregarProducto);
+            this.gpb_detalle.Controls.Add(this.llb_SeleccionarProducto);
             this.gpb_detalle.Controls.Add(this.nud_cantidad);
             this.gpb_detalle.Controls.Add(this.txt_codigo);
             this.gpb_detalle.Controls.Add(this.lbl_codigo);
@@ -135,16 +135,16 @@
             this.gpb_detalle.TabStop = false;
             this.gpb_detalle.Text = "Detalle";
             // 
-            // llb_AgregarProducto
+            // llb_SeleccionarProducto
             // 
-            this.llb_AgregarProducto.AutoSize = true;
-            this.llb_AgregarProducto.Location = new System.Drawing.Point(182, 28);
-            this.llb_AgregarProducto.Name = "llb_AgregarProducto";
-            this.llb_AgregarProducto.Size = new System.Drawing.Size(119, 15);
-            this.llb_AgregarProducto.TabIndex = 9;
-            this.llb_AgregarProducto.TabStop = true;
-            this.llb_AgregarProducto.Text = "Seleccionar producto";
-            this.llb_AgregarProducto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_AgregarProducto_LinkClicked);
+            this.llb_SeleccionarProducto.AutoSize = true;
+            this.llb_SeleccionarProducto.Location = new System.Drawing.Point(182, 28);
+            this.llb_SeleccionarProducto.Name = "llb_SeleccionarProducto";
+            this.llb_SeleccionarProducto.Size = new System.Drawing.Size(119, 15);
+            this.llb_SeleccionarProducto.TabIndex = 9;
+            this.llb_SeleccionarProducto.TabStop = true;
+            this.llb_SeleccionarProducto.Text = "Seleccionar producto";
+            this.llb_SeleccionarProducto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_SeleccionarProducto_LinkClicked);
             // 
             // nud_cantidad
             // 
@@ -337,7 +337,7 @@
         private GroupBox gpb_detalle;
         private TextBox txt_codigo;
         private NumericUpDown nud_cantidad;
-        private LinkLabel llb_AgregarProducto;
+        private LinkLabel llb_SeleccionarProducto;
         private GroupBox gpb_total;
         private ComboBox cmb_medioDePago;
         private Label lbl_medioDePago;

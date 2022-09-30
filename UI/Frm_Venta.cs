@@ -13,14 +13,17 @@ namespace UI
 {
     public partial class Frm_Venta : Form
     {
-        List<Producto> listaCarrito;
-        Dictionary<string, int> dictCarrito;
+        //List<Producto> listaCarrito;
+        List<Tuple<int, Producto, decimal>> listaTuplaCarrito;
+        //Dictionary<string, int> dictCarrito;
 
         public Frm_Venta()
         {
             InitializeComponent();
-            listaCarrito = new List<Producto>();
-            dictCarrito = new Dictionary<string, int>();
+            //listaCarrito = new List<Producto>();
+            listaTuplaCarrito = new List<Tuple<int, Producto, decimal>>();
+            //dictCarrito = new Dictionary<string, int>();
+            //listaCarritoL = new List<List<string>>();
         }
 
         private void Frm_Venta_Load(object sender, EventArgs e)
@@ -34,15 +37,16 @@ namespace UI
             // cmb_puntoDeVenta , opcion por defecto
             cmb_puntoDeVenta.SelectedIndex = 0;
             // cargo la listaCarrito en lst_carrito
+            lst_carrito.DataSource = listaTuplaCarrito;
             //lst_carrito.DataSource = listaCarrito;
-            lst_carrito.DataSource = dictCarrito;
+            //lst_carrito.DataSource = dictCarrito;
 
             
 
             
         }
 
-        private void llb_AgregarProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llb_SeleccionarProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Frm_AdminInventario frm_Admin = new Frm_AdminInventario();
             frm_Admin.ShowDialog();
@@ -66,11 +70,11 @@ namespace UI
                 // lo agrego a la lista
                 //this.listaCarrito.Add(auxProducto);
                 // lo agrego al dict
-                this.dictCarrito.Add(auxProducto.ToString(), (int)nud_cantidad.Value);
+                //this.dictCarrito.Add(auxProducto.ToString(), (int)nud_cantidad.Value);
                 // actualiza el DataSource de lst_carrito para que muestre los valores
                 lst_carrito.DataSource = null;
                 //lst_carrito.DataSource = this.listaCarrito;
-                lst_carrito.DataSource = this.dictCarrito;
+                //lst_carrito.DataSource = this.dictCarrito;
 
             }
         }

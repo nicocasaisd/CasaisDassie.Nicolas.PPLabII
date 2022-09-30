@@ -13,17 +13,12 @@ namespace UI
 {
     public partial class Frm_Venta : Form
     {
-        //List<Producto> listaCarrito;
         List<Tuple<Producto, decimal>> listaTuplaCarrito;
-        //Dictionary<string, int> dictCarrito;
 
         public Frm_Venta()
         {
             InitializeComponent();
-            //listaCarrito = new List<Producto>();
             listaTuplaCarrito = new List<Tuple<Producto, decimal>>();
-            //dictCarrito = new Dictionary<string, int>();
-            //listaCarritoL = new List<List<string>>();
         }
 
         private void Frm_Venta_Load(object sender, EventArgs e)
@@ -38,12 +33,6 @@ namespace UI
             cmb_puntoDeVenta.SelectedIndex = 0;
             // cargo la listaCarrito en lst_carrito
             lst_carrito.DataSource = listaTuplaCarrito;
-            //lst_carrito.DataSource = listaCarrito;
-            //lst_carrito.DataSource = dictCarrito;
-
-            
-
-            
         }
 
         private void llb_SeleccionarProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -72,11 +61,47 @@ namespace UI
                 // lo agrego a la lista
                 this.listaTuplaCarrito.Add(Tuple.Create(auxProducto, cantidad));
                 // actualiza el DataSource de lst_carrito para que muestre los valores
-                lst_carrito.DataSource = null;
-                lst_carrito.DataSource = this.listaTuplaCarrito;
+                ActualizarLista();
 
             }
         }
 
+        private void btn_RemoverProducto_Click(object sender, EventArgs e)
+        {
+            if(lst_carrito.SelectedIndex >= 0)
+            {
+                listaTuplaCarrito.RemoveAt(lst_carrito.SelectedIndex);
+                ActualizarLista();
+            }
+        }
+
+        #region METODOS LÓGICA
+
+        private void ActualizarLista()
+        {
+            lst_carrito.DataSource = null;
+            lst_carrito.DataSource = this.listaTuplaCarrito;
+            // actualizo txt_total
+            txt_total.Text = CalcularTotal(listaTuplaCarrito).ToString();
+        }
+
+        private double CalcularTotal(List<Tuple<Producto, decimal>> listaTuplaCarrito)
+        {
+            double subtotal = 0;
+            double total = 0;
+            foreach(Tuple<Producto, decimal> item in listaTuplaCarrito)
+            {
+                subtotal = item.Item1.Precio * (int)item.Item2;
+
+                total += subtotal;
+
+            }
+
+            return total;
+        }
+
+
+
+        #endregion
     }
 }

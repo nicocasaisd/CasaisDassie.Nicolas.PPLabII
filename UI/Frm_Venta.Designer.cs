@@ -209,6 +209,7 @@
             this.btn_RemoverProducto.TabIndex = 10;
             this.btn_RemoverProducto.Text = "Quitar";
             this.btn_RemoverProducto.UseVisualStyleBackColor = true;
+            this.btn_RemoverProducto.Click += new System.EventHandler(this.btn_RemoverProducto_Click);
             // 
             // gpb_datosFacturacion
             // 

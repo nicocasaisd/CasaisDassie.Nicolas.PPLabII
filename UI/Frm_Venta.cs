@@ -61,9 +61,14 @@ namespace UI
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
                 // lo agrego a la lista
                 this.listaCarrito.Add(auxProducto);
-                
-                
+
+                //lst_carrito.DataSource = listaCarrito;
+                //this.lst_carrito.Refresh();
+                lst_carrito.DataSource = null;
+                lst_carrito.DataSource = this.listaCarrito;
+
             }
         }
+
     }
 }

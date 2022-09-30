@@ -29,5 +29,10 @@ namespace UI
             cmb_puntoDeVenta.SelectedIndex = 0;
             
         }
+
+        private void llb_AgregarProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

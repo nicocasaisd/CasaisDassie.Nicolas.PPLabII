@@ -82,5 +82,10 @@ namespace UI
                 }
             }
         }
+
+        private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

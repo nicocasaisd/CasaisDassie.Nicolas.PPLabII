@@ -144,6 +144,7 @@
             this.llb_AgregarProducto.TabIndex = 9;
             this.llb_AgregarProducto.TabStop = true;
             this.llb_AgregarProducto.Text = "Seleccionar producto";
+            this.llb_AgregarProducto.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_AgregarProducto_LinkClicked);
             // 
             // nud_cantidad
             // 
@@ -154,6 +155,7 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Enabled = false;
             this.txt_codigo.Location = new System.Drawing.Point(77, 25);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(100, 23);

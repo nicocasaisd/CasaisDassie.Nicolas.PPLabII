@@ -13,6 +13,7 @@ namespace UI
 {
     public partial class Frm_Venta : Form
     {
+        const decimal recargoCredito = 0.10M;
         List<Tuple<Producto, decimal>> listaTuplaCarrito;
 
         public Frm_Venta()
@@ -59,9 +60,18 @@ namespace UI
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
                 // lo agrego a la lista
-                this.listaTuplaCarrito.Add(Tuple.Create(auxProducto, cantidad));
+                if(this.ChequeoProductoEnCarrito(auxProducto, listaTuplaCarrito) != -1)
+                {
+
+                }
+                else
+                {
+                    this.listaTuplaCarrito.Add(Tuple.Create(auxProducto, cantidad));
+                }
                 // actualiza el DataSource de lst_carrito para que muestre los valores
                 ActualizarLista();
+
+               
 
             }
         }
@@ -85,22 +95,37 @@ namespace UI
             txt_total.Text = CalcularTotal(listaTuplaCarrito).ToString();
         }
 
-        private double CalcularTotal(List<Tuple<Producto, decimal>> listaTuplaCarrito)
+        private decimal CalcularTotal(List<Tuple<Producto, decimal>> listaTuplaCarrito)
         {
-            double subtotal = 0;
-            double total = 0;
+            decimal subtotal = 0;
+            decimal total = 0;
             foreach(Tuple<Producto, decimal> item in listaTuplaCarrito)
             {
-                subtotal = item.Item1.Precio * (int)item.Item2;
+                subtotal = item.Item2 * (decimal)item.Item1.Precio;
 
                 total += subtotal;
 
+            }
+            // recargo por Crédito
+            if(cmb_medioDePago.SelectedItem.Equals(eMedioDePago.Crédito))
+            {
+                total += total * recargoCredito;
             }
 
             return total;
         }
 
-
+        private int ChequeoProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal>> listaTuplaCarrito)
+        {
+            for (int i = 0; i < listaTuplaCarrito.Count; i++)
+            {
+                if (listaTuplaCarrito[i].Item1.Id == auxProducto.Id)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
 
         #endregion
     }

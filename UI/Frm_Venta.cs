@@ -14,11 +14,13 @@ namespace UI
     public partial class Frm_Venta : Form
     {
         List<Producto> listaCarrito;
+        Dictionary<string, int> dictCarrito;
 
         public Frm_Venta()
         {
             InitializeComponent();
             listaCarrito = new List<Producto>();
+            dictCarrito = new Dictionary<string, int>();
         }
 
         private void Frm_Venta_Load(object sender, EventArgs e)
@@ -32,7 +34,9 @@ namespace UI
             // cmb_puntoDeVenta , opcion por defecto
             cmb_puntoDeVenta.SelectedIndex = 0;
             // cargo la listaCarrito en lst_carrito
-            lst_carrito.DataSource = listaCarrito;
+            //lst_carrito.DataSource = listaCarrito;
+            lst_carrito.DataSource = dictCarrito;
+
             
 
             
@@ -60,12 +64,13 @@ namespace UI
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
                 // lo agrego a la lista
-                this.listaCarrito.Add(auxProducto);
-
-                //lst_carrito.DataSource = listaCarrito;
-                //this.lst_carrito.Refresh();
+                //this.listaCarrito.Add(auxProducto);
+                // lo agrego al dict
+                this.dictCarrito.Add(auxProducto.ToString(), (int)nud_cantidad.Value);
+                // actualiza el DataSource de lst_carrito para que muestre los valores
                 lst_carrito.DataSource = null;
-                lst_carrito.DataSource = this.listaCarrito;
+                //lst_carrito.DataSource = this.listaCarrito;
+                lst_carrito.DataSource = this.dictCarrito;
 
             }
         }

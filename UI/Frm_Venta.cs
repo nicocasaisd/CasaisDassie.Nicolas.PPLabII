@@ -14,14 +14,14 @@ namespace UI
     public partial class Frm_Venta : Form
     {
         //List<Producto> listaCarrito;
-        List<Tuple<int, Producto, decimal>> listaTuplaCarrito;
+        List<Tuple<Producto, decimal>> listaTuplaCarrito;
         //Dictionary<string, int> dictCarrito;
 
         public Frm_Venta()
         {
             InitializeComponent();
             //listaCarrito = new List<Producto>();
-            listaTuplaCarrito = new List<Tuple<int, Producto, decimal>>();
+            listaTuplaCarrito = new List<Tuple<Producto, decimal>>();
             //dictCarrito = new Dictionary<string, int>();
             //listaCarritoL = new List<List<string>>();
         }
@@ -61,20 +61,19 @@ namespace UI
 
         private void btn_AgregarProducto_Click(object sender, EventArgs e)
         {
-            if(this.btn_AgregarProducto.Enabled && this.nud_cantidad.Value > 0)
+            decimal cantidad = this.nud_cantidad.Value;
+
+            if(this.btn_AgregarProducto.Enabled && cantidad > 0)
             {
                 // cargo el producto a partir del idProducto
                 Producto auxProducto;
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
                 // lo agrego a la lista
-                //this.listaCarrito.Add(auxProducto);
-                // lo agrego al dict
-                //this.dictCarrito.Add(auxProducto.ToString(), (int)nud_cantidad.Value);
+                this.listaTuplaCarrito.Add(Tuple.Create(auxProducto, cantidad));
                 // actualiza el DataSource de lst_carrito para que muestre los valores
                 lst_carrito.DataSource = null;
-                //lst_carrito.DataSource = this.listaCarrito;
-                //lst_carrito.DataSource = this.dictCarrito;
+                lst_carrito.DataSource = this.listaTuplaCarrito;
 
             }
         }

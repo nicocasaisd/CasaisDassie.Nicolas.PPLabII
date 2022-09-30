@@ -14,10 +14,25 @@ namespace UI
 {
     public partial class Frm_AdminInventario : Form
     {
+        int idProducto = 0;
+
+        #region CONSTRUCTORES
+
         public Frm_AdminInventario()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+        #region PROPIEDADES
+
+        public int IdProducto
+        {
+            get { return idProducto; }
+        }
+
+        #endregion
 
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
@@ -85,7 +100,16 @@ namespace UI
 
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
         {
-
+            if (lst_listaProductos.SelectedIndex >= 0)
+            {
+                // Obtengo el indice del producto seleccionado
+                int indexProducto = lst_listaProductos.SelectedIndex;
+                // Guardo en un aux de producto
+                Producto auxProducto = (Producto) lst_listaProductos.Items[indexProducto];
+                // Obtengo la id
+                this.idProducto = auxProducto.Id;
+            }
+            this.Hide();
         }
     }
 }

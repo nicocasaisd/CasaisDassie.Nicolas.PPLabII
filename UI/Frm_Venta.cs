@@ -32,7 +32,14 @@ namespace UI
 
         private void llb_AgregarProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Frm_AdminInventario frm_Admin = new Frm_AdminInventario();
+            frm_Admin.ShowDialog();
+            // cargo el producto
+            if(frm_Admin.IdProducto >= 1000)
+            {
+                this.txt_codigo.Text = frm_Admin.IdProducto.ToString();
+            }
+            
         }
     }
 }

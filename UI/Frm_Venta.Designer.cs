@@ -45,9 +45,18 @@
             this.btn_AgregarProducto = new System.Windows.Forms.Button();
             this.btn_RemoverProducto = new System.Windows.Forms.Button();
             this.gpb_datosFacturacion = new System.Windows.Forms.GroupBox();
+            this.cmb_puntoDeVenta = new System.Windows.Forms.ComboBox();
+            this.lbl_puntoDeVenta = new System.Windows.Forms.Label();
+            this.txt_nroDeFactura = new System.Windows.Forms.TextBox();
+            this.lbl_nroDeFactura = new System.Windows.Forms.Label();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
+            this.lbl_fecha = new System.Windows.Forms.Label();
+            this.lbl_nombreCliente = new System.Windows.Forms.Label();
+            this.txt_nombreCliente = new System.Windows.Forms.TextBox();
             this.gpb_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.gpb_total.SuspendLayout();
+            this.gpb_datosFacturacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // lst_carrito
@@ -200,12 +209,91 @@
             // 
             // gpb_datosFacturacion
             // 
+            this.gpb_datosFacturacion.Controls.Add(this.cmb_puntoDeVenta);
+            this.gpb_datosFacturacion.Controls.Add(this.lbl_puntoDeVenta);
+            this.gpb_datosFacturacion.Controls.Add(this.txt_nroDeFactura);
+            this.gpb_datosFacturacion.Controls.Add(this.lbl_nroDeFactura);
+            this.gpb_datosFacturacion.Controls.Add(this.dtp_fecha);
+            this.gpb_datosFacturacion.Controls.Add(this.lbl_fecha);
+            this.gpb_datosFacturacion.Controls.Add(this.lbl_nombreCliente);
+            this.gpb_datosFacturacion.Controls.Add(this.txt_nombreCliente);
             this.gpb_datosFacturacion.Location = new System.Drawing.Point(27, 12);
             this.gpb_datosFacturacion.Name = "gpb_datosFacturacion";
             this.gpb_datosFacturacion.Size = new System.Drawing.Size(508, 92);
             this.gpb_datosFacturacion.TabIndex = 11;
             this.gpb_datosFacturacion.TabStop = false;
-            this.gpb_datosFacturacion.Text = "groupBox1";
+            this.gpb_datosFacturacion.Text = "Datos de facturación";
+            // 
+            // cmb_puntoDeVenta
+            // 
+            this.cmb_puntoDeVenta.FormattingEnabled = true;
+            this.cmb_puntoDeVenta.Items.AddRange(new object[] {
+            "Alem 723"});
+            this.cmb_puntoDeVenta.Location = new System.Drawing.Point(332, 17);
+            this.cmb_puntoDeVenta.Name = "cmb_puntoDeVenta";
+            this.cmb_puntoDeVenta.Size = new System.Drawing.Size(158, 23);
+            this.cmb_puntoDeVenta.TabIndex = 7;
+            // 
+            // lbl_puntoDeVenta
+            // 
+            this.lbl_puntoDeVenta.AutoSize = true;
+            this.lbl_puntoDeVenta.Location = new System.Drawing.Point(218, 25);
+            this.lbl_puntoDeVenta.Name = "lbl_puntoDeVenta";
+            this.lbl_puntoDeVenta.Size = new System.Drawing.Size(87, 15);
+            this.lbl_puntoDeVenta.TabIndex = 6;
+            this.lbl_puntoDeVenta.Text = "Punto de venta";
+            // 
+            // txt_nroDeFactura
+            // 
+            this.txt_nroDeFactura.Enabled = false;
+            this.txt_nroDeFactura.Location = new System.Drawing.Point(332, 53);
+            this.txt_nroDeFactura.Name = "txt_nroDeFactura";
+            this.txt_nroDeFactura.Size = new System.Drawing.Size(156, 23);
+            this.txt_nroDeFactura.TabIndex = 5;
+            // 
+            // lbl_nroDeFactura
+            // 
+            this.lbl_nroDeFactura.AutoSize = true;
+            this.lbl_nroDeFactura.Location = new System.Drawing.Point(219, 56);
+            this.lbl_nroDeFactura.Name = "lbl_nroDeFactura";
+            this.lbl_nroDeFactura.Size = new System.Drawing.Size(107, 15);
+            this.lbl_nroDeFactura.TabIndex = 4;
+            this.lbl_nroDeFactura.Text = "Número de factura";
+            // 
+            // dtp_fecha
+            // 
+            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha.Location = new System.Drawing.Point(72, 56);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(100, 23);
+            this.dtp_fecha.TabIndex = 3;
+            this.dtp_fecha.Value = new System.DateTime(2022, 9, 30, 10, 20, 10, 0);
+            // 
+            // lbl_fecha
+            // 
+            this.lbl_fecha.AutoSize = true;
+            this.lbl_fecha.Location = new System.Drawing.Point(18, 62);
+            this.lbl_fecha.Name = "lbl_fecha";
+            this.lbl_fecha.Size = new System.Drawing.Size(38, 15);
+            this.lbl_fecha.TabIndex = 2;
+            this.lbl_fecha.Text = "Fecha";
+            // 
+            // lbl_nombreCliente
+            // 
+            this.lbl_nombreCliente.AutoSize = true;
+            this.lbl_nombreCliente.Location = new System.Drawing.Point(18, 25);
+            this.lbl_nombreCliente.Name = "lbl_nombreCliente";
+            this.lbl_nombreCliente.Size = new System.Drawing.Size(44, 15);
+            this.lbl_nombreCliente.TabIndex = 1;
+            this.lbl_nombreCliente.Text = "Cliente";
+            // 
+            // txt_nombreCliente
+            // 
+            this.txt_nombreCliente.Location = new System.Drawing.Point(72, 22);
+            this.txt_nombreCliente.Name = "txt_nombreCliente";
+            this.txt_nombreCliente.Size = new System.Drawing.Size(114, 23);
+            this.txt_nombreCliente.TabIndex = 0;
+            this.txt_nombreCliente.Text = "Consumidor Final";
             // 
             // Frm_Venta
             // 
@@ -228,6 +316,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).EndInit();
             this.gpb_total.ResumeLayout(false);
             this.gpb_total.PerformLayout();
+            this.gpb_datosFacturacion.ResumeLayout(false);
+            this.gpb_datosFacturacion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -251,5 +341,13 @@
         private Button btn_AgregarProducto;
         private Button btn_RemoverProducto;
         private GroupBox gpb_datosFacturacion;
+        private Label lbl_nombreCliente;
+        private TextBox txt_nombreCliente;
+        private Label lbl_fecha;
+        private DateTimePicker dtp_fecha;
+        private TextBox txt_nroDeFactura;
+        private Label lbl_nroDeFactura;
+        private Label lbl_puntoDeVenta;
+        private ComboBox cmb_puntoDeVenta;
     }
 }

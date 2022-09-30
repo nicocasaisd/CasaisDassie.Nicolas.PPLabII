@@ -22,6 +22,11 @@ namespace UI
             // Agrego data al cmb_medioDePago
             Array eMedio = Enum.GetValues(typeof(eMedioDePago));
             cmb_medioDePago.DataSource = eMedio;
+            // Format del DateTimePicker
+            dtp_fecha.Format = DateTimePickerFormat.Custom;
+            dtp_fecha.CustomFormat = "dd/MM/yyyy";
+            // cmb_puntoDeVenta , opcion por defecto
+            cmb_puntoDeVenta.SelectedIndex = 0;
             
         }
     }

@@ -59,10 +59,12 @@ namespace UI
                 Producto auxProducto;
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
-                // lo agrego a la lista
-                if(this.ChequeoProductoEnCarrito(auxProducto, listaTuplaCarrito) != -1)
+                // me fijo si ya existe y lo agrego a la lista
+                if(this.ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito) != -1)
                 {
-
+                    // MAMARRACHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+                    int indiceProducto = this.ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito);
+                    this.ActualizarProductoEnCarrito(indiceProducto, cantidad, listaTuplaCarrito, auxProducto);
                 }
                 else
                 {
@@ -115,7 +117,7 @@ namespace UI
             return total;
         }
 
-        private int ChequeoProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal>> listaTuplaCarrito)
+        private int ObtenerIndiceProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal>> listaTuplaCarrito)
         {
             for (int i = 0; i < listaTuplaCarrito.Count; i++)
             {
@@ -126,6 +128,13 @@ namespace UI
             }
             return -1;
         }
+
+        private void ActualizarProductoEnCarrito(int indice, decimal cantidad, List<Tuple<Producto, decimal>> listaTuplaCarrito, Producto auxProducto)
+        {
+            cantidad += this.listaTuplaCarrito[indice].Item2;
+            this.listaTuplaCarrito[indice] = Tuple.Create(auxProducto, cantidad);
+        }
+
 
         #endregion
     }

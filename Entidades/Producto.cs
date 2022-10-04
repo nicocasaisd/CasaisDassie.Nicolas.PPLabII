@@ -65,7 +65,10 @@
         public double Precio { get => precio; set => precio = value; }
         public int CantidadStock { get => cantidadStock; set => cantidadStock = value; }
 
-
+        public string NombreLista
+        {
+            get { return this.Nombre + this.Marca + this.Categoria;  }
+        }
 
 
 

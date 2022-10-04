@@ -95,6 +95,7 @@ namespace UI
             lst_carrito.DataSource = this.listaTuplaCarrito;
             // actualizo txt_total
             txt_total.Text = CalcularTotal(listaTuplaCarrito).ToString();
+            lst_carrito.DisplayMember = "Item1";
         }
 
         private decimal CalcularTotal(List<Tuple<Producto, decimal>> listaTuplaCarrito)
@@ -137,5 +138,15 @@ namespace UI
 
 
         #endregion
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult eCancelar;
+            eCancelar = MessageBox.Show("¿Desea cerrar el formulario?", "Descartar el formulario", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(eCancelar == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

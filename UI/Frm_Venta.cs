@@ -14,12 +14,12 @@ namespace UI
     public partial class Frm_Venta : Form
     {
         const decimal recargoCredito = 0.10M;
-        List<Tuple<Producto, decimal>> listaTuplaCarrito;
+        List<Tuple<Producto, decimal, string>> listaTuplaCarrito;
 
         public Frm_Venta()
         {
             InitializeComponent();
-            listaTuplaCarrito = new List<Tuple<Producto, decimal>>();
+            listaTuplaCarrito = new List<Tuple<Producto, decimal, string>>();
         }
 
         private void Frm_Venta_Load(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace UI
                 }
                 else
                 {
-                    this.listaTuplaCarrito.Add(Tuple.Create(auxProducto, cantidad));
+                    this.listaTuplaCarrito.Add(Tuple.Create(auxProducto, cantidad, FormatearProductoEnCarrito(auxProducto, cantidad)));
                 }
                 // actualiza el DataSource de lst_carrito para que muestre los valores
                 ActualizarLista();
@@ -95,14 +95,14 @@ namespace UI
             lst_carrito.DataSource = this.listaTuplaCarrito;
             // actualizo txt_total
             txt_total.Text = CalcularTotal(listaTuplaCarrito).ToString();
-            lst_carrito.DisplayMember = "Item1";
+            lst_carrito.DisplayMember = "Item3";
         }
 
-        private decimal CalcularTotal(List<Tuple<Producto, decimal>> listaTuplaCarrito)
+        private decimal CalcularTotal(List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             decimal subtotal = 0;
             decimal total = 0;
-            foreach(Tuple<Producto, decimal> item in listaTuplaCarrito)
+            foreach(Tuple<Producto, decimal, string> item in listaTuplaCarrito)
             {
                 subtotal = item.Item2 * (decimal)item.Item1.Precio;
 
@@ -118,7 +118,7 @@ namespace UI
             return total;
         }
 
-        private int ObtenerIndiceProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal>> listaTuplaCarrito)
+        private int ObtenerIndiceProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             for (int i = 0; i < listaTuplaCarrito.Count; i++)
             {
@@ -130,10 +130,16 @@ namespace UI
             return -1;
         }
 
-        private void ActualizarProductoEnCarrito(int indice, decimal cantidad, List<Tuple<Producto, decimal>> listaTuplaCarrito, Producto auxProducto)
+        private void ActualizarProductoEnCarrito(int indice, decimal cantidad, List<Tuple<Producto, decimal, string>> listaTuplaCarrito, Producto auxProducto)
         {
             cantidad += this.listaTuplaCarrito[indice].Item2;
-            this.listaTuplaCarrito[indice] = Tuple.Create(auxProducto, cantidad);
+            this.listaTuplaCarrito[indice] = Tuple.Create(auxProducto, cantidad, FormatearProductoEnCarrito(auxProducto, cantidad));
+        }
+
+        private string FormatearProductoEnCarrito(Producto auxProducto, decimal cantidad)
+        {
+            //return $"{auxProducto} \t\t {cantidad}";
+            return String.Format("{0, 1} {1, 80}", auxProducto, cantidad);
         }
 
 

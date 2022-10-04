@@ -138,8 +138,8 @@ namespace UI
 
         private string FormatearProductoEnCarrito(Producto auxProducto, decimal cantidad)
         {
-            //return $"{auxProducto} \t\t {cantidad}";
-            return String.Format("{0, 1} {1, 80}", auxProducto, cantidad);
+            //return $"{auxProducto, -20}  {cantidad, 20}";
+            return String.Format("{0, -30}  {1, 80}", auxProducto, cantidad);
         }
 
 

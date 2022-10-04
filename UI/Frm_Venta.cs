@@ -24,6 +24,8 @@ namespace UI
 
         private void Frm_Venta_Load(object sender, EventArgs e)
         {
+            // Cargo el nro de factura
+            txt_nroDeFactura.Text = Factura.ProximoNroDeFactura.ToString("D8");
             // Agrego data al cmb_medioDePago
             Array eMedio = Enum.GetValues(typeof(eMedioDePago));
             cmb_medioDePago.DataSource = eMedio;
@@ -87,7 +89,60 @@ namespace UI
             }
         }
 
+
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult eCancelar;
+            eCancelar = MessageBox.Show("¿Desea cerrar el formulario?", "Descartar el formulario", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(eCancelar == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
+        {
+            // chequeo si hay campos vacíos
+            if( String.IsNullOrEmpty(txt_nombreCliente.Text) || String.IsNullOrEmpty(cmb_puntoDeVenta.Text) 
+                || String.IsNullOrEmpty(txt_nroDeFactura.Text) || this.listaTuplaCarrito.Count == 0)
+            {
+                MessageBox.Show("Debe completar todos los campos y el carrito no puede estar vacío.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // asigno los campos del formulario
+                string cliente = txt_nombreCliente.Text;
+                DateTime fecha = dtp_fecha.Value;
+                string puntoDeVenta = cmb_puntoDeVenta.Text;
+                int nroDeFactura = int.Parse(txt_nroDeFactura.Text);
+                eMedioDePago medioDePago = (eMedioDePago)cmb_medioDePago.SelectedItem;
+                // instancio el objeto factura
+                Factura nuevaFactura = new Factura(cliente, fecha, puntoDeVenta, nroDeFactura, medioDePago, this.listaTuplaCarrito);
+                // instancio un Frm_Factura
+                Frm_Factura frm_Factura = new Frm_Factura(nuevaFactura);
+                frm_Factura.Show();
+                // limpio los datos
+                this.LimpiarCampos();
+
+            }
+
+        }
+
         #region METODOS LÓGICA
+
+        private void LimpiarCampos()
+        {
+            // Cargo el nro de factura
+            txt_nroDeFactura.Text = Factura.ProximoNroDeFactura.ToString("D8");
+            // Reseteo fecha
+            dtp_fecha.Value = DateTime.Now;
+            // cmb_puntoDeVenta , opcion por defecto
+            cmb_puntoDeVenta.SelectedIndex = 0;
+            // limpio la listaTuplaCarrito y la recargo
+            listaTuplaCarrito.Clear();
+            this.ActualizarLista();
+        }
 
         private void ActualizarLista()
         {
@@ -102,7 +157,7 @@ namespace UI
         {
             decimal subtotal = 0;
             decimal total = 0;
-            foreach(Tuple<Producto, decimal, string> item in listaTuplaCarrito)
+            foreach (Tuple<Producto, decimal, string> item in listaTuplaCarrito)
             {
                 subtotal = item.Item2 * (decimal)item.Item1.Precio;
 
@@ -110,7 +165,7 @@ namespace UI
 
             }
             // recargo por Crédito
-            if(cmb_medioDePago.SelectedItem.Equals(eMedioDePago.Crédito))
+            if (cmb_medioDePago.SelectedItem.Equals(eMedioDePago.Crédito))
             {
                 total += total * recargoCredito;
             }
@@ -143,16 +198,10 @@ namespace UI
         }
 
 
+
         #endregion
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            DialogResult eCancelar;
-            eCancelar = MessageBox.Show("¿Desea cerrar el formulario?", "Descartar el formulario", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if(eCancelar == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
+
+
     }
 }

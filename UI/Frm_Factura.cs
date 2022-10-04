@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace UI
 {
     public partial class Frm_Factura : Form
     {
+        private Factura factura;
+
         public Frm_Factura()
         {
             InitializeComponent();
+            factura = new Factura();
+        }
+
+        public Frm_Factura( Factura factura) : this()
+        {
+            this.factura = factura;
         }
     }
 }

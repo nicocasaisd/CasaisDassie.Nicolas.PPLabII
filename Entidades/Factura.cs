@@ -8,18 +8,22 @@ namespace Entidades
 {
     public class Factura
     {
+        private static int proximoNroDeFactura = 1;
         private string cliente;
         private DateTime fecha;
         private string puntoDeVenta;
-        private string nroDeFactura;
+        private int nroDeFactura;
         private eMedioDePago medioDePago;
         private List<Tuple<Producto, decimal, string>> listaTuplaCarrito;
-        private Producto producto;
-        private decimal cantidad;
+
+
+        public Factura()
+        {
+        }
 
         #region CONSTRUCTORES
 
-        public Factura(string cliente, DateTime fecha, string puntoDeVenta, string nroDeFactura, eMedioDePago medioDePago, List<Tuple<Producto, decimal, string>> listaTuplaCarrito, Producto producto, decimal cantidad)
+        public Factura(string cliente, DateTime fecha, string puntoDeVenta, int nroDeFactura, eMedioDePago medioDePago, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             this.cliente = cliente;
             this.fecha = fecha;
@@ -27,13 +31,19 @@ namespace Entidades
             this.nroDeFactura = nroDeFactura;
             this.medioDePago = medioDePago;
             this.listaTuplaCarrito = listaTuplaCarrito;
-            this.producto = producto;
-            this.cantidad = cantidad;
+            // aumenta el nro de factura
+            Factura.ProximoNroDeFactura++;
         }
 
         #endregion
 
         #region PROPIEDADES
+
+        public static int ProximoNroDeFactura
+        {
+            get { return proximoNroDeFactura; }
+            set { proximoNroDeFactura = value; }
+        }
 
         public string Cliente
         {
@@ -50,7 +60,7 @@ namespace Entidades
             get { return this.puntoDeVenta; }
         }
 
-        public string NroDeFactura
+        public int NroDeFactura
         {
             get { return this.nroDeFactura; }
         }
@@ -64,18 +74,6 @@ namespace Entidades
         {
             get { return this.listaTuplaCarrito; }
         }
-
-        public decimal Cantidad
-        {
-            get { return this.cantidad; }
-        }
-
-        public Producto Producto
-        {
-            get { return this.producto; }
-        }
-
-
 
         #endregion
     }

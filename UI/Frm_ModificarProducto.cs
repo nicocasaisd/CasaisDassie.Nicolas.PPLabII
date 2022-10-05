@@ -59,7 +59,7 @@ namespace UI
                 // no enabled
                 txt_id.Enabled = false;
                 txt_nombre.Enabled = false;
-                cmb_categoria.Enabled = false;
+                cmb_categoria.Enabled = true;
                 cmb_tipo.Enabled = false;
                 cmb_marca.Enabled = false;
                 // completo los campos
@@ -94,6 +94,7 @@ namespace UI
                 {
                     auxProducto.Precio = auxPrecio;
                     auxProducto.CantidadStock = auxCantidad;
+                    auxProducto.Categoria = (eCategoriaProducto)cmb_categoria.SelectedIndex;
                 }
                 else
                 {

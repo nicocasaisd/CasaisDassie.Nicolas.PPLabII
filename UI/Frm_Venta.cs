@@ -117,8 +117,9 @@ namespace UI
                 string puntoDeVenta = cmb_puntoDeVenta.Text;
                 int nroDeFactura = int.Parse(txt_nroDeFactura.Text);
                 eMedioDePago medioDePago = (eMedioDePago)cmb_medioDePago.SelectedItem;
+                decimal total = CalcularTotal(this.listaTuplaCarrito); 
                 // instancio el objeto factura
-                Factura nuevaFactura = new Factura(cliente, fecha, puntoDeVenta, nroDeFactura, medioDePago, this.listaTuplaCarrito);
+                Factura nuevaFactura = new Factura(cliente, fecha, puntoDeVenta, nroDeFactura, medioDePago, total, this.listaTuplaCarrito);
                 // instancio un Frm_Factura
                 Frm_Factura frm_Factura = new Frm_Factura(nuevaFactura);
                 frm_Factura.Show();

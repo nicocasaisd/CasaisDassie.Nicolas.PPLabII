@@ -25,5 +25,11 @@ namespace UI
         {
             this.factura = factura;
         }
+
+        private void Frm_Factura_Load(object sender, EventArgs e)
+        {
+            txt_importeTotal.Text = this.factura.Total.ToString();
+        }
+
     }
 }

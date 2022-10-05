@@ -101,5 +101,11 @@ namespace Entidades
 
             return index;
         }
+
+        public static Producto ObtenerProductoPorId(int id)
+        {
+            int index = ObtenerIndexProducto(id);
+            return listaProductos[index];
+        }
     }
 }

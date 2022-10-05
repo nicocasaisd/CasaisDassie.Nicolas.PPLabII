@@ -14,7 +14,8 @@ namespace UI
 {
     public partial class Frm_AdminInventario : Form
     {
-        int idProducto = 0;
+        int idProducto = -1;
+        Producto auxProducto;
         List<Producto> listaProductos;
 
         #region CONSTRUCTORES
@@ -122,9 +123,9 @@ namespace UI
 
         private void dgv_listaProductos_SelectionChanged(object sender, EventArgs e)
         {
-            Producto auxProducto;
             auxProducto = (Producto)dgv_listaProductos.SelectedRows[0].DataBoundItem;
-
+            // seteo la id
+            this.idProducto = auxProducto.Id;
             // muestro en labels
             lbl_idProducto.Text = auxProducto.Id.ToString();
             lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
@@ -132,7 +133,20 @@ namespace UI
 
         private void btn_ModificarProducto_Click(object sender, EventArgs e)
         {
-
+            if (dgv_listaProductos.SelectedRows is not null)
+            {
+                // Obtengo el indice del producto seleccionado
+                //int indexProducto = 
+                // Instancio el form
+                Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(this.idProducto, eModificarProductoOpcion.ModificarProducto);
+                frm_Modificar.ShowDialog();
+                // Chequeo respuesta
+                if (frm_Modificar.DialogResult == DialogResult.OK)
+                {
+                    MessageBox.Show("Se ha modificado el producto");
+                    //lst_listaProductos.ClearSelected();
+                }
+            }
         }
     }
 }

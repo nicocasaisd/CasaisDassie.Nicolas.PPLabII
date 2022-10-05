@@ -13,7 +13,7 @@ namespace UI
 {
     public partial class Frm_ModificarProducto : Form
     {
-        int indexProducto;
+        int idProducto;
         Producto auxProducto;
         eModificarProductoOpcion opcion;
 
@@ -33,17 +33,17 @@ namespace UI
         {
             this.opcion = opcion;
         }
-        public Frm_ModificarProducto(int indexProducto, 
+        public Frm_ModificarProducto(int idProducto, 
             eModificarProductoOpcion opcion) : this(opcion)
         {
-            this.indexProducto = indexProducto;
+            this.idProducto = idProducto;
         }
 
         #endregion
 
         private void Frm_ModificarProducto_Load(object sender, EventArgs e)
         {
-            auxProducto = TiendaElectronica.ListaProductos[indexProducto];
+            auxProducto = TiendaElectronica.ObtenerProductoPorId(this.idProducto);
             // Agrego data al cmb_categoria
             Array eCategoria = Enum.GetValues(typeof(eCategoriaProducto));
             cmb_categoria.DataSource = eCategoria;
@@ -52,20 +52,22 @@ namespace UI
             cmb_tipo.DataSource = eTipo;
             // Agrego data al cmb_marca
             Array eMarca = Enum.GetValues(typeof(eMarcaProducto));
-            cmb_tipo.DataSource = eMarca;
+            cmb_marca.DataSource = eMarca;
 
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
                 // no enabled
                 txt_id.Enabled = false;
                 txt_nombre.Enabled = false;
-                cmb_categoria.Enabled = false;
-                cmb_tipo.Enabled = false;
-                cmb_marca.Enabled = false;
+                //cmb_categoria.Enabled = false;
+                //cmb_tipo.Enabled = false;
+                //cmb_marca.Enabled = false;
                 // completo los campos
                 txt_id.Text = auxProducto.Id.ToString();
                 txt_nombre.Text = auxProducto.Nombre;
-                //cmb_categoria.SelectedItem
+                cmb_categoria.SelectedIndex = (int)auxProducto.Categoria;
+                cmb_tipo.SelectedIndex = (int)auxProducto.Tipo;
+                cmb_marca.SelectedIndex = (int)auxProducto.Marca;
 
             }
             else if(this.opcion ==eModificarProductoOpcion.AgregarProducto)

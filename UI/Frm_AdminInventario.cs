@@ -23,6 +23,8 @@ namespace UI
         public Frm_AdminInventario()
         {
             InitializeComponent();
+            this.auxProducto = new Producto();
+            this.listaProductos = new List<Producto>(TiendaElectronica.ListaProductos);
         }
 
         #endregion
@@ -38,38 +40,36 @@ namespace UI
 
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
-            listaProductos = new List<Producto>(TiendaElectronica.ListaProductos);
-            this.lst_listaProductos.DataSource = TiendaElectronica.ListaProductos;
+            //this.dgv_listaProductos.DataSource = TiendaElectronica.ListaProductos;
             this.dgv_listaProductos.DataSource = this.listaProductos;
-            //this.dgv_listaProductos.Columns["descripcion"].Visible = false;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
             this.dgv_listaProductos.Columns["categoria"].Visible = false;
         }
 
-        private void lst_listaProductos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // lo mismo con dgv
+        //private void lst_listaProductos_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    // lo mismo con dgv
 
-            // Obtener el item seleccionado actualmente
-            if(lst_listaProductos.SelectedItem != null)
-            {
-                Producto auxProducto = (Producto) lst_listaProductos.SelectedItem;
-                // Seteo valores
-                lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
-                lbl_precioProducto.Text = auxProducto.Precio.ToString();
-                lbl_idProducto.Text = auxProducto.Id.ToString();
-            }
-            else
-            {
-                // Seteo valores
-                lbl_cantidadProducto.Text = String.Empty;
-                lbl_precioProducto.Text = String.Empty;
-                lbl_idProducto.Text = String.Empty;
-            }
+        //    // Obtener el item seleccionado actualmente
+        //    if(lst_listaProductos.SelectedItem != null)
+        //    {
+        //        Producto auxProducto = (Producto) lst_listaProductos.SelectedItem;
+        //        // Seteo valores
+        //        lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
+        //        lbl_precioProducto.Text = auxProducto.Precio.ToString();
+        //        lbl_idProducto.Text = auxProducto.Id.ToString();
+        //    }
+        //    else
+        //    {
+        //        // Seteo valores
+        //        lbl_cantidadProducto.Text = String.Empty;
+        //        lbl_precioProducto.Text = String.Empty;
+        //        lbl_idProducto.Text = String.Empty;
+        //    }
 
-            
 
-        }
+
+        //}
 
         //private void btn_cambiarPrecio_Click(object sender, EventArgs e)
         //{
@@ -109,13 +109,8 @@ namespace UI
 
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
         {
-            if (lst_listaProductos.SelectedIndex >= 0)
+            if (auxProducto is not null)
             {
-                // Obtengo el indice del producto seleccionado
-                int indexProducto = lst_listaProductos.SelectedIndex;
-                // Guardo en un aux de producto
-                Producto auxProducto = (Producto) lst_listaProductos.Items[indexProducto];
-                // Obtengo la id
                 this.idProducto = auxProducto.Id;
             }
             this.Hide();
@@ -123,7 +118,10 @@ namespace UI
 
         private void dgv_listaProductos_SelectionChanged(object sender, EventArgs e)
         {
-            auxProducto = (Producto)dgv_listaProductos.SelectedRows[0].DataBoundItem;
+            if(dgv_listaProductos.SelectedRows.Count > 0)
+            {
+                this.auxProducto = (Producto)dgv_listaProductos.SelectedRows[0].DataBoundItem;
+            }
             // seteo la id
             this.idProducto = auxProducto.Id;
             // muestro en labels
@@ -135,8 +133,6 @@ namespace UI
         {
             if (dgv_listaProductos.SelectedRows is not null)
             {
-                // Obtengo el indice del producto seleccionado
-                //int indexProducto = 
                 // Instancio el form
                 Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(this.idProducto, eModificarProductoOpcion.ModificarProducto);
                 frm_Modificar.ShowDialog();
@@ -146,6 +142,8 @@ namespace UI
                     MessageBox.Show("Se ha modificado el producto");
                     //lst_listaProductos.ClearSelected();
                 }
+                // Actualizo la lista
+
             }
         }
     }

@@ -86,25 +86,11 @@ namespace UI
 
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
-                decimal auxPrecio;
-                int auxCantidad;
-
-                if(decimal.TryParse(precioComoString, out auxPrecio)
-                    && int.TryParse(cantidadComoString, out auxCantidad) )
+                if(ModificarProducto(precioComoString, cantidadComoString))
                 {
-                    auxProducto.Precio = auxPrecio;
-                    auxProducto.CantidadStock = auxCantidad;
-                    auxProducto.Categoria = (eCategoriaProducto)cmb_categoria.SelectedIndex;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
-                else
-                {
-                    MessageBox.Show("Error. Se ingresaron datos no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-
-
-                
             }
             else if (this.opcion == eModificarProductoOpcion.AgregarProducto)
             {
@@ -112,8 +98,29 @@ namespace UI
                 
             }
             
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            
+        }
+
+        private bool ModificarProducto(string precioComoString, string cantidadComoString)
+        {
+            bool retorno = false;
+            decimal auxPrecio;
+            int auxCantidad;
+
+            if (decimal.TryParse(precioComoString, out auxPrecio)
+                && int.TryParse(cantidadComoString, out auxCantidad))
+            {
+                auxProducto.Precio = auxPrecio;
+                auxProducto.CantidadStock = auxCantidad;
+                auxProducto.Categoria = (eCategoriaProducto)cmb_categoria.SelectedIndex;
+                retorno = true;
+            }
+            else
+            {
+                MessageBox.Show("Error. Se ingresaron datos no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return retorno;
         }
     }
 }

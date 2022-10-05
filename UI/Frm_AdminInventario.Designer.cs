@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grp_listaProductos = new System.Windows.Forms.GroupBox();
-            this.lst_listaProductos = new System.Windows.Forms.ListBox();
             this.grp_descripcion = new System.Windows.Forms.GroupBox();
             this.lbl_idProducto = new System.Windows.Forms.Label();
             this.lbl_precioProducto = new System.Windows.Forms.Label();
@@ -41,30 +39,9 @@
             this.dgv_listaProductos = new System.Windows.Forms.DataGridView();
             this.btn_ModificarProducto = new System.Windows.Forms.Button();
             this.btn_AgregarProducto = new System.Windows.Forms.Button();
-            this.grp_listaProductos.SuspendLayout();
             this.grp_descripcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grp_listaProductos
-            // 
-            this.grp_listaProductos.Controls.Add(this.lst_listaProductos);
-            this.grp_listaProductos.Location = new System.Drawing.Point(523, 370);
-            this.grp_listaProductos.Name = "grp_listaProductos";
-            this.grp_listaProductos.Size = new System.Drawing.Size(236, 175);
-            this.grp_listaProductos.TabIndex = 0;
-            this.grp_listaProductos.TabStop = false;
-            this.grp_listaProductos.Text = "Lista de productos";
-            // 
-            // lst_listaProductos
-            // 
-            this.lst_listaProductos.FormattingEnabled = true;
-            this.lst_listaProductos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lst_listaProductos.ItemHeight = 15;
-            this.lst_listaProductos.Location = new System.Drawing.Point(20, 22);
-            this.lst_listaProductos.Name = "lst_listaProductos";
-            this.lst_listaProductos.Size = new System.Drawing.Size(187, 124);
-            this.lst_listaProductos.TabIndex = 0;
             // 
             // grp_descripcion
             // 
@@ -192,11 +169,9 @@
             this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.btn_SeleccionarProducto);
             this.Controls.Add(this.grp_descripcion);
-            this.Controls.Add(this.grp_listaProductos);
             this.Name = "Frm_AdminInventario";
             this.Text = "Frm_AdminInventario";
             this.Load += new System.EventHandler(this.Frm_AdminInventario_Load);
-            this.grp_listaProductos.ResumeLayout(false);
             this.grp_descripcion.ResumeLayout(false);
             this.grp_descripcion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();
@@ -205,9 +180,6 @@
         }
 
         #endregion
-
-        private GroupBox grp_listaProductos;
-        private ListBox lst_listaProductos;
         private GroupBox grp_descripcion;
         private Label lbl_precio;
         private Label lbl_cantidad;

@@ -37,8 +37,6 @@
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_precio = new System.Windows.Forms.Label();
             this.lbl_cantidad = new System.Windows.Forms.Label();
-            this.btn_cambiarPrecio = new System.Windows.Forms.Button();
-            this.btn_cambiarCantidad = new System.Windows.Forms.Button();
             this.btn_SeleccionarProducto = new System.Windows.Forms.Button();
             this.dgv_listaProductos = new System.Windows.Forms.DataGridView();
             this.grp_listaProductos.SuspendLayout();
@@ -138,26 +136,6 @@
             this.lbl_cantidad.TabIndex = 0;
             this.lbl_cantidad.Text = "Cantidad: ";
             // 
-            // btn_cambiarPrecio
-            // 
-            this.btn_cambiarPrecio.Location = new System.Drawing.Point(446, 296);
-            this.btn_cambiarPrecio.Name = "btn_cambiarPrecio";
-            this.btn_cambiarPrecio.Size = new System.Drawing.Size(83, 50);
-            this.btn_cambiarPrecio.TabIndex = 2;
-            this.btn_cambiarPrecio.Text = "Cambiar Precio";
-            this.btn_cambiarPrecio.UseVisualStyleBackColor = true;
-            this.btn_cambiarPrecio.Click += new System.EventHandler(this.btn_cambiarPrecio_Click);
-            // 
-            // btn_cambiarCantidad
-            // 
-            this.btn_cambiarCantidad.Location = new System.Drawing.Point(357, 296);
-            this.btn_cambiarCantidad.Name = "btn_cambiarCantidad";
-            this.btn_cambiarCantidad.Size = new System.Drawing.Size(83, 50);
-            this.btn_cambiarCantidad.TabIndex = 3;
-            this.btn_cambiarCantidad.Text = "Cambiar Cantidad";
-            this.btn_cambiarCantidad.UseVisualStyleBackColor = true;
-            this.btn_cambiarCantidad.Click += new System.EventHandler(this.btn_cambiarCantidad_Click);
-            // 
             // btn_SeleccionarProducto
             // 
             this.btn_SeleccionarProducto.Location = new System.Drawing.Point(202, 305);
@@ -190,8 +168,6 @@
             this.ClientSize = new System.Drawing.Size(1170, 601);
             this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.btn_SeleccionarProducto);
-            this.Controls.Add(this.btn_cambiarCantidad);
-            this.Controls.Add(this.btn_cambiarPrecio);
             this.Controls.Add(this.grp_descripcion);
             this.Controls.Add(this.grp_listaProductos);
             this.Name = "Frm_AdminInventario";
@@ -216,8 +192,6 @@
         private Label lbl_idProducto;
         private Label lbl_precioProducto;
         private Label lbl_cantidadProducto;
-        private Button btn_cambiarPrecio;
-        private Button btn_cambiarCantidad;
         private Button btn_SeleccionarProducto;
         private DataGridView dgv_listaProductos;
     }

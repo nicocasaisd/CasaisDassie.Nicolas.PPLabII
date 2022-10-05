@@ -70,41 +70,41 @@ namespace UI
 
         }
 
-        private void btn_cambiarPrecio_Click(object sender, EventArgs e)
-        {
-            if(lst_listaProductos.SelectedIndex  >= 0)
-            {
-                // Obtengo el indice del producto seleccionado
-                int indexProducto = lst_listaProductos.SelectedIndex;
-                // Instancio el form
-                Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto, ModificarProductoOpcion.CambiarPrecio);
-                frm_Modificar.ShowDialog();
+        //private void btn_cambiarPrecio_Click(object sender, EventArgs e)
+        //{
+        //    if(lst_listaProductos.SelectedIndex  >= 0)
+        //    {
+        //        // Obtengo el indice del producto seleccionado
+        //        int indexProducto = lst_listaProductos.SelectedIndex;
+        //        // Instancio el form
+        //        Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto, ModificarProductoOpcion.CambiarPrecio);
+        //        frm_Modificar.ShowDialog();
 
-                if(frm_Modificar.DialogResult == DialogResult.OK)
-                {
-                    MessageBox.Show("Se ha modificado el precio de un producto");
-                    lst_listaProductos.ClearSelected();
-                }
-            }
-        }
+        //        if(frm_Modificar.DialogResult == DialogResult.OK)
+        //        {
+        //            MessageBox.Show("Se ha modificado el precio de un producto");
+        //            lst_listaProductos.ClearSelected();
+        //        }
+        //    }
+        //}
 
-        private void btn_cambiarCantidad_Click(object sender, EventArgs e)
-        {
-            if (lst_listaProductos.SelectedIndex >= 0)
-            {
-                // Obtengo el indice del producto seleccionado
-                int indexProducto = lst_listaProductos.SelectedIndex;
-                // Instancio el form
-                Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto, ModificarProductoOpcion.CambiarCantidad);
-                frm_Modificar.ShowDialog();
-                // Chequeo respuesta
-                if (frm_Modificar.DialogResult == DialogResult.OK)
-                {
-                    MessageBox.Show("Se ha modificado el stock de un producto");
-                    lst_listaProductos.ClearSelected();
-                }
-            }
-        }
+        //private void btn_cambiarCantidad_Click(object sender, EventArgs e)
+        //{
+        //    if (lst_listaProductos.SelectedIndex >= 0)
+        //    {
+        //        // Obtengo el indice del producto seleccionado
+        //        int indexProducto = lst_listaProductos.SelectedIndex;
+        //        // Instancio el form
+        //        Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto, ModificarProductoOpcion.CambiarCantidad);
+        //        frm_Modificar.ShowDialog();
+        //        // Chequeo respuesta
+        //        if (frm_Modificar.DialogResult == DialogResult.OK)
+        //        {
+        //            MessageBox.Show("Se ha modificado el stock de un producto");
+        //            lst_listaProductos.ClearSelected();
+        //        }
+        //    }
+        //}
 
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
         {

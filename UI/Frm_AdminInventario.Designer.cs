@@ -49,9 +49,9 @@
             // grp_listaProductos
             // 
             this.grp_listaProductos.Controls.Add(this.lst_listaProductos);
-            this.grp_listaProductos.Location = new System.Drawing.Point(35, 53);
+            this.grp_listaProductos.Location = new System.Drawing.Point(523, 370);
             this.grp_listaProductos.Name = "grp_listaProductos";
-            this.grp_listaProductos.Size = new System.Drawing.Size(236, 324);
+            this.grp_listaProductos.Size = new System.Drawing.Size(236, 175);
             this.grp_listaProductos.TabIndex = 0;
             this.grp_listaProductos.TabStop = false;
             this.grp_listaProductos.Text = "Lista de productos";
@@ -63,7 +63,7 @@
             this.lst_listaProductos.ItemHeight = 15;
             this.lst_listaProductos.Location = new System.Drawing.Point(20, 22);
             this.lst_listaProductos.Name = "lst_listaProductos";
-            this.lst_listaProductos.Size = new System.Drawing.Size(187, 214);
+            this.lst_listaProductos.Size = new System.Drawing.Size(187, 124);
             this.lst_listaProductos.TabIndex = 0;
             // 
             // grp_descripcion
@@ -74,7 +74,7 @@
             this.grp_descripcion.Controls.Add(this.lbl_id);
             this.grp_descripcion.Controls.Add(this.lbl_precio);
             this.grp_descripcion.Controls.Add(this.lbl_cantidad);
-            this.grp_descripcion.Location = new System.Drawing.Point(314, 53);
+            this.grp_descripcion.Location = new System.Drawing.Point(821, 373);
             this.grp_descripcion.Name = "grp_descripcion";
             this.grp_descripcion.Size = new System.Drawing.Size(200, 172);
             this.grp_descripcion.TabIndex = 1;
@@ -140,7 +140,7 @@
             // 
             // btn_cambiarPrecio
             // 
-            this.btn_cambiarPrecio.Location = new System.Drawing.Point(431, 249);
+            this.btn_cambiarPrecio.Location = new System.Drawing.Point(446, 296);
             this.btn_cambiarPrecio.Name = "btn_cambiarPrecio";
             this.btn_cambiarPrecio.Size = new System.Drawing.Size(83, 50);
             this.btn_cambiarPrecio.TabIndex = 2;
@@ -150,7 +150,7 @@
             // 
             // btn_cambiarCantidad
             // 
-            this.btn_cambiarCantidad.Location = new System.Drawing.Point(315, 249);
+            this.btn_cambiarCantidad.Location = new System.Drawing.Point(357, 296);
             this.btn_cambiarCantidad.Name = "btn_cambiarCantidad";
             this.btn_cambiarCantidad.Size = new System.Drawing.Size(83, 50);
             this.btn_cambiarCantidad.TabIndex = 3;
@@ -160,7 +160,7 @@
             // 
             // btn_SeleccionarProducto
             // 
-            this.btn_SeleccionarProducto.Location = new System.Drawing.Point(318, 343);
+            this.btn_SeleccionarProducto.Location = new System.Drawing.Point(202, 305);
             this.btn_SeleccionarProducto.Name = "btn_SeleccionarProducto";
             this.btn_SeleccionarProducto.Size = new System.Drawing.Size(149, 33);
             this.btn_SeleccionarProducto.TabIndex = 4;
@@ -175,17 +175,19 @@
             this.dgv_listaProductos.AllowUserToResizeColumns = false;
             this.dgv_listaProductos.AllowUserToResizeRows = false;
             this.dgv_listaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_listaProductos.Location = new System.Drawing.Point(611, 107);
+            this.dgv_listaProductos.Location = new System.Drawing.Point(12, 89);
             this.dgv_listaProductos.Name = "dgv_listaProductos";
             this.dgv_listaProductos.RowTemplate.Height = 25;
-            this.dgv_listaProductos.Size = new System.Drawing.Size(485, 201);
+            this.dgv_listaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_listaProductos.Size = new System.Drawing.Size(688, 201);
             this.dgv_listaProductos.TabIndex = 5;
+            this.dgv_listaProductos.SelectionChanged += new System.EventHandler(this.dgv_listaProductos_SelectionChanged);
             // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 485);
+            this.ClientSize = new System.Drawing.Size(1170, 601);
             this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.btn_SeleccionarProducto);
             this.Controls.Add(this.btn_cambiarCantidad);

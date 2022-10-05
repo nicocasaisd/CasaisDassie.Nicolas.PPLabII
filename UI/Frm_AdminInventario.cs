@@ -42,10 +42,13 @@ namespace UI
             this.dgv_listaProductos.DataSource = this.listaProductos;
             this.dgv_listaProductos.Columns["descripcion"].Visible = false;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
+            this.dgv_listaProductos.Columns["categoria"].Visible = false;
         }
 
         private void lst_listaProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // lo mismo con dgv
+
             // Obtener el item seleccionado actualmente
             if(lst_listaProductos.SelectedItem != null)
             {
@@ -117,5 +120,14 @@ namespace UI
             this.Hide();
         }
 
+        private void dgv_listaProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            Producto auxProducto;
+            auxProducto = (Producto)dgv_listaProductos.SelectedRows[0].DataBoundItem;
+
+            // muestro en labels
+            lbl_idProducto.Text = auxProducto.Id.ToString();
+            lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
+        }
     }
 }

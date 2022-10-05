@@ -45,10 +45,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.gpb_carrito = new System.Windows.Forms.GroupBox();
+            this.lbl_listaProducto = new System.Windows.Forms.Label();
+            this.lbl_listaCantidad = new System.Windows.Forms.Label();
+            this.lst_carrito = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.gpb_carrito.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -209,11 +214,53 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "FACTURA";
             // 
+            // gpb_carrito
+            // 
+            this.gpb_carrito.Controls.Add(this.lbl_listaProducto);
+            this.gpb_carrito.Controls.Add(this.lbl_listaCantidad);
+            this.gpb_carrito.Controls.Add(this.lst_carrito);
+            this.gpb_carrito.Location = new System.Drawing.Point(12, 253);
+            this.gpb_carrito.Name = "gpb_carrito";
+            this.gpb_carrito.Size = new System.Drawing.Size(825, 233);
+            this.gpb_carrito.TabIndex = 15;
+            this.gpb_carrito.TabStop = false;
+            this.gpb_carrito.Text = "Carrito";
+            // 
+            // lbl_listaProducto
+            // 
+            this.lbl_listaProducto.AutoSize = true;
+            this.lbl_listaProducto.Location = new System.Drawing.Point(85, 15);
+            this.lbl_listaProducto.Name = "lbl_listaProducto";
+            this.lbl_listaProducto.Size = new System.Drawing.Size(56, 15);
+            this.lbl_listaProducto.TabIndex = 12;
+            this.lbl_listaProducto.Text = "Producto";
+            // 
+            // lbl_listaCantidad
+            // 
+            this.lbl_listaCantidad.AutoSize = true;
+            this.lbl_listaCantidad.Location = new System.Drawing.Point(607, 15);
+            this.lbl_listaCantidad.Name = "lbl_listaCantidad";
+            this.lbl_listaCantidad.Size = new System.Drawing.Size(55, 15);
+            this.lbl_listaCantidad.TabIndex = 13;
+            this.lbl_listaCantidad.Text = "Cantidad";
+            // 
+            // lst_carrito
+            // 
+            this.lst_carrito.Enabled = false;
+            this.lst_carrito.FormattingEnabled = true;
+            this.lst_carrito.ItemHeight = 15;
+            this.lst_carrito.Location = new System.Drawing.Point(15, 34);
+            this.lst_carrito.Name = "lst_carrito";
+            this.lst_carrito.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lst_carrito.Size = new System.Drawing.Size(804, 184);
+            this.lst_carrito.TabIndex = 0;
+            // 
             // Frm_Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 607);
+            this.Controls.Add(this.gpb_carrito);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -232,6 +279,8 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.gpb_carrito.ResumeLayout(false);
+            this.gpb_carrito.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +304,9 @@
         private TextBox txt_puntoDeVenta;
         private Panel panel2;
         private Label label7;
+        private GroupBox gpb_carrito;
+        private Label lbl_listaProducto;
+        private Label lbl_listaCantidad;
+        private ListBox lst_carrito;
     }
 }

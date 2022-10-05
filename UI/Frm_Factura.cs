@@ -36,6 +36,8 @@ namespace UI
             txt_puntoDeVenta.Text = this.factura.PuntoDeVenta;
             txt_nroDeFactura.Text = this.factura.NroDeFactura.ToString("D8");
             txt_fecha.Text = this.factura.Fecha.ToShortDateString();
+            lst_carrito.DataSource = this.factura.ListaTuplaCarrito;
+            lst_carrito.DisplayMember = "Item3";
         }
 
     }

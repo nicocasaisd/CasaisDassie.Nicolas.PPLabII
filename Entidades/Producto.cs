@@ -11,8 +11,8 @@
         private eCategoriaProducto categoria;
         private eTipoProducto tipo;
         private eMarcaProducto marca;
-        private string descripcion;
-        private double precio;
+        //private string descripcion;
+        private decimal precio;
         private int cantidadStock;
 
         #endregion
@@ -32,7 +32,7 @@
             proximaId++;
         }
 
-        public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, double precio) : this()
+        public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio) : this()
         {
             this.Nombre = nombre;
             this.Categoria = categoria;
@@ -40,13 +40,11 @@
             this.Marca = marca;
             this.Precio = precio;
             // Valores por defecto
-            this.Descripcion = "Sin descripcion";
             this.CantidadStock = 0;
         }
 
-        public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, string descripcion, double precio, int cantidadStock) :this(nombre, categoria, tipo, marca, precio)
+        public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio, int cantidadStock) :this(nombre, categoria, tipo, marca, precio)
         {
-            this.Descripcion = descripcion;
             this.CantidadStock = cantidadStock;
         }
 
@@ -61,8 +59,7 @@
         public eCategoriaProducto Categoria { get => categoria; set => categoria = value; }
         public eTipoProducto Tipo { get => tipo; set => tipo = value; }
         public eMarcaProducto Marca { get => marca; set => marca = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public double Precio { get => precio; set => precio = value; }
+        public decimal Precio { get => precio; set => precio = value; }
         public int CantidadStock { get => cantidadStock; set => cantidadStock = value; }
 
         public string NombreLista

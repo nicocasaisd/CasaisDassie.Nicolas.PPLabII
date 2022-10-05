@@ -41,7 +41,7 @@ namespace UI
             listaProductos = new List<Producto>(TiendaElectronica.ListaProductos);
             this.lst_listaProductos.DataSource = TiendaElectronica.ListaProductos;
             this.dgv_listaProductos.DataSource = this.listaProductos;
-            this.dgv_listaProductos.Columns["descripcion"].Visible = false;
+            //this.dgv_listaProductos.Columns["descripcion"].Visible = false;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
             this.dgv_listaProductos.Columns["categoria"].Visible = false;
         }

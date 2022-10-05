@@ -59,15 +59,17 @@ namespace UI
                 // no enabled
                 txt_id.Enabled = false;
                 txt_nombre.Enabled = false;
-                //cmb_categoria.Enabled = false;
-                //cmb_tipo.Enabled = false;
-                //cmb_marca.Enabled = false;
+                cmb_categoria.Enabled = false;
+                cmb_tipo.Enabled = false;
+                cmb_marca.Enabled = false;
                 // completo los campos
                 txt_id.Text = auxProducto.Id.ToString();
                 txt_nombre.Text = auxProducto.Nombre;
                 cmb_categoria.SelectedIndex = (int)auxProducto.Categoria;
                 cmb_tipo.SelectedIndex = (int)auxProducto.Tipo;
                 cmb_marca.SelectedIndex = (int)auxProducto.Marca;
+                txt_precio.Text = auxProducto.Precio.ToString();
+                txt_cantidadStock.Text = auxProducto.CantidadStock.ToString();
 
             }
             else if(this.opcion ==eModificarProductoOpcion.AgregarProducto)
@@ -79,19 +81,34 @@ namespace UI
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            string valorComoString = txt_precio.Text;
+            string precioComoString = txt_precio.Text;
+            string cantidadComoString = txt_cantidadStock.Text;
 
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
-                double auxPrecio;
-                double.TryParse(valorComoString, out auxPrecio);
-                auxProducto.Precio = auxPrecio;
+                decimal auxPrecio;
+                int auxCantidad;
+
+                if(decimal.TryParse(precioComoString, out auxPrecio)
+                    && int.TryParse(cantidadComoString, out auxCantidad) )
+                {
+                    auxProducto.Precio = auxPrecio;
+                    auxProducto.CantidadStock = auxCantidad;
+                }
+                else
+                {
+                    MessageBox.Show("Error. Se ingresaron datos no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+
+
+                
             }
             else if (this.opcion == eModificarProductoOpcion.AgregarProducto)
             {
-                int auxCantidad;
-                int.TryParse(valorComoString, out auxCantidad);
-                auxProducto.CantidadStock = auxCantidad;
+                
+                
             }
             
             this.DialogResult = DialogResult.OK;

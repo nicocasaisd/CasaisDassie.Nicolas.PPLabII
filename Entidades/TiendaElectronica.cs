@@ -66,11 +66,11 @@ namespace Entidades
         {
             listaProductos.Add(new Producto(
                 "Parlante Bluetooth", eCategoriaProducto.Audio, eTipoProducto.Parlante,
-                eMarcaProducto.JBL, "Parlante con bateria", 17500, 20
+                eMarcaProducto.JBL, 17500, 20
                 ));
             listaProductos.Add(new Producto(
                 "Teclado inalámbrico", eCategoriaProducto.Computacion, eTipoProducto.Teclado,
-                eMarcaProducto.Lenovo, "Teclado sensitivo", 1270, 10
+                eMarcaProducto.Lenovo, 1270, 10
                 ));
         }
 

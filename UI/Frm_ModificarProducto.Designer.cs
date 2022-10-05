@@ -29,15 +29,25 @@
         private void InitializeComponent()
         {
             this.btn_aceptar = new System.Windows.Forms.Button();
-            this.txt_nuevoPrecio = new System.Windows.Forms.TextBox();
-            this.lbl_nuevoCampo = new System.Windows.Forms.Label();
-            this.lbl_previoCampo = new System.Windows.Forms.Label();
-            this.lbl_previoCampoContenido = new System.Windows.Forms.Label();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.txt_cantidadStock = new System.Windows.Forms.TextBox();
+            this.lbl_id = new System.Windows.Forms.Label();
+            this.lbl_nombre = new System.Windows.Forms.Label();
+            this.lbl_categoria = new System.Windows.Forms.Label();
+            this.lbl_tipo = new System.Windows.Forms.Label();
+            this.lbl_marca = new System.Windows.Forms.Label();
+            this.lbl_precio = new System.Windows.Forms.Label();
+            this.lbl_cantidadStock = new System.Windows.Forms.Label();
+            this.cmb_categoria = new System.Windows.Forms.ComboBox();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.cmb_marca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(157, 145);
+            this.btn_aceptar.Location = new System.Drawing.Point(576, 183);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_aceptar.TabIndex = 0;
@@ -45,50 +55,142 @@
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
-            // txt_nuevoPrecio
+            // txt_precio
             // 
-            this.txt_nuevoPrecio.Location = new System.Drawing.Point(132, 85);
-            this.txt_nuevoPrecio.Name = "txt_nuevoPrecio";
-            this.txt_nuevoPrecio.Size = new System.Drawing.Size(100, 23);
-            this.txt_nuevoPrecio.TabIndex = 2;
+            this.txt_precio.Location = new System.Drawing.Point(490, 85);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.Size = new System.Drawing.Size(100, 23);
+            this.txt_precio.TabIndex = 2;
             // 
-            // lbl_nuevoCampo
+            // txt_id
             // 
-            this.lbl_nuevoCampo.AutoSize = true;
-            this.lbl_nuevoCampo.Location = new System.Drawing.Point(30, 88);
-            this.lbl_nuevoCampo.Name = "lbl_nuevoCampo";
-            this.lbl_nuevoCampo.Size = new System.Drawing.Size(84, 15);
-            this.lbl_nuevoCampo.TabIndex = 3;
-            this.lbl_nuevoCampo.Text = "Nuevo precio: ";
+            this.txt_id.Location = new System.Drawing.Point(27, 85);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(55, 23);
+            this.txt_id.TabIndex = 2;
             // 
-            // lbl_previoCampo
+            // txt_nombre
             // 
-            this.lbl_previoCampo.AutoSize = true;
-            this.lbl_previoCampo.Location = new System.Drawing.Point(31, 45);
-            this.lbl_previoCampo.Name = "lbl_previoCampo";
-            this.lbl_previoCampo.Size = new System.Drawing.Size(90, 15);
-            this.lbl_previoCampo.TabIndex = 4;
-            this.lbl_previoCampo.Text = "Precio anterior: ";
+            this.txt_nombre.Location = new System.Drawing.Point(88, 85);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(100, 23);
+            this.txt_nombre.TabIndex = 2;
             // 
-            // lbl_previoCampoContenido
+            // txt_cantidadStock
             // 
-            this.lbl_previoCampoContenido.AutoSize = true;
-            this.lbl_previoCampoContenido.Location = new System.Drawing.Point(142, 49);
-            this.lbl_previoCampoContenido.Name = "lbl_previoCampoContenido";
-            this.lbl_previoCampoContenido.Size = new System.Drawing.Size(38, 15);
-            this.lbl_previoCampoContenido.TabIndex = 5;
-            this.lbl_previoCampoContenido.Text = "label1";
+            this.txt_cantidadStock.Location = new System.Drawing.Point(606, 85);
+            this.txt_cantidadStock.Name = "txt_cantidadStock";
+            this.txt_cantidadStock.Size = new System.Drawing.Size(100, 23);
+            this.txt_cantidadStock.TabIndex = 2;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Location = new System.Drawing.Point(36, 55);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(18, 15);
+            this.lbl_id.TabIndex = 3;
+            this.lbl_id.Text = "ID";
+            // 
+            // lbl_nombre
+            // 
+            this.lbl_nombre.AutoSize = true;
+            this.lbl_nombre.Location = new System.Drawing.Point(106, 55);
+            this.lbl_nombre.Name = "lbl_nombre";
+            this.lbl_nombre.Size = new System.Drawing.Size(51, 15);
+            this.lbl_nombre.TabIndex = 3;
+            this.lbl_nombre.Text = "Nombre";
+            // 
+            // lbl_categoria
+            // 
+            this.lbl_categoria.AutoSize = true;
+            this.lbl_categoria.Location = new System.Drawing.Point(201, 55);
+            this.lbl_categoria.Name = "lbl_categoria";
+            this.lbl_categoria.Size = new System.Drawing.Size(58, 15);
+            this.lbl_categoria.TabIndex = 3;
+            this.lbl_categoria.Text = "Categoría";
+            // 
+            // lbl_tipo
+            // 
+            this.lbl_tipo.AutoSize = true;
+            this.lbl_tipo.Location = new System.Drawing.Point(309, 55);
+            this.lbl_tipo.Name = "lbl_tipo";
+            this.lbl_tipo.Size = new System.Drawing.Size(30, 15);
+            this.lbl_tipo.TabIndex = 3;
+            this.lbl_tipo.Text = "Tipo";
+            // 
+            // lbl_marca
+            // 
+            this.lbl_marca.AutoSize = true;
+            this.lbl_marca.Location = new System.Drawing.Point(438, 55);
+            this.lbl_marca.Name = "lbl_marca";
+            this.lbl_marca.Size = new System.Drawing.Size(40, 15);
+            this.lbl_marca.TabIndex = 3;
+            this.lbl_marca.Text = "Marca";
+            // 
+            // lbl_precio
+            // 
+            this.lbl_precio.AutoSize = true;
+            this.lbl_precio.Location = new System.Drawing.Point(522, 55);
+            this.lbl_precio.Name = "lbl_precio";
+            this.lbl_precio.Size = new System.Drawing.Size(40, 15);
+            this.lbl_precio.TabIndex = 3;
+            this.lbl_precio.Text = "Precio";
+            // 
+            // lbl_cantidadStock
+            // 
+            this.lbl_cantidadStock.AutoSize = true;
+            this.lbl_cantidadStock.Location = new System.Drawing.Point(636, 55);
+            this.lbl_cantidadStock.Name = "lbl_cantidadStock";
+            this.lbl_cantidadStock.Size = new System.Drawing.Size(36, 15);
+            this.lbl_cantidadStock.TabIndex = 3;
+            this.lbl_cantidadStock.Text = "Stock";
+            // 
+            // cmb_categoria
+            // 
+            this.cmb_categoria.FormattingEnabled = true;
+            this.cmb_categoria.Location = new System.Drawing.Point(194, 85);
+            this.cmb_categoria.Name = "cmb_categoria";
+            this.cmb_categoria.Size = new System.Drawing.Size(92, 23);
+            this.cmb_categoria.TabIndex = 4;
+            // 
+            // cmb_tipo
+            // 
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Location = new System.Drawing.Point(292, 85);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(92, 23);
+            this.cmb_tipo.TabIndex = 4;
+            // 
+            // cmb_marca
+            // 
+            this.cmb_marca.FormattingEnabled = true;
+            this.cmb_marca.Location = new System.Drawing.Point(390, 85);
+            this.cmb_marca.Name = "cmb_marca";
+            this.cmb_marca.Size = new System.Drawing.Size(92, 23);
+            this.cmb_marca.TabIndex = 4;
             // 
             // Frm_ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 216);
-            this.Controls.Add(this.lbl_previoCampoContenido);
-            this.Controls.Add(this.lbl_previoCampo);
-            this.Controls.Add(this.lbl_nuevoCampo);
-            this.Controls.Add(this.txt_nuevoPrecio);
+            this.ClientSize = new System.Drawing.Size(842, 235);
+            this.Controls.Add(this.cmb_marca);
+            this.Controls.Add(this.cmb_tipo);
+            this.Controls.Add(this.cmb_categoria);
+            this.Controls.Add(this.lbl_cantidadStock);
+            this.Controls.Add(this.lbl_precio);
+            this.Controls.Add(this.lbl_marca);
+            this.Controls.Add(this.lbl_tipo);
+            this.Controls.Add(this.lbl_categoria);
+            this.Controls.Add(this.lbl_nombre);
+            this.Controls.Add(this.lbl_id);
+            this.Controls.Add(this.txt_nombre);
+            this.Controls.Add(this.txt_id);
+            this.Controls.Add(this.txt_cantidadStock);
+            this.Controls.Add(this.txt_precio);
             this.Controls.Add(this.btn_aceptar);
+            this.MaximizeBox = false;
             this.Name = "Frm_ModificarProducto";
             this.Text = "Frm_ModificarProducto";
             this.Load += new System.EventHandler(this.Frm_ModificarProducto_Load);
@@ -100,9 +202,19 @@
         #endregion
 
         private Button btn_aceptar;
-        private TextBox txt_nuevoPrecio;
-        private Label lbl_nuevoCampo;
-        private Label lbl_previoCampo;
-        private Label lbl_previoCampoContenido;
+        private TextBox txt_precio;
+        private TextBox txt_id;
+        private TextBox txt_nombre;
+        private TextBox txt_cantidadStock;
+        private Label lbl_id;
+        private Label lbl_nombre;
+        private Label lbl_categoria;
+        private Label lbl_tipo;
+        private Label lbl_marca;
+        private Label lbl_precio;
+        private Label lbl_cantidadStock;
+        private ComboBox cmb_categoria;
+        private ComboBox cmb_tipo;
+        private ComboBox cmb_marca;
     }
 }

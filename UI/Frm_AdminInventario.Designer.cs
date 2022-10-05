@@ -39,6 +39,8 @@
             this.lbl_cantidad = new System.Windows.Forms.Label();
             this.btn_SeleccionarProducto = new System.Windows.Forms.Button();
             this.dgv_listaProductos = new System.Windows.Forms.DataGridView();
+            this.btn_ModificarProducto = new System.Windows.Forms.Button();
+            this.btn_AgregarProducto = new System.Windows.Forms.Button();
             this.grp_listaProductos.SuspendLayout();
             this.grp_descripcion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).BeginInit();
@@ -161,11 +163,32 @@
             this.dgv_listaProductos.TabIndex = 5;
             this.dgv_listaProductos.SelectionChanged += new System.EventHandler(this.dgv_listaProductos_SelectionChanged);
             // 
+            // btn_ModificarProducto
+            // 
+            this.btn_ModificarProducto.Location = new System.Drawing.Point(374, 305);
+            this.btn_ModificarProducto.Name = "btn_ModificarProducto";
+            this.btn_ModificarProducto.Size = new System.Drawing.Size(142, 33);
+            this.btn_ModificarProducto.TabIndex = 6;
+            this.btn_ModificarProducto.Text = "Modificar producto";
+            this.btn_ModificarProducto.UseVisualStyleBackColor = true;
+            this.btn_ModificarProducto.Click += new System.EventHandler(this.btn_ModificarProducto_Click);
+            // 
+            // btn_AgregarProducto
+            // 
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(533, 305);
+            this.btn_AgregarProducto.Name = "btn_AgregarProducto";
+            this.btn_AgregarProducto.Size = new System.Drawing.Size(142, 33);
+            this.btn_AgregarProducto.TabIndex = 6;
+            this.btn_AgregarProducto.Text = "Agregar producto";
+            this.btn_AgregarProducto.UseVisualStyleBackColor = true;
+            // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 601);
+            this.Controls.Add(this.btn_AgregarProducto);
+            this.Controls.Add(this.btn_ModificarProducto);
             this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.btn_SeleccionarProducto);
             this.Controls.Add(this.grp_descripcion);
@@ -194,5 +217,7 @@
         private Label lbl_cantidadProducto;
         private Button btn_SeleccionarProducto;
         private DataGridView dgv_listaProductos;
+        private Button btn_ModificarProducto;
+        private Button btn_AgregarProducto;
     }
 }

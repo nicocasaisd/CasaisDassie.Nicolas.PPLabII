@@ -129,5 +129,10 @@ namespace UI
             lbl_idProducto.Text = auxProducto.Id.ToString();
             lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
         }
+
+        private void btn_ModificarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace UI
     {
         private Factura factura;
 
+        #region CONSTRUCTORES
         public Frm_Factura()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace UI
             this.factura = factura;
         }
 
+        #endregion
         private void Frm_Factura_Load(object sender, EventArgs e)
         {
             txt_importeTotal.Text = this.factura.Total.ToString();

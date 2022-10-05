@@ -15,6 +15,7 @@ namespace UI
     public partial class Frm_AdminInventario : Form
     {
         int idProducto = 0;
+        List<Producto> listaProductos;
 
         #region CONSTRUCTORES
 
@@ -36,7 +37,11 @@ namespace UI
 
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
+            listaProductos = new List<Producto>(TiendaElectronica.ListaProductos);
             this.lst_listaProductos.DataSource = TiendaElectronica.ListaProductos;
+            this.dgv_listaProductos.DataSource = this.listaProductos;
+            this.dgv_listaProductos.Columns["descripcion"].Visible = false;
+            this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
         }
 
         private void lst_listaProductos_SelectedIndexChanged(object sender, EventArgs e)

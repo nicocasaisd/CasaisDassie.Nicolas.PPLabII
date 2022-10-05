@@ -40,10 +40,10 @@
             this.btn_cambiarPrecio = new System.Windows.Forms.Button();
             this.btn_cambiarCantidad = new System.Windows.Forms.Button();
             this.btn_SeleccionarProducto = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_listaProductos = new System.Windows.Forms.DataGridView();
             this.grp_listaProductos.SuspendLayout();
             this.grp_descripcion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // grp_listaProductos
@@ -168,25 +168,25 @@
             this.btn_SeleccionarProducto.UseVisualStyleBackColor = true;
             this.btn_SeleccionarProducto.Click += new System.EventHandler(this.btn_SeleccionarProducto_Click);
             // 
-            // dataGridView1
+            // dgv_listaProductos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(611, 107);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 5;
+            this.dgv_listaProductos.AllowUserToAddRows = false;
+            this.dgv_listaProductos.AllowUserToDeleteRows = false;
+            this.dgv_listaProductos.AllowUserToResizeColumns = false;
+            this.dgv_listaProductos.AllowUserToResizeRows = false;
+            this.dgv_listaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaProductos.Location = new System.Drawing.Point(611, 107);
+            this.dgv_listaProductos.Name = "dgv_listaProductos";
+            this.dgv_listaProductos.RowTemplate.Height = 25;
+            this.dgv_listaProductos.Size = new System.Drawing.Size(485, 201);
+            this.dgv_listaProductos.TabIndex = 5;
             // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1124, 485);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.btn_SeleccionarProducto);
             this.Controls.Add(this.btn_cambiarCantidad);
             this.Controls.Add(this.btn_cambiarPrecio);
@@ -198,7 +198,7 @@
             this.grp_listaProductos.ResumeLayout(false);
             this.grp_descripcion.ResumeLayout(false);
             this.grp_descripcion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,6 +217,6 @@
         private Button btn_cambiarPrecio;
         private Button btn_cambiarCantidad;
         private Button btn_SeleccionarProducto;
-        private DataGridView dataGridView1;
+        private DataGridView dgv_listaProductos;
     }
 }

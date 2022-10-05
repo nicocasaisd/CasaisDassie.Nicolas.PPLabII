@@ -40,8 +40,10 @@
             this.btn_cambiarPrecio = new System.Windows.Forms.Button();
             this.btn_cambiarCantidad = new System.Windows.Forms.Button();
             this.btn_SeleccionarProducto = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grp_listaProductos.SuspendLayout();
             this.grp_descripcion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grp_listaProductos
@@ -63,7 +65,6 @@
             this.lst_listaProductos.Name = "lst_listaProductos";
             this.lst_listaProductos.Size = new System.Drawing.Size(187, 214);
             this.lst_listaProductos.TabIndex = 0;
-
             // 
             // grp_descripcion
             // 
@@ -167,11 +168,25 @@
             this.btn_SeleccionarProducto.UseVisualStyleBackColor = true;
             this.btn_SeleccionarProducto.Click += new System.EventHandler(this.btn_SeleccionarProducto_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(611, 107);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1124, 485);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_SeleccionarProducto);
             this.Controls.Add(this.btn_cambiarCantidad);
             this.Controls.Add(this.btn_cambiarPrecio);
@@ -183,6 +198,7 @@
             this.grp_listaProductos.ResumeLayout(false);
             this.grp_descripcion.ResumeLayout(false);
             this.grp_descripcion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,5 +217,6 @@
         private Button btn_cambiarPrecio;
         private Button btn_cambiarCantidad;
         private Button btn_SeleccionarProducto;
+        private DataGridView dataGridView1;
     }
 }

@@ -42,6 +42,7 @@
             this.gpb_totalGanancia = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_totalGanancia = new System.Windows.Forms.TextBox();
+            this.btn_calcular = new System.Windows.Forms.Button();
             this.gpb_ventasTotales.SuspendLayout();
             this.gpb_datosCategoria.SuspendLayout();
             this.gpb_totalGanancia.SuspendLayout();
@@ -182,11 +183,22 @@
             this.txt_totalGanancia.Size = new System.Drawing.Size(149, 23);
             this.txt_totalGanancia.TabIndex = 0;
             // 
+            // btn_calcular
+            // 
+            this.btn_calcular.Location = new System.Drawing.Point(404, 385);
+            this.btn_calcular.Name = "btn_calcular";
+            this.btn_calcular.Size = new System.Drawing.Size(75, 23);
+            this.btn_calcular.TabIndex = 7;
+            this.btn_calcular.Text = "Calcular";
+            this.btn_calcular.UseVisualStyleBackColor = true;
+            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
+            // 
             // Frm_Estadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 450);
+            this.Controls.Add(this.btn_calcular);
             this.Controls.Add(this.gpb_totalGanancia);
             this.Controls.Add(this.gpb_datosCategoria);
             this.Controls.Add(this.gpb_ventasTotales);
@@ -220,5 +232,6 @@
         private GroupBox gpb_totalGanancia;
         private Label label5;
         private TextBox txt_totalGanancia;
+        private Button btn_calcular;
     }
 }

@@ -13,8 +13,10 @@ namespace UI
 {
     public partial class Frm_Estadisticas : Form
     {
-        int totalVentas;
-        decimal totalGanacia = 0;
+        //int totalVentas;
+        //decimal totalGanacia = 0;
+        //string productoMasVendido = "";
+        eCategoriaProducto categoria;
         
 
 
@@ -40,6 +42,12 @@ namespace UI
 
         private void cmb_categoria_SelectedIndexChanged(object sender, EventArgs e)
         {
+            categoria = (eCategoriaProducto)cmb_categoria.SelectedItem;
+            
+        }
+
+        private void btn_calcular_Click(object sender, EventArgs e)
+        {
             CalcularDatos();
         }
 
@@ -48,26 +56,82 @@ namespace UI
             CalcularTotalVentas();
             CalcularTotalGanancia();
             CalcularMasVendido();
+            CalcularPromedioGananciaCategoria();
+        }
+
+        private void CalcularPromedioGananciaCategoria()
+        {
+            decimal cantidadVendida = 0;
+            decimal totalVendido = 0;
+            decimal promedioVendido = 0;
+
+            foreach (Factura item in TiendaElectronica.ListaFacturas)
+            {
+                foreach (Tuple<Producto, decimal, string> tupla in item.ListaTuplaCarrito)
+                {
+                    Producto auxProducto = tupla.Item1;
+                    decimal auxCantidad = tupla.Item2;
+                    if (auxProducto.Categoria == this.categoria)
+                    {
+                        cantidadVendida += auxCantidad;
+                        totalVendido += auxProducto.Precio * auxCantidad;
+                    }
+                }
+            }
+
+            if(cantidadVendida > 0)
+            {
+                promedioVendido = totalVendido / cantidadVendida;
+            }
+
+            txt_promedioDeGanancia.Text = promedioVendido.ToString();
         }
 
         private void CalcularMasVendido()
         {
+            int idProducto;
+
+            foreach(Producto producto in TiendaElectronica.ListaProductos)
+            {
+                if(producto.Categoria == this.categoria)
+                {
+                    idProducto = producto.Id;
+
+                    foreach (Factura item in TiendaElectronica.ListaFacturas)
+                    {
+                        foreach (Tuple<Producto, decimal, string> tupla in item.ListaTuplaCarrito)
+                        {
+
+                        }
+                    }
+
+
+                }
+
+
+            }
             
         }
 
         private void CalcularTotalGanancia()
         {
+            decimal totalGanancia = 0;
+
             foreach(Factura item in TiendaElectronica.ListaFacturas)
             {
-                totalGanacia += item.Total;
+                totalGanancia += item.Total;
             }
-            txt_totalGanancia.Text = totalGanacia.ToString();
+            txt_totalGanancia.Text = totalGanancia.ToString();
         }
 
         private void CalcularTotalVentas()
         {
+            decimal totalVentas = 0;
+
             totalVentas = TiendaElectronica.ListaFacturas.Count;
             txt_ventasTotales.Text = totalVentas.ToString();
         }
+
+        
     }
 }

@@ -98,7 +98,7 @@ namespace UI
             foreach(Producto producto in TiendaElectronica.ListaProductos)
             {
                 cantidadVendida = 0;
-                cantidadMaxima = 0;
+                //cantidadMaxima = 0;
 
                 if(producto.Categoria == this.categoria)
                 {
@@ -126,6 +126,7 @@ namespace UI
                 if(cantidadVendida > cantidadMaxima)
                 {
                     productoMasVendido = nombreProducto;
+                    cantidadMaxima = cantidadVendida;
                 }
             }
 

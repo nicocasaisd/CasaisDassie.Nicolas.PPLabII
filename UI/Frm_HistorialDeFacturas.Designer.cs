@@ -36,6 +36,8 @@
             // 
             this.dgv_historialDeFacturas.AllowUserToAddRows = false;
             this.dgv_historialDeFacturas.AllowUserToDeleteRows = false;
+            this.dgv_historialDeFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_historialDeFacturas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_historialDeFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_historialDeFacturas.Location = new System.Drawing.Point(12, 40);
             this.dgv_historialDeFacturas.Name = "dgv_historialDeFacturas";

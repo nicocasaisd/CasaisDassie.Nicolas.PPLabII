@@ -54,6 +54,7 @@
             this.dgv_listaProductos.AllowUserToDeleteRows = false;
             this.dgv_listaProductos.AllowUserToResizeColumns = false;
             this.dgv_listaProductos.AllowUserToResizeRows = false;
+            this.dgv_listaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_listaProductos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_listaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listaProductos.Location = new System.Drawing.Point(12, 89);

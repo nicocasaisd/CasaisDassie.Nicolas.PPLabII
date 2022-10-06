@@ -56,9 +56,29 @@ namespace Entidades
             return -1;
         }
 
+        public static int ValidarLoginVendedor(string email, string pass)
+        {
+            int index = 0;
+
+            foreach (Vendedor auxVendedor in listaVendedores)
+            {
+                if (auxVendedor.ValidarVendedor(email, pass))
+                {
+                    return index;
+                }
+                index++;
+            }
+            return -1;
+        }
+
         public static Duenio ObtenerDuenio(int index)
         {
             return listaDuenios[index];
+        }
+
+        public static Vendedor ObtenerVendedor(int index)
+        {
+            return listaVendedores[index];
         }
 
         public static void AsignarUsuarioLogueado(Usuario usuario)

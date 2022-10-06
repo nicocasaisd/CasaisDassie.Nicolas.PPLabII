@@ -11,15 +11,19 @@ namespace UI
 
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
-            int indexDuenio = TiendaElectronica.ValidarLoginDuenio(this.txt_usuario.Text, this.txt_password.Text);
-
-            if( indexDuenio> -1)
+            if(LoguearDuenio(this.txt_usuario.Text, this.txt_password.Text))
             {
-                Duenio auxDuenio = TiendaElectronica.ObtenerDuenio(indexDuenio);
-                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal(auxDuenio);
+                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
                 menuPrincipal.Show();
                 this.Hide();
             }
+            else if(LoguearVendedor(this.txt_usuario.Text, this.txt_password.Text))
+            {
+                Frm_Venta frm_Venta = new Frm_Venta();
+                frm_Venta.Show();
+                this.Hide();
+            }
+
             
         }
 
@@ -42,9 +46,28 @@ namespace UI
 
         #region METODOS
 
-        private bool ValidarLogin(string usuario, string pass)
+        private bool LoguearDuenio(string usuario, string pass)
         {
+            int indexDuenio = TiendaElectronica.ValidarLoginDuenio(this.txt_usuario.Text, this.txt_password.Text);
+            //int indexVendedor = TiendaElectronica.ValidarLoginVendedor(this.txt_usuario.Text, this.txt_password.Text);
+            if (indexDuenio > -1)
+            {
+                Duenio auxDuenio = TiendaElectronica.ObtenerDuenio(indexDuenio);
+                TiendaElectronica.AsignarUsuarioLogueado(auxDuenio);
+                return true;
+            }
+            return false;
+        }
 
+        private bool LoguearVendedor(string usuario, string pass)
+        {
+            int indexVendedor = TiendaElectronica.ValidarLoginVendedor(this.txt_usuario.Text, this.txt_password.Text);
+            if (indexVendedor > -1)
+            {
+                Vendedor auxVendedor = TiendaElectronica.ObtenerVendedor(indexVendedor);
+                TiendaElectronica.AsignarUsuarioLogueado(auxVendedor);
+                return true;
+            }
             return false;
         }
 

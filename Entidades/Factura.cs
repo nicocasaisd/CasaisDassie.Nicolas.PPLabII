@@ -80,6 +80,7 @@ namespace Entidades
         public List<Tuple<Producto, decimal, string>> ListaTuplaCarrito
         {
             get { return this.listaTuplaCarrito; }
+            set { listaTuplaCarrito = value; }
         }
 
         #endregion

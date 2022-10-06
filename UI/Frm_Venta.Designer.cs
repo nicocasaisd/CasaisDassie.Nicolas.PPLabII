@@ -155,6 +155,11 @@
             // nud_cantidad
             // 
             this.nud_cantidad.Location = new System.Drawing.Point(77, 63);
+            this.nud_cantidad.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.nud_cantidad.Name = "nud_cantidad";
             this.nud_cantidad.Size = new System.Drawing.Size(100, 23);
             this.nud_cantidad.TabIndex = 8;
@@ -199,6 +204,7 @@
             // 
             // btn_AgregarProducto
             // 
+            this.btn_AgregarProducto.Enabled = false;
             this.btn_AgregarProducto.Location = new System.Drawing.Point(341, 143);
             this.btn_AgregarProducto.Name = "btn_AgregarProducto";
             this.btn_AgregarProducto.Size = new System.Drawing.Size(75, 23);

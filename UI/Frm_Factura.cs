@@ -25,6 +25,7 @@ namespace UI
         public Frm_Factura( Factura factura) : this()
         {
             this.factura = factura;
+            this.factura.ListaTuplaCarrito = new List<Tuple<Producto, decimal, string>>(factura.ListaTuplaCarrito);
         }
 
         #endregion

@@ -43,28 +43,29 @@ namespace UI
             Frm_AdminInventario frm_Admin = new Frm_AdminInventario(Frm_AdminInventario.eAdminInventarioOpcion.SeleccionarProducto);
             frm_Admin.ShowDialog();
             // cargo el producto
-            if(frm_Admin.IdProducto >= 1000)
+            if (frm_Admin.IdProducto >= 1000)
             {
                 this.txt_codigo.Text = frm_Admin.IdProducto.ToString();
                 this.btn_AgregarProducto.Enabled = true;
             }
+
+            
             
         }
 
         private void btn_AgregarProducto_Click(object sender, EventArgs e)
         {
             decimal cantidad = this.nud_cantidad.Value;
-
-            if(this.btn_AgregarProducto.Enabled && cantidad > 0)
+            Producto auxProducto;
+           
+            if(!String.IsNullOrEmpty(txt_codigo.Text))
             {
                 // cargo el producto a partir del idProducto
-                Producto auxProducto;
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
                 // me fijo si ya existe y lo agrego a la lista
-                if(this.ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito) != -1)
+                if (ExisteProductoEnCarrito(auxProducto, listaTuplaCarrito))
                 {
-                    // MAMARRACHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
                     int indiceProducto = this.ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito);
                     this.ActualizarProductoEnCarrito(indiceProducto, cantidad, listaTuplaCarrito, auxProducto);
                 }
@@ -74,9 +75,6 @@ namespace UI
                 }
                 // actualiza el DataSource de lst_carrito para que muestre los valores
                 ActualizarLista();
-
-               
-
             }
         }
 
@@ -124,7 +122,7 @@ namespace UI
                 Frm_Factura frm_Factura = new Frm_Factura(nuevaFactura);
                 frm_Factura.Show();
                 // limpio los datos
-                //this.LimpiarCampos();
+                this.LimpiarCampos();
 
             }
 
@@ -174,6 +172,15 @@ namespace UI
             return total;
         }
 
+        private bool ExisteProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
+        {
+            if(ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito) != -1)
+            {
+                return true;
+            }
+
+            return false;
+        }
         private int ObtenerIndiceProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             for (int i = 0; i < listaTuplaCarrito.Count; i++)

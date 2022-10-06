@@ -24,6 +24,7 @@ namespace UI
 
         private void Frm_Venta_Load(object sender, EventArgs e)
         {
+            this.BackColor = Color.White;
             // Cargo el nro de factura
             txt_nroDeFactura.Text = Factura.ProximoNroDeFactura.ToString("D8");
             // Agrego data al cmb_medioDePago
@@ -58,7 +59,7 @@ namespace UI
             decimal cantidad = this.nud_cantidad.Value;
             Producto auxProducto;
            
-            if(!String.IsNullOrEmpty(txt_codigo.Text))
+            if(!String.IsNullOrEmpty(txt_codigo.Text) && cantidad > 0)
             {
                 // cargo el producto a partir del idProducto
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
@@ -151,6 +152,12 @@ namespace UI
 
         }
 
+        private void cmb_medioDePago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // actualizo txt_total
+            txt_total.Text = CalcularTotal(listaTuplaCarrito).ToString();
+        }
+
         #region METODOS LÓGICA
 
         private void LimpiarCampos()
@@ -231,9 +238,10 @@ namespace UI
 
 
 
+
+
         #endregion
 
-
-
+        
     }
 }

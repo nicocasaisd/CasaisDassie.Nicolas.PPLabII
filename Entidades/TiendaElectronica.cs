@@ -165,5 +165,8 @@ namespace Entidades
 
             return false;
         }
+
+        //public void AsignarColorDeFondo()
+        
     }
 }

@@ -201,6 +201,7 @@
             this.cmb_medioDePago.Name = "cmb_medioDePago";
             this.cmb_medioDePago.Size = new System.Drawing.Size(109, 23);
             this.cmb_medioDePago.TabIndex = 5;
+            this.cmb_medioDePago.SelectedIndexChanged += new System.EventHandler(this.cmb_medioDePago_SelectedIndexChanged);
             // 
             // btn_AgregarProducto
             // 
@@ -345,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 534);
+            this.ClientSize = new System.Drawing.Size(632, 534);
             this.Controls.Add(this.gpb_datosFacturacion);
             this.Controls.Add(this.btn_RemoverProducto);
             this.Controls.Add(this.btn_AgregarProducto);

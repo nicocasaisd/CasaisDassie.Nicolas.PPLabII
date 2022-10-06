@@ -51,9 +51,6 @@
             this.dgv_listaProductos.AllowUserToDeleteRows = false;
             this.dgv_listaProductos.AllowUserToResizeColumns = false;
             this.dgv_listaProductos.AllowUserToResizeRows = false;
-            this.dgv_listaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_listaProductos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_listaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listaProductos.Location = new System.Drawing.Point(12, 89);
@@ -88,12 +85,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 601);
+            this.ClientSize = new System.Drawing.Size(761, 337);
             this.Controls.Add(this.btn_AgregarProducto);
             this.Controls.Add(this.btn_ModificarProducto);
             this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.btn_SeleccionarProducto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_AdminInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_AdminInventario";
             this.Load += new System.EventHandler(this.Frm_AdminInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();

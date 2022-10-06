@@ -206,6 +206,7 @@
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.btn_aceptar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Frm_ModificarProducto";
             this.Text = "Frm_ModificarProducto";

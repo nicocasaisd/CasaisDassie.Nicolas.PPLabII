@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AdminInventario));
             this.btn_SeleccionarProducto = new System.Windows.Forms.Button();
             this.dgv_listaProductos = new System.Windows.Forms.DataGridView();
             this.btn_ModificarProducto = new System.Windows.Forms.Button();
@@ -125,6 +126,7 @@
             this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.btn_SeleccionarProducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_AdminInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_AdminInventario";

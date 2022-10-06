@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MenuPrincipal));
             this.btn_inventario = new System.Windows.Forms.Button();
             this.btn_ventas = new System.Windows.Forms.Button();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.Controls.Add(this.lbl_nombreUsuario);
             this.Controls.Add(this.btn_ventas);
             this.Controls.Add(this.btn_inventario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_MenuPrincipal";
             this.Text = "Frm_MenuPrincipal";
             this.Load += new System.EventHandler(this.Frm_MenuPrincipal_Load);

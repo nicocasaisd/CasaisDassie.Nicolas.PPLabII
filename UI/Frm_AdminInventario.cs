@@ -58,12 +58,14 @@ namespace UI
 
             if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio) && this.eOpcion == eAdminInventarioOpcion.ModificarProducto)
             {
+                this.Text = "Administrador de Inventario";
                 btn_AgregarProducto.Visible = true;
                 btn_ModificarProducto.Visible = true;
                 btn_SeleccionarProducto.Visible = false;
             }
             else if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor) || this.eOpcion == eAdminInventarioOpcion.SeleccionarProducto)
             {
+                this.Text = "Seleccionar producto";
                 btn_AgregarProducto.Visible = false;
                 btn_ModificarProducto.Visible = false;
                 btn_SeleccionarProducto.Visible = true;

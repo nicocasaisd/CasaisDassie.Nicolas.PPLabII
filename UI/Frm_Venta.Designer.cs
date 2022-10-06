@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Venta));
             this.lst_carrito = new System.Windows.Forms.ListBox();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
@@ -369,6 +370,7 @@
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.gpb_carrito);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Venta";
             this.Text = "Frm_Venta";
             this.Load += new System.EventHandler(this.Frm_Venta_Load);

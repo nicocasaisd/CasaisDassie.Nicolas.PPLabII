@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_HistorialDeFacturas));
             this.dgv_historialDeFacturas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historialDeFacturas)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             this.ClientSize = new System.Drawing.Size(800, 211);
             this.Controls.Add(this.dgv_historialDeFacturas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_HistorialDeFacturas";
             this.Text = "Frm_HistorialDeFacturas";

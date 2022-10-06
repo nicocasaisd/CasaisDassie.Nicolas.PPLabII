@@ -44,6 +44,7 @@ namespace UI
 
         private void Frm_ModificarProducto_Load(object sender, EventArgs e)
         {
+            this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             // Agrego data al cmb_categoria
             Array eCategoria = Enum.GetValues(typeof(eCategoriaProducto));
             cmb_categoria.DataSource = eCategoria;

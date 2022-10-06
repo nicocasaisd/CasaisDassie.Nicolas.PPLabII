@@ -52,6 +52,7 @@ namespace UI
 
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
+            this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
 

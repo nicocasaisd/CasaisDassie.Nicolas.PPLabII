@@ -64,7 +64,12 @@ namespace UI
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
                 // me fijo si ya existe y lo agrego a la lista
-                if (ExisteProductoEnCarrito(auxProducto, listaTuplaCarrito))
+                if(!ExisteStockDeProducto(auxProducto, this.listaTuplaCarrito))
+                {
+                    MessageBox.Show("No hay stock suficiente del producto que quiere agregar.", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (ExisteProductoEnCarrito(auxProducto, this.listaTuplaCarrito))
                 {
                     int indiceProducto = this.ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito);
                     this.ActualizarProductoEnCarrito(indiceProducto, cantidad, listaTuplaCarrito, auxProducto);
@@ -76,6 +81,24 @@ namespace UI
                 // actualiza el DataSource de lst_carrito para que muestre los valores
                 ActualizarLista();
             }
+        }
+
+        private bool ExisteStockDeProducto(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
+        {
+            decimal cantidad = nud_cantidad.Value;
+            decimal cantidadCargadaEnCarrito = 0;
+            int indiceProductoEnCarrito = ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito);
+            
+            if (indiceProductoEnCarrito != -1)
+            {
+                cantidadCargadaEnCarrito = listaTuplaCarrito[indiceProductoEnCarrito].Item2;
+            }
+            if( auxProducto.CantidadStock >= (cantidad + cantidadCargadaEnCarrito))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private void btn_RemoverProducto_Click(object sender, EventArgs e)
@@ -138,6 +161,7 @@ namespace UI
             dtp_fecha.Value = DateTime.Now;
             // cmb_puntoDeVenta , opcion por defecto
             cmb_puntoDeVenta.SelectedIndex = 0;
+            nud_cantidad.Value = 0;
             // limpio la listaTuplaCarrito y la recargo
             listaTuplaCarrito.Clear();
             this.ActualizarLista();

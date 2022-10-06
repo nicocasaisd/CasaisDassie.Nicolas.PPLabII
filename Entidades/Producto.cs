@@ -24,28 +24,22 @@
             proximaId = 1000;
         }
 
-
         public Producto()
         { 
         }
 
-        public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio) : this()
+        public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio, int cantidadStock) : this()
         {
             this.Nombre = nombre;
             this.Categoria = categoria;
             this.Tipo = tipo;
             this.Marca = marca;
             this.Precio = precio;
-            // Valores por defecto
-            this.CantidadStock = 0;
+            this.CantidadStock = cantidadStock;
             this.id = proximaId;
             proximaId++;
         }
 
-        public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio, int cantidadStock) :this(nombre, categoria, tipo, marca, precio)
-        {
-            this.CantidadStock = cantidadStock;
-        }
 
 
 
@@ -72,7 +66,7 @@
 
         #region METODOS
 
-        // Sobrecarga de ToString
+        // Override de ToString
         public override string ToString()
         {
             return $"{this.Id}, {this.Nombre}, {this.Marca}" ;

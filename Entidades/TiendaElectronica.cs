@@ -139,5 +139,31 @@ namespace Entidades
             int index = ObtenerIndexProducto(id);
             return listaProductos[index];
         }
+
+        public static bool GenerarVenta(List<Tuple<Producto, decimal, string>> carrito)
+        {
+            //recorro el carrito
+            foreach(Tuple<Producto, decimal, string> item in carrito)
+            {
+                ////recorro la lista original
+                //foreach(Producto producto in ListaProductos)
+                //{
+                //    if(item.Item1.Id == producto.Id)
+                //    {
+                //        producto.CantidadStock -= (int) item.Item2;
+                //    }
+                //
+                for(int i=0; i<ListaProductos.Count; i++)
+                {
+                    Producto producto = ListaProductos[i];
+                    if (item.Item1.Id == producto.Id)
+                    {
+                        producto.CantidadStock -= (int)item.Item2;
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

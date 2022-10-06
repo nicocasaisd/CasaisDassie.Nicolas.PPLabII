@@ -49,6 +49,7 @@
             this.lbl_listaProducto = new System.Windows.Forms.Label();
             this.lbl_listaCantidad = new System.Windows.Forms.Label();
             this.lst_carrito = new System.Windows.Forms.ListBox();
+            this.btn_generarVenta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -59,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(619, 51);
+            this.label1.Location = new System.Drawing.Point(617, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 15);
             this.label1.TabIndex = 0;
@@ -68,7 +69,7 @@
             // txt_importeTotal
             // 
             this.txt_importeTotal.Enabled = false;
-            this.txt_importeTotal.Location = new System.Drawing.Point(704, 48);
+            this.txt_importeTotal.Location = new System.Drawing.Point(702, 15);
             this.txt_importeTotal.Name = "txt_importeTotal";
             this.txt_importeTotal.Size = new System.Drawing.Size(100, 23);
             this.txt_importeTotal.TabIndex = 1;
@@ -80,7 +81,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 488);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 107);
+            this.panel1.Size = new System.Drawing.Size(825, 59);
             this.panel1.TabIndex = 2;
             // 
             // panel3
@@ -255,11 +256,22 @@
             this.lst_carrito.Size = new System.Drawing.Size(804, 184);
             this.lst_carrito.TabIndex = 0;
             // 
+            // btn_generarVenta
+            // 
+            this.btn_generarVenta.Location = new System.Drawing.Point(551, 571);
+            this.btn_generarVenta.Name = "btn_generarVenta";
+            this.btn_generarVenta.Size = new System.Drawing.Size(143, 23);
+            this.btn_generarVenta.TabIndex = 16;
+            this.btn_generarVenta.Text = "Generar Venta";
+            this.btn_generarVenta.UseVisualStyleBackColor = true;
+            this.btn_generarVenta.Click += new System.EventHandler(this.btn_generarVenta_Click);
+            // 
             // Frm_Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 607);
+            this.Controls.Add(this.btn_generarVenta);
             this.Controls.Add(this.gpb_carrito);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
@@ -308,5 +320,6 @@
         private Label lbl_listaProducto;
         private Label lbl_listaCantidad;
         private ListBox lst_carrito;
+        private Button btn_generarVenta;
     }
 }

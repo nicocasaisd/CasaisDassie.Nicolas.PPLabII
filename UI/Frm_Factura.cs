@@ -40,5 +40,10 @@ namespace UI
             lst_carrito.DisplayMember = "Item3";
         }
 
+        private void btn_generarVenta_Click(object sender, EventArgs e)
+        {
+            TiendaElectronica.GenerarVenta(this.factura.ListaTuplaCarrito);
+            this.Close();
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 
 namespace Entidades
@@ -166,7 +167,19 @@ namespace Entidades
             return false;
         }
 
-        //public void AsignarColorDeFondo()
+        public static Color ObtenerColorDeUsuario()
+        {
+            if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))
+            {
+                return Color.LightGray;
+            }
+            else if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio))
+            {
+                return Color.LightSteelBlue;
+            }
+
+            return Color.WhiteSmoke;
+        }
         
     }
 }

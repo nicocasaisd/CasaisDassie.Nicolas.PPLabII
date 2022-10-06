@@ -24,7 +24,7 @@ namespace UI
 
         private void Frm_Venta_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             // Cargo el nro de factura
             txt_nroDeFactura.Text = Factura.ProximoNroDeFactura.ToString("D8");
             // Agrego data al cmb_medioDePago

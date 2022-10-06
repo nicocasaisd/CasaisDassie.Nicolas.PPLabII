@@ -13,17 +13,23 @@ namespace UI
 {
     public partial class Frm_MenuPrincipal : Form
     {
-        private Duenio auxDuenio;
+        //private Duenio auxDuenio;
+        public Usuario usuario;
 
         public Frm_MenuPrincipal()
         {
-            auxDuenio = new Duenio();
+            usuario = new Duenio();
             InitializeComponent();
         }
 
         public Frm_MenuPrincipal(Duenio auxDuenio) :this()
         {
-            this.auxDuenio = auxDuenio;
+            this.usuario = auxDuenio;
+        }
+
+        public Frm_MenuPrincipal(Vendedor auxVendedor) : this()
+        {
+            this.usuario = auxVendedor;
         }
 
         private void btn_inventario_Click(object sender, EventArgs e)
@@ -34,7 +40,7 @@ namespace UI
 
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
-            this.lbl_nombreUsuario.Text = "Bienvenido " + auxDuenio.Email;
+            this.lbl_nombreUsuario.Text = "Bienvenido " + TiendaElectronica.UsuarioLogueado.Email;
         }
 
         private void btn_ventas_Click(object sender, EventArgs e)

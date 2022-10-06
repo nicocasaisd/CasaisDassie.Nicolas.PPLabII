@@ -39,5 +39,15 @@ namespace UI
             txt_usuario.Text = "nicolas@electronicacasais.com";
             txt_password.Text = "asd123";
         }
+
+        #region METODOS
+
+        private bool ValidarLogin(string usuario, string pass)
+        {
+
+            return false;
+        }
+
+        #endregion
     }
 }

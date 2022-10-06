@@ -9,9 +9,10 @@ namespace Entidades
         #region ATRIBUTOS
 
         private static string nombreTienda;
-        static List<Vendedor> listaVendedores;
-        static List<Duenio> listaDuenios;
-        static List<Producto> listaProductos;
+        private static Usuario usuarioLogueado;
+        private static List<Vendedor> listaVendedores;
+        private static List<Duenio> listaDuenios;
+        private static List<Producto> listaProductos;
 
         #endregion
 
@@ -34,6 +35,12 @@ namespace Entidades
             get { return listaProductos; }
         }
 
+        public static Usuario UsuarioLogueado
+        {
+            get { return usuarioLogueado; }
+            set { usuarioLogueado = value; }
+        }
+
         public static int ValidarLoginDuenio(string email, string pass)
         {
             int index = 0;
@@ -52,6 +59,11 @@ namespace Entidades
         public static Duenio ObtenerDuenio(int index)
         {
             return listaDuenios[index];
+        }
+
+        public static void AsignarUsuarioLogueado(Usuario usuario)
+        {
+            UsuarioLogueado = usuario;
         }
 
 

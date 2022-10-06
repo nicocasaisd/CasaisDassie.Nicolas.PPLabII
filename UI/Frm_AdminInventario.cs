@@ -42,6 +42,7 @@ namespace UI
         {
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
+
         }
 
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)

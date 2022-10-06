@@ -102,22 +102,39 @@ namespace Entidades
             return -1;
         }
 
+        /// <summary>
+        /// Devuelve el objeto Duenio de la lista de dueños.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public static Duenio ObtenerDuenio(int index)
         {
             return listaDuenios[index];
         }
 
+        /// <summary>
+        /// Devuelve el objeto Vendedor de la lista de vendedores.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public static Vendedor ObtenerVendedor(int index)
         {
             return listaVendedores[index];
         }
 
+        /// <summary>
+        /// Asigna el Usuario al atributo estático usuarioLogueado
+        /// </summary>
+        /// <param name="usuario"></param>
         public static void AsignarUsuarioLogueado(Usuario usuario)
         {
             UsuarioLogueado = usuario;
         }
 
 
+        /// <summary>
+        /// Ingresa datos "hardcodeados" a las listas de productos, dueños y vendedores.
+        /// </summary>
         private static void HardcodearDatos()
         {
             HardcodearVendedores();
@@ -134,6 +151,30 @@ namespace Entidades
             listaProductos.Add(new Producto(
                 "Teclado inalámbrico", eCategoriaProducto.Computacion, eTipoProducto.Teclado,
                 eMarcaProducto.Lenovo, 1270, 10
+                ));
+            listaProductos.Add(new Producto(
+                "Monitor 19\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
+                eMarcaProducto.Lenovo, 1270, 10
+                ));
+            listaProductos.Add(new Producto(
+                "Notebook I7 8gb RAM", eCategoriaProducto.Computacion, eTipoProducto.Notebook,
+                eMarcaProducto.Dell, 123300, 5
+                ));
+            listaProductos.Add(new Producto(
+                "Impresora Profesional", eCategoriaProducto.Impresion, eTipoProducto.Impresora,
+                eMarcaProducto.Epson, 45070, 6
+                ));
+            listaProductos.Add(new Producto(
+                "Play Station 5", eCategoriaProducto.Gaming, eTipoProducto.ConsolaGaming,
+                eMarcaProducto.PlayStation, 16580, 4
+                ));
+            listaProductos.Add(new Producto(
+                "Micrófono Condenser", eCategoriaProducto.Audio, eTipoProducto.Microfono,
+                eMarcaProducto.DyB, 43200, 16
+                ));
+            listaProductos.Add(new Producto(
+                "Monitor 14\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
+                eMarcaProducto.HP, 35200, 3
                 ));
         }
 

@@ -68,7 +68,6 @@ namespace UI
             return false;
         }
 
-
         /// <summary>
         /// Si puede loguear el Vendedor devuelve true y asigna el indice de lista Vendedor a su atributo
         /// </summary>

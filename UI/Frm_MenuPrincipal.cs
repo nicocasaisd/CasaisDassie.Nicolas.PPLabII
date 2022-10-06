@@ -19,17 +19,25 @@ namespace UI
             InitializeComponent();
         }
 
-        private void btn_inventario_Click(object sender, EventArgs e)
-        {
-            Frm_AdminInventario frm_AdminInventario = new Frm_AdminInventario(Frm_AdminInventario.eAdminInventarioOpcion.ModificarProducto);
-            frm_AdminInventario.Show();
-        }
 
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
             this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             this.lbl_nombreUsuario.Text = "Bienvenido " + TiendaElectronica.UsuarioLogueado.Email;
             Sonido("ding.wav");
+        }
+
+
+        private void btn_ventas_Click(object sender, EventArgs e)
+        {
+            Frm_Venta frm_Venta = new Frm_Venta();
+            frm_Venta.ShowDialog();
+        }
+
+        private void btn_inventario_Click(object sender, EventArgs e)
+        {
+            Frm_AdminInventario frm_AdminInventario = new Frm_AdminInventario(Frm_AdminInventario.eAdminInventarioOpcion.ModificarProducto);
+            frm_AdminInventario.ShowDialog();
         }
 
         public void Sonido(string sonido)
@@ -39,10 +47,5 @@ namespace UI
             spl.Play();
         }
 
-        private void btn_ventas_Click(object sender, EventArgs e)
-        {
-            Frm_Venta frm_Venta = new Frm_Venta();
-            frm_Venta.Show();
-        }
     }
 }

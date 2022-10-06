@@ -21,7 +21,7 @@ namespace UI
             {
                 Frm_Venta frm_Venta = new Frm_Venta();
                 frm_Venta.Show();
-                this.Hide();
+                this.Close();
             }
 
             

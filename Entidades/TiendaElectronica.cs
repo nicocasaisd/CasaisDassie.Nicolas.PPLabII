@@ -18,6 +18,10 @@ namespace Entidades
 
         #endregion
 
+        #region CONSTRUCTORES
+        /// <summary>
+        /// Constructor estático que inicializa las colecciones y hardcodea datos.
+        /// </summary>
         static TiendaElectronica()
         {
             nombreTienda = "Electrónica Casais";
@@ -28,6 +32,9 @@ namespace Entidades
             HardcodearDatos();
         }
 
+        #endregion
+
+        #region PROPIEDADES
         public static string Nombre
         {
             get { return nombreTienda; }
@@ -49,6 +56,16 @@ namespace Entidades
             set { usuarioLogueado = value; }
         }
 
+        #endregion
+
+        #region METODOS
+
+        /// <summary>
+        /// Devuelve el índice del duenio a loguear, en caso de que no exista devuelve -1.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
         public static int ValidarLoginDuenio(string email, string pass)
         {
             int index = 0;
@@ -64,6 +81,12 @@ namespace Entidades
             return -1;
         }
 
+        /// <summary>
+        /// Devuelve el índice del vendedor a loguear, en caso de que no exista devuelve -1.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
         public static int ValidarLoginVendedor(string email, string pass)
         {
             int index = 0;
@@ -153,14 +176,7 @@ namespace Entidades
             //recorro el carrito
             foreach(Tuple<Producto, decimal, string> item in carrito)
             {
-                ////recorro la lista original
-                //foreach(Producto producto in ListaProductos)
-                //{
-                //    if(item.Item1.Id == producto.Id)
-                //    {
-                //        producto.CantidadStock -= (int) item.Item2;
-                //    }
-                //
+                // recorro la lista original
                 for(int i=0; i<ListaProductos.Count; i++)
                 {
                     Producto producto = ListaProductos[i];
@@ -189,4 +205,7 @@ namespace Entidades
         }
         
     }
+
+    #endregion
+
 }

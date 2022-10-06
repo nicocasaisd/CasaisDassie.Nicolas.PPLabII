@@ -30,6 +30,11 @@ namespace Entidades
             get { return email; }
         }
 
+        /// <summary>
+        /// Compara la password recibida con su atributo
+        /// </summary>
+        /// <param name="pass"></param>
+        /// <returns></returns>
         public bool ValidarPassword(string pass)
         {
             if(pass == this.password)

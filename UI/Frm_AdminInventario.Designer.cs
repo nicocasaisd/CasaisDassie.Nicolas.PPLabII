@@ -32,6 +32,8 @@
             this.dgv_listaProductos = new System.Windows.Forms.DataGridView();
             this.btn_ModificarProducto = new System.Windows.Forms.Button();
             this.btn_AgregarProducto = new System.Windows.Forms.Button();
+            this.cmb_categoria = new System.Windows.Forms.ComboBox();
+            this.btn_buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +83,31 @@
             this.btn_AgregarProducto.UseVisualStyleBackColor = true;
             this.btn_AgregarProducto.Click += new System.EventHandler(this.btn_AgregarProducto_Click);
             // 
+            // cmb_categoria
+            // 
+            this.cmb_categoria.FormattingEnabled = true;
+            this.cmb_categoria.Location = new System.Drawing.Point(437, 35);
+            this.cmb_categoria.Name = "cmb_categoria";
+            this.cmb_categoria.Size = new System.Drawing.Size(148, 23);
+            this.cmb_categoria.TabIndex = 7;
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Location = new System.Drawing.Point(591, 34);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(83, 24);
+            this.btn_buscar.TabIndex = 8;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 337);
+            this.Controls.Add(this.btn_buscar);
+            this.Controls.Add(this.cmb_categoria);
             this.Controls.Add(this.btn_AgregarProducto);
             this.Controls.Add(this.btn_ModificarProducto);
             this.Controls.Add(this.dgv_listaProductos);
@@ -105,5 +127,7 @@
         private DataGridView dgv_listaProductos;
         private Button btn_ModificarProducto;
         private Button btn_AgregarProducto;
+        private ComboBox cmb_categoria;
+        private Button btn_buscar;
     }
 }

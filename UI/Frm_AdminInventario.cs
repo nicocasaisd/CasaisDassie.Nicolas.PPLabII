@@ -67,6 +67,10 @@ namespace UI
                 btn_ModificarProducto.Visible = false;
                 btn_SeleccionarProducto.Visible = true;
             }
+
+            // Agrego data al cmb_categoria
+            Array eCategoria = Enum.GetValues(typeof(eCategoriaProducto));
+            cmb_categoria.DataSource = eCategoria;
         }
 
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
@@ -134,5 +138,9 @@ namespace UI
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
         }
 
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

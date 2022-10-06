@@ -15,10 +15,14 @@ namespace UI
 {
     public partial class Frm_AdminInventario : Form
     {
+        #region ATRIBUTOS
+
         int idProducto = -1;
         Producto auxProducto;
         List<Producto> listaInventario;
         eAdminInventarioOpcion eOpcion;
+
+        #endregion
 
         public enum eAdminInventarioOpcion
         {
@@ -57,6 +61,7 @@ namespace UI
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
 
+            // si es Dueño y recibio la opcion eAdminInventario
             if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio) && this.eOpcion == eAdminInventarioOpcion.ModificarProducto)
             {
                 this.Text = "Administrador de Inventario";
@@ -64,7 +69,8 @@ namespace UI
                 btn_ModificarProducto.Visible = true;
                 btn_SeleccionarProducto.Visible = false;
             }
-            else if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor) || this.eOpcion == eAdminInventarioOpcion.SeleccionarProducto)
+            // si recibio la opcion eAdminInventario
+            else if (this.eOpcion == eAdminInventarioOpcion.SeleccionarProducto)
             {
                 this.Text = "Seleccionar producto";
                 btn_AgregarProducto.Visible = false;

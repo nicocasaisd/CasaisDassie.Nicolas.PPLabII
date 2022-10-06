@@ -8,7 +8,11 @@ namespace Entidades
 {
     public class Factura
     {
+
+        #region ATRIBUTOS
+
         private static int proximoNroDeFactura = 1;
+
         private string cliente;
         private DateTime fecha;
         private string puntoDeVenta;
@@ -17,13 +21,13 @@ namespace Entidades
         private decimal total;
         private List<Tuple<Producto, decimal, string>> listaTuplaCarrito;
 
+        #endregion
+
+        #region CONSTRUCTORES
 
         public Factura()
         {
         }
-
-        #region CONSTRUCTORES
-
         public Factura(string cliente, DateTime fecha, string puntoDeVenta, int nroDeFactura, eMedioDePago medioDePago, decimal total, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             this.cliente = cliente;

@@ -46,5 +46,11 @@ namespace UI
             TiendaElectronica.GenerarVenta(this.factura.ListaTuplaCarrito);
             this.Close();
         }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
     }
 }

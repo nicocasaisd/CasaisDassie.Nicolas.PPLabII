@@ -50,6 +50,7 @@
             this.lbl_listaCantidad = new System.Windows.Forms.Label();
             this.lst_carrito = new System.Windows.Forms.ListBox();
             this.btn_generarVenta = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -258,7 +259,7 @@
             // 
             // btn_generarVenta
             // 
-            this.btn_generarVenta.Location = new System.Drawing.Point(551, 571);
+            this.btn_generarVenta.Location = new System.Drawing.Point(566, 570);
             this.btn_generarVenta.Name = "btn_generarVenta";
             this.btn_generarVenta.Size = new System.Drawing.Size(143, 23);
             this.btn_generarVenta.TabIndex = 16;
@@ -266,11 +267,22 @@
             this.btn_generarVenta.UseVisualStyleBackColor = true;
             this.btn_generarVenta.Click += new System.EventHandler(this.btn_generarVenta_Click);
             // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Location = new System.Drawing.Point(739, 570);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(98, 24);
+            this.btn_Cancelar.TabIndex = 17;
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
             // Frm_Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 607);
+            this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_generarVenta);
             this.Controls.Add(this.gpb_carrito);
             this.Controls.Add(this.panel2);
@@ -321,5 +333,6 @@
         private Label lbl_listaCantidad;
         private ListBox lst_carrito;
         private Button btn_generarVenta;
+        private Button btn_Cancelar;
     }
 }

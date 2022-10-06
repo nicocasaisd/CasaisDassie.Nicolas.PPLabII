@@ -26,7 +26,7 @@ namespace UI
             {
                 Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
                 menuPrincipal.Show();
-                this.Close();
+                this.Hide();
             }
             else if(LoguearVendedor(this.txt_usuario.Text, this.txt_password.Text))
             {

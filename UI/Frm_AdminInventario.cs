@@ -16,7 +16,7 @@ namespace UI
     {
         int idProducto = -1;
         Producto auxProducto;
-        List<Producto> listaProductos;
+        List<Producto> listaInventario;
 
         #region CONSTRUCTORES
 
@@ -24,7 +24,7 @@ namespace UI
         {
             InitializeComponent();
             this.auxProducto = new Producto();
-            this.listaProductos = new List<Producto>(TiendaElectronica.ListaProductos);
+            this.listaInventario = new List<Producto>(TiendaElectronica.ListaProductos);
         }
 
         #endregion
@@ -41,7 +41,7 @@ namespace UI
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
             //this.dgv_listaProductos.DataSource = TiendaElectronica.ListaProductos;
-            this.dgv_listaProductos.DataSource = this.listaProductos;
+            this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
             this.dgv_listaProductos.Columns["categoria"].Visible = false;
         }
@@ -143,13 +143,35 @@ namespace UI
                     //lst_listaProductos.ClearSelected();
                 }
                 // Actualizo la lista
+                ActualizarListaInventario();
 
             }
         }
 
         private void btn_AgregarProducto_Click(object sender, EventArgs e)
         {
+            if (dgv_listaProductos.SelectedRows is not null)
+            {
+                // Instancio el form
+                Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(eModificarProductoOpcion.AgregarProducto);
+                frm_Modificar.ShowDialog();
+                // Chequeo respuesta
+                if (frm_Modificar.DialogResult == DialogResult.OK)
+                {
+                    MessageBox.Show("Se ha agregado el producto");
+                }
+                // Actualizo la lista
+                ActualizarListaInventario();
 
+            }
         }
+
+        private void ActualizarListaInventario()
+        {
+            this.listaInventario.Union(TiendaElectronica.ListaProductos);
+            dgv_listaProductos.DataSource = null;
+            dgv_listaProductos.DataSource = this.listaInventario;
+        }
+
     }
 }

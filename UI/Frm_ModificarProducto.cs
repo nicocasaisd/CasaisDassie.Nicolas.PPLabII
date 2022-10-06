@@ -37,13 +37,13 @@ namespace UI
             eModificarProductoOpcion opcion) : this(opcion)
         {
             this.idProducto = idProducto;
+            auxProducto = TiendaElectronica.ObtenerProductoPorId(this.idProducto);
         }
 
         #endregion
 
         private void Frm_ModificarProducto_Load(object sender, EventArgs e)
         {
-            auxProducto = TiendaElectronica.ObtenerProductoPorId(this.idProducto);
             // Agrego data al cmb_categoria
             Array eCategoria = Enum.GetValues(typeof(eCategoriaProducto));
             cmb_categoria.DataSource = eCategoria;
@@ -68,11 +68,11 @@ namespace UI
                 cmb_categoria.SelectedIndex = (int)auxProducto.Categoria;
                 cmb_tipo.SelectedIndex = (int)auxProducto.Tipo;
                 cmb_marca.SelectedIndex = (int)auxProducto.Marca;
-                txt_precio.Text = auxProducto.Precio.ToString();
-                txt_cantidadStock.Text = auxProducto.CantidadStock.ToString();
+                nud_precio.Value = auxProducto.Precio;
+                nud_cantidadStock.Value = auxProducto.CantidadStock;
 
             }
-            else if(this.opcion ==eModificarProductoOpcion.AgregarProducto)
+            else if(this.opcion == eModificarProductoOpcion.AgregarProducto)
             {
 
             }
@@ -81,12 +81,9 @@ namespace UI
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            string precioComoString = txt_precio.Text;
-            string cantidadComoString = txt_cantidadStock.Text;
-
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
-                if(ModificarProducto(precioComoString, cantidadComoString))
+                if(ModificarProducto())
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -94,33 +91,57 @@ namespace UI
             }
             else if (this.opcion == eModificarProductoOpcion.AgregarProducto)
             {
-                
+                if(AgregarProducto())
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
                 
             }
             
             
         }
 
-        private bool ModificarProducto(string precioComoString, string cantidadComoString)
+        private bool AgregarProducto()
         {
             bool retorno = false;
-            decimal auxPrecio;
-            int auxCantidad;
-
-            if (decimal.TryParse(precioComoString, out auxPrecio)
-                && int.TryParse(cantidadComoString, out auxCantidad))
+            if(ValidarCampos())
             {
-                auxProducto.Precio = auxPrecio;
-                auxProducto.CantidadStock = auxCantidad;
-                auxProducto.Categoria = (eCategoriaProducto)cmb_categoria.SelectedIndex;
+                Producto auxProducto = new Producto(
+                    txt_nombre.Text, 
+                    (eCategoriaProducto) cmb_categoria.SelectedItem, 
+                    (eTipoProducto) cmb_tipo.SelectedItem, 
+                    (eMarcaProducto) cmb_marca.SelectedItem, 
+                    nud_precio.Value,
+                    (int) nud_cantidadStock.Value);
+
+                TiendaElectronica.ListaProductos.Add(auxProducto);
+
                 retorno = true;
             }
             else
             {
                 MessageBox.Show("Error. Se ingresaron datos no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             return retorno;
+        }
+
+        private bool ValidarCampos()
+        {
+            return !(   String.IsNullOrEmpty(this.txt_nombre.Text)
+                    ||  String.IsNullOrEmpty(this.cmb_categoria.Text) 
+                    ||  String.IsNullOrEmpty(this.cmb_tipo.Text)
+                    ||  String.IsNullOrEmpty(this.cmb_marca.Text) );
+        }
+
+        private bool ModificarProducto()
+        {
+
+            auxProducto.Precio = nud_precio.Value;
+            auxProducto.CantidadStock = (int) nud_cantidadStock.Value;
+            auxProducto.Categoria = (eCategoriaProducto)cmb_categoria.SelectedIndex;
+
+            return true; ;
         }
     }
 }

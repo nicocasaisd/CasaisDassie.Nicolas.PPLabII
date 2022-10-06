@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.btn_aceptar = new System.Windows.Forms.Button();
-            this.txt_precio = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.txt_cantidadStock = new System.Windows.Forms.TextBox();
             this.lbl_id = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.lbl_categoria = new System.Windows.Forms.Label();
@@ -43,6 +41,10 @@
             this.cmb_categoria = new System.Windows.Forms.ComboBox();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.cmb_marca = new System.Windows.Forms.ComboBox();
+            this.nud_precio = new System.Windows.Forms.NumericUpDown();
+            this.nud_cantidadStock = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_precio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadStock)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_aceptar
@@ -55,15 +57,9 @@
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
-            // txt_precio
-            // 
-            this.txt_precio.Location = new System.Drawing.Point(490, 85);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(100, 23);
-            this.txt_precio.TabIndex = 2;
-            // 
             // txt_id
             // 
+            this.txt_id.Enabled = false;
             this.txt_id.Location = new System.Drawing.Point(27, 85);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(55, 23);
@@ -75,13 +71,6 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(100, 23);
             this.txt_nombre.TabIndex = 2;
-            // 
-            // txt_cantidadStock
-            // 
-            this.txt_cantidadStock.Location = new System.Drawing.Point(606, 85);
-            this.txt_cantidadStock.Name = "txt_cantidadStock";
-            this.txt_cantidadStock.Size = new System.Drawing.Size(100, 23);
-            this.txt_cantidadStock.TabIndex = 2;
             // 
             // lbl_id
             // 
@@ -131,7 +120,7 @@
             // lbl_precio
             // 
             this.lbl_precio.AutoSize = true;
-            this.lbl_precio.Location = new System.Drawing.Point(522, 55);
+            this.lbl_precio.Location = new System.Drawing.Point(514, 55);
             this.lbl_precio.Name = "lbl_precio";
             this.lbl_precio.Size = new System.Drawing.Size(40, 15);
             this.lbl_precio.TabIndex = 3;
@@ -148,6 +137,7 @@
             // 
             // cmb_categoria
             // 
+            this.cmb_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_categoria.FormattingEnabled = true;
             this.cmb_categoria.Location = new System.Drawing.Point(194, 85);
             this.cmb_categoria.Name = "cmb_categoria";
@@ -156,6 +146,7 @@
             // 
             // cmb_tipo
             // 
+            this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo.FormattingEnabled = true;
             this.cmb_tipo.Location = new System.Drawing.Point(292, 85);
             this.cmb_tipo.Name = "cmb_tipo";
@@ -164,17 +155,44 @@
             // 
             // cmb_marca
             // 
+            this.cmb_marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_marca.FormattingEnabled = true;
             this.cmb_marca.Location = new System.Drawing.Point(390, 85);
             this.cmb_marca.Name = "cmb_marca";
             this.cmb_marca.Size = new System.Drawing.Size(92, 23);
             this.cmb_marca.TabIndex = 4;
             // 
+            // nud_precio
+            // 
+            this.nud_precio.Location = new System.Drawing.Point(488, 86);
+            this.nud_precio.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nud_precio.Name = "nud_precio";
+            this.nud_precio.Size = new System.Drawing.Size(98, 23);
+            this.nud_precio.TabIndex = 5;
+            // 
+            // nud_cantidadStock
+            // 
+            this.nud_cantidadStock.Location = new System.Drawing.Point(592, 86);
+            this.nud_cantidadStock.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.nud_cantidadStock.Name = "nud_cantidadStock";
+            this.nud_cantidadStock.Size = new System.Drawing.Size(98, 23);
+            this.nud_cantidadStock.TabIndex = 5;
+            // 
             // Frm_ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 235);
+            this.Controls.Add(this.nud_cantidadStock);
+            this.Controls.Add(this.nud_precio);
             this.Controls.Add(this.cmb_marca);
             this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.cmb_categoria);
@@ -187,13 +205,13 @@
             this.Controls.Add(this.lbl_id);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.txt_id);
-            this.Controls.Add(this.txt_cantidadStock);
-            this.Controls.Add(this.txt_precio);
             this.Controls.Add(this.btn_aceptar);
             this.MaximizeBox = false;
             this.Name = "Frm_ModificarProducto";
             this.Text = "Frm_ModificarProducto";
             this.Load += new System.EventHandler(this.Frm_ModificarProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_precio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,10 +220,8 @@
         #endregion
 
         private Button btn_aceptar;
-        private TextBox txt_precio;
         private TextBox txt_id;
         private TextBox txt_nombre;
-        private TextBox txt_cantidadStock;
         private Label lbl_id;
         private Label lbl_nombre;
         private Label lbl_categoria;
@@ -216,5 +232,7 @@
         private ComboBox cmb_categoria;
         private ComboBox cmb_tipo;
         private ComboBox cmb_marca;
+        private NumericUpDown nud_precio;
+        private NumericUpDown nud_cantidadStock;
     }
 }

@@ -140,7 +140,7 @@
             this.dgv_listaProductos.Name = "dgv_listaProductos";
             this.dgv_listaProductos.RowTemplate.Height = 25;
             this.dgv_listaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_listaProductos.Size = new System.Drawing.Size(688, 201);
+            this.dgv_listaProductos.Size = new System.Drawing.Size(716, 201);
             this.dgv_listaProductos.TabIndex = 5;
             this.dgv_listaProductos.SelectionChanged += new System.EventHandler(this.dgv_listaProductos_SelectionChanged);
             // 

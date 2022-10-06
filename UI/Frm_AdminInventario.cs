@@ -168,7 +168,8 @@ namespace UI
 
         private void ActualizarListaInventario()
         {
-            this.listaInventario.Union(TiendaElectronica.ListaProductos);
+            this.listaInventario.Clear();
+            this.listaInventario.AddRange(TiendaElectronica.ListaProductos);
             dgv_listaProductos.DataSource = null;
             dgv_listaProductos.DataSource = this.listaInventario;
         }

@@ -20,7 +20,7 @@ namespace UI
 
         private void btn_inventario_Click(object sender, EventArgs e)
         {
-            Frm_AdminInventario frm_AdminInventario = new Frm_AdminInventario();
+            Frm_AdminInventario frm_AdminInventario = new Frm_AdminInventario(Frm_AdminInventario.eAdminInventarioOpcion.ModificarProducto);
             frm_AdminInventario.Show();
         }
 

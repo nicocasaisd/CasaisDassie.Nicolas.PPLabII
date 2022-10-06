@@ -40,7 +40,7 @@ namespace UI
 
         private void llb_SeleccionarProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Frm_AdminInventario frm_Admin = new Frm_AdminInventario();
+            Frm_AdminInventario frm_Admin = new Frm_AdminInventario(Frm_AdminInventario.eAdminInventarioOpcion.SeleccionarProducto);
             frm_Admin.ShowDialog();
             // cargo el producto
             if(frm_Admin.IdProducto >= 1000)

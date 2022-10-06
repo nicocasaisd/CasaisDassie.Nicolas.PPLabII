@@ -17,6 +17,13 @@ namespace UI
         int idProducto = -1;
         Producto auxProducto;
         List<Producto> listaInventario;
+        eAdminInventarioOpcion eOpcion;
+
+        public enum eAdminInventarioOpcion
+        {
+            SeleccionarProducto,
+            ModificarProducto
+        }
 
         #region CONSTRUCTORES
 
@@ -25,6 +32,11 @@ namespace UI
             InitializeComponent();
             this.auxProducto = new Producto();
             this.listaInventario = new List<Producto>(TiendaElectronica.ListaProductos);
+        }
+
+        public Frm_AdminInventario(eAdminInventarioOpcion opcion) : this()
+        {
+            this.eOpcion = opcion;
         }
 
         #endregion
@@ -43,14 +55,17 @@ namespace UI
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
 
-            if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio))
+            if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio) && this.eOpcion == eAdminInventarioOpcion.ModificarProducto)
             {
-               
+                btn_AgregarProducto.Visible = true;
+                btn_ModificarProducto.Visible = true;
+                btn_SeleccionarProducto.Visible = false;
             }
-            else if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))
+            else if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor) || this.eOpcion == eAdminInventarioOpcion.SeleccionarProducto)
             {
                 btn_AgregarProducto.Visible = false;
                 btn_ModificarProducto.Visible = false;
+                btn_SeleccionarProducto.Visible = true;
             }
         }
 
@@ -71,9 +86,6 @@ namespace UI
             }
             // seteo la id
             this.idProducto = auxProducto.Id;
-            // muestro en labels
-            lbl_idProducto.Text = auxProducto.Id.ToString();
-            lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
         }
 
         private void btn_ModificarProducto_Click(object sender, EventArgs e)

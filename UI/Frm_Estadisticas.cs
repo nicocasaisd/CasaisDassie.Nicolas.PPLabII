@@ -90,26 +90,47 @@ namespace UI
         private void CalcularMasVendido()
         {
             int idProducto;
+            string nombreProducto = "";
+            decimal cantidadVendida;
+            decimal cantidadMaxima = 0;
+            string productoMasVendido = "";
 
             foreach(Producto producto in TiendaElectronica.ListaProductos)
             {
+                cantidadVendida = 0;
+
                 if(producto.Categoria == this.categoria)
                 {
                     idProducto = producto.Id;
+                    nombreProducto = producto.Nombre;
 
                     foreach (Factura item in TiendaElectronica.ListaFacturas)
                     {
                         foreach (Tuple<Producto, decimal, string> tupla in item.ListaTuplaCarrito)
                         {
-
+                            Producto auxProducto = tupla.Item1;
+                            decimal auxCantidad = tupla.Item2;
+                            // si es el mismo producto de la categoria que itero
+                            if (auxProducto.Id == idProducto)
+                            {
+                                cantidadVendida += auxCantidad;
+                            }
                         }
                     }
 
 
                 }
 
-
+                // 
+                if(cantidadVendida > cantidadMaxima)
+                {
+                    productoMasVendido = nombreProducto;
+                }
             }
+
+            // asigno el campo
+
+            txt_productoMasVendido.Text = productoMasVendido;
             
         }
 

@@ -11,7 +11,6 @@
         private eCategoriaProducto categoria;
         private eTipoProducto tipo;
         private eMarcaProducto marca;
-        //private string descripcion;
         private decimal precio;
         private int cantidadStock;
 
@@ -55,6 +54,9 @@
         public decimal Precio { get => precio; set => precio = value; }
         public int CantidadStock { get => cantidadStock; set => cantidadStock = value; }
 
+        /// <summary>
+        /// Devuelve un string compuesto con información sobre el Producto
+        /// </summary>
         public string NombreLista
         {
             get { return this.Nombre + this.Marca + this.Categoria;  }

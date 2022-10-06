@@ -131,6 +131,10 @@
             this.dgv_listaProductos.AllowUserToDeleteRows = false;
             this.dgv_listaProductos.AllowUserToResizeColumns = false;
             this.dgv_listaProductos.AllowUserToResizeRows = false;
+            this.dgv_listaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_listaProductos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgv_listaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listaProductos.Location = new System.Drawing.Point(12, 89);
             this.dgv_listaProductos.Name = "dgv_listaProductos";
@@ -158,6 +162,7 @@
             this.btn_AgregarProducto.TabIndex = 6;
             this.btn_AgregarProducto.Text = "Agregar producto";
             this.btn_AgregarProducto.UseVisualStyleBackColor = true;
+            this.btn_AgregarProducto.Click += new System.EventHandler(this.btn_AgregarProducto_Click);
             // 
             // Frm_AdminInventario
             // 

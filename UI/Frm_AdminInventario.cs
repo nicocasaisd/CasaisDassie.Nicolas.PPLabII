@@ -146,5 +146,10 @@ namespace UI
 
             }
         }
+
+        private void btn_AgregarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

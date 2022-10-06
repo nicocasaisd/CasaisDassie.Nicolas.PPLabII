@@ -32,13 +32,13 @@ namespace UI
             {
                 Frm_Venta frm_Venta = new Frm_Venta();
                 frm_Venta.Show();
-                this.Close();
+                this.Hide();
             }
             else if (LoguearContador(this.txt_usuario.Text, this.txt_password.Text))
             {
                 Frm_Estadisticas frm_Estadisticas = new Frm_Estadisticas();
                 frm_Estadisticas.Show();
-                this.Close();
+                this.Hide();
                 //MessageBox.Show("Contador");
             }
         }

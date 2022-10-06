@@ -30,15 +30,15 @@
         {
             this.btn_Salir = new System.Windows.Forms.Button();
             this.gpb_ventasTotales = new System.Windows.Forms.GroupBox();
-            this.txt_ventasTotales = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_ventasTotales = new System.Windows.Forms.TextBox();
             this.gpb_datosCategoria = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb_categoria = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_promedioDeGanancia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_productoMasVendido = new System.Windows.Forms.TextBox();
-            this.txt_promedioDeGanancia = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmb_categoria = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.gpb_totalGanancia = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_totalGanancia = new System.Windows.Forms.TextBox();
@@ -69,14 +69,6 @@
             this.gpb_ventasTotales.TabStop = false;
             this.gpb_ventasTotales.Text = "Total de Ventas";
             // 
-            // txt_ventasTotales
-            // 
-            this.txt_ventasTotales.Enabled = false;
-            this.txt_ventasTotales.Location = new System.Drawing.Point(103, 40);
-            this.txt_ventasTotales.Name = "txt_ventasTotales";
-            this.txt_ventasTotales.Size = new System.Drawing.Size(149, 23);
-            this.txt_ventasTotales.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -85,6 +77,14 @@
             this.label1.Size = new System.Drawing.Size(65, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cant total: ";
+            // 
+            // txt_ventasTotales
+            // 
+            this.txt_ventasTotales.Enabled = false;
+            this.txt_ventasTotales.Location = new System.Drawing.Point(103, 40);
+            this.txt_ventasTotales.Name = "txt_ventasTotales";
+            this.txt_ventasTotales.Size = new System.Drawing.Size(149, 23);
+            this.txt_ventasTotales.TabIndex = 0;
             // 
             // gpb_datosCategoria
             // 
@@ -100,6 +100,42 @@
             this.gpb_datosCategoria.TabIndex = 6;
             this.gpb_datosCategoria.TabStop = false;
             this.gpb_datosCategoria.Text = "Datos por categoría";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(83, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Elija categoría:";
+            // 
+            // cmb_categoria
+            // 
+            this.cmb_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_categoria.FormattingEnabled = true;
+            this.cmb_categoria.Location = new System.Drawing.Point(172, 126);
+            this.cmb_categoria.Name = "cmb_categoria";
+            this.cmb_categoria.Size = new System.Drawing.Size(149, 23);
+            this.cmb_categoria.TabIndex = 4;
+            this.cmb_categoria.SelectedIndexChanged += new System.EventHandler(this.cmb_categoria_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Promedio de ganancia:";
+            // 
+            // txt_promedioDeGanancia
+            // 
+            this.txt_promedioDeGanancia.Enabled = false;
+            this.txt_promedioDeGanancia.Location = new System.Drawing.Point(172, 83);
+            this.txt_promedioDeGanancia.Name = "txt_promedioDeGanancia";
+            this.txt_promedioDeGanancia.Size = new System.Drawing.Size(149, 23);
+            this.txt_promedioDeGanancia.TabIndex = 2;
             // 
             // label2
             // 
@@ -117,40 +153,6 @@
             this.txt_productoMasVendido.Name = "txt_productoMasVendido";
             this.txt_productoMasVendido.Size = new System.Drawing.Size(149, 23);
             this.txt_productoMasVendido.TabIndex = 0;
-            // 
-            // txt_promedioDeGanancia
-            // 
-            this.txt_promedioDeGanancia.Enabled = false;
-            this.txt_promedioDeGanancia.Location = new System.Drawing.Point(172, 83);
-            this.txt_promedioDeGanancia.Name = "txt_promedioDeGanancia";
-            this.txt_promedioDeGanancia.Size = new System.Drawing.Size(149, 23);
-            this.txt_promedioDeGanancia.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Promedio de ganancia:";
-            // 
-            // cmb_categoria
-            // 
-            this.cmb_categoria.FormattingEnabled = true;
-            this.cmb_categoria.Location = new System.Drawing.Point(172, 126);
-            this.cmb_categoria.Name = "cmb_categoria";
-            this.cmb_categoria.Size = new System.Drawing.Size(149, 23);
-            this.cmb_categoria.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Elija categoría:";
             // 
             // gpb_totalGanancia
             // 
@@ -191,6 +193,7 @@
             this.Controls.Add(this.btn_Salir);
             this.Name = "Frm_Estadisticas";
             this.Text = "Frm_Estadisticas";
+            this.Load += new System.EventHandler(this.Frm_Estadisticas_Load);
             this.gpb_ventasTotales.ResumeLayout(false);
             this.gpb_ventasTotales.PerformLayout();
             this.gpb_datosCategoria.ResumeLayout(false);

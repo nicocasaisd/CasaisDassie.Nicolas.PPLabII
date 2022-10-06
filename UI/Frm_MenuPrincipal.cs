@@ -13,23 +13,9 @@ namespace UI
 {
     public partial class Frm_MenuPrincipal : Form
     {
-        //private Duenio auxDuenio;
-        public Usuario usuario;
-
         public Frm_MenuPrincipal()
         {
-            usuario = new Duenio();
             InitializeComponent();
-        }
-
-        public Frm_MenuPrincipal(Duenio auxDuenio) :this()
-        {
-            this.usuario = auxDuenio;
-        }
-
-        public Frm_MenuPrincipal(Vendedor auxVendedor) : this()
-        {
-            this.usuario = auxVendedor;
         }
 
         private void btn_inventario_Click(object sender, EventArgs e)

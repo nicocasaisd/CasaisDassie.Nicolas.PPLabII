@@ -18,6 +18,7 @@ namespace Entidades
         private static List<Vendedor> listaVendedores;
         private static List<Duenio> listaDuenios;
         private static List<Producto> listaProductos;
+        private static List<Contador> listaContadores;
 
         #endregion
 
@@ -32,6 +33,7 @@ namespace Entidades
             listaDuenios = new List<Duenio>();
             listaProductos = new List<Producto>();
             listaFacturas = new List<Factura>();
+            listaContadores = new List<Contador>();
             HardcodearDatos();
         }
 
@@ -51,6 +53,11 @@ namespace Entidades
         public static List<Factura> ListaFacturas
         {
             get { return listaFacturas; }
+        }
+
+        public static List<Contador> ListaContadores
+        {
+            get { return listaContadores; }
         }
 
         public static Usuario UsuarioLogueado
@@ -106,6 +113,27 @@ namespace Entidades
         }
 
         /// <summary>
+        /// Devuelve el índice del vendedor a loguear, en caso de que no exista devuelve -1.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        public static int ValidarLoginContador(string email, string pass)
+        {
+            int index = 0;
+
+            foreach (Contador auxContador in listaContadores)
+            {
+                if (auxContador.ValidarContador(email, pass))
+                {
+                    return index;
+                }
+                index++;
+            }
+            return -1;
+        }
+
+        /// <summary>
         /// Devuelve el objeto Duenio de la lista de dueños.
         /// </summary>
         /// <param name="index"></param>
@@ -123,6 +151,16 @@ namespace Entidades
         public static Vendedor ObtenerVendedor(int index)
         {
             return listaVendedores[index];
+        }
+
+        /// <summary>
+        /// Devuelve el objeto Vendedor de la lista de vendedores.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public static Contador ObtenerContador(int index)
+        {
+            return listaContadores[index];
         }
 
         /// <summary>
@@ -190,6 +228,11 @@ namespace Entidades
         private static void HardcodearDuenios()
         {
             listaDuenios.Add(new Duenio("fernando@electronicacasais.com", "asd123"));
+        }
+
+        private static void HardcodearContadores()
+        {
+            listaContadores.Add(new Contador("contador@electronicacasais.com", "asd123"));
         }
 
         /// <summary>

@@ -34,6 +34,12 @@ namespace UI
                 frm_Venta.Show();
                 this.Close();
             }
+            else if (LoguearContador(this.txt_usuario.Text, this.txt_password.Text))
+            {
+                Frm_Venta frm_Venta = new Frm_Venta();
+                frm_Venta.Show();
+                this.Close();
+            }
         }
 
         private void btn_AutoCompletarDuenio_Click(object sender, EventArgs e)
@@ -81,6 +87,24 @@ namespace UI
             {
                 Vendedor auxVendedor = TiendaElectronica.ObtenerVendedor(indexVendedor);
                 TiendaElectronica.AsignarUsuarioLogueado(auxVendedor);
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Si puede loguear el Vendedor devuelve true y asigna el indice de lista Vendedor a su atributo
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        private bool LoguearContador(string usuario, string pass)
+        {
+            int indexContador = TiendaElectronica.ValidarLoginContador(this.txt_usuario.Text, this.txt_password.Text);
+            if (indexContador > -1)
+            {
+                Contador auxContador = TiendaElectronica.ObtenerContador(indexContador);
+                TiendaElectronica.AsignarUsuarioLogueado(auxContador);
                 return true;
             }
             return false;

@@ -55,6 +55,8 @@ namespace UI
 
         #endregion
 
+        #region METODOS FORM
+
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
             this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
@@ -83,6 +85,11 @@ namespace UI
             cmb_categoria.DataSource = eCategoria;
         }
 
+        /// <summary>
+        /// Asigna el ID del producto al atributo idProducto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
         {
             if (auxProducto is not null)
@@ -92,6 +99,11 @@ namespace UI
             this.Hide();
         }
 
+        /// <summary>
+        /// Asigna el objeto Producto seleccionado al atributo auxProducto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgv_listaProductos_SelectionChanged(object sender, EventArgs e)
         {
             if(dgv_listaProductos.SelectedRows.Count > 0)
@@ -102,6 +114,11 @@ namespace UI
             this.idProducto = auxProducto.Id;
         }
 
+        /// <summary>
+        /// Instancia el Form para Modificar el producto y espera la respuesta para hacerlo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ModificarProducto_Click(object sender, EventArgs e)
         {
             if (dgv_listaProductos.SelectedRows is not null)
@@ -121,6 +138,11 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Instancia el Form para Agregar el producto  y espera la respuesta para hacerlo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_AgregarProducto_Click(object sender, EventArgs e)
         {
             if (dgv_listaProductos.SelectedRows is not null)
@@ -140,6 +162,10 @@ namespace UI
             }
         }
 
+        #endregion
+
+        #region METODOS
+
         private void ActualizarListaInventario()
         {
             this.listaInventario.Clear();
@@ -154,6 +180,11 @@ namespace UI
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
         }
 
+        /// <summary>
+        /// Filtra la listaInventario que se muestra en el DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             // limpio la lista actual
@@ -171,8 +202,8 @@ namespace UI
                 }
                 ActualizarDataGridList();
             }
-
         }
 
+        #endregion
     }
 }

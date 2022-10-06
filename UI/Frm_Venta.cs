@@ -14,14 +14,22 @@ namespace UI
 {
     public partial class Frm_Venta : Form
     {
+        #region ATRIBUTOS
         const decimal recargoCredito = 0.10M;
         List<Tuple<Producto, decimal, string>> listaTuplaCarrito;
+        #endregion
+
+        #region CONSTRUCTORES
 
         public Frm_Venta()
         {
             InitializeComponent();
             listaTuplaCarrito = new List<Tuple<Producto, decimal, string>>();
         }
+
+        #endregion
+
+        #region METODOS FORM
 
         private void Frm_Venta_Load(object sender, EventArgs e)
         {
@@ -44,6 +52,11 @@ namespace UI
             lst_carrito.DataSource = listaTuplaCarrito;
         }
 
+        /// <summary>
+        /// Instancia el Form para Seleccionar Producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void llb_SeleccionarProducto_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Frm_AdminInventario frm_Admin = new Frm_AdminInventario(Frm_AdminInventario.eAdminInventarioOpcion.SeleccionarProducto);
@@ -59,6 +72,11 @@ namespace UI
             
         }
 
+        /// <summary>
+        /// Valida la cantidad, el stock y si ya existe en la lista, y luego agrega la tupla Producto-Cantidad-String a la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_AgregarProducto_Click(object sender, EventArgs e)
         {
             decimal cantidad = this.nud_cantidad.Value;
@@ -91,23 +109,6 @@ namespace UI
             }
         }
 
-        private bool ExisteStockDeProducto(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
-        {
-            decimal cantidad = nud_cantidad.Value;
-            decimal cantidadCargadaEnCarrito = 0;
-            int indiceProductoEnCarrito = ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito);
-            
-            if (indiceProductoEnCarrito != -1)
-            {
-                cantidadCargadaEnCarrito = listaTuplaCarrito[indiceProductoEnCarrito].Item2;
-            }
-            if( auxProducto.CantidadStock >= (cantidad + cantidadCargadaEnCarrito))
-            {
-                return true;
-            }
-
-            return false;
-        }
 
         private void btn_RemoverProducto_Click(object sender, EventArgs e)
         {
@@ -117,8 +118,6 @@ namespace UI
                 ActualizarLista();
             }
         }
-
-
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
@@ -130,6 +129,11 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Revisa que todos los campos estén completados, instancia una Factura y abre el modal Factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
             // chequeo si hay campos vacíos
@@ -155,23 +159,71 @@ namespace UI
                 frm_Factura.Show();
                 // limpio los datos
                 this.LimpiarCampos();
-
             }
-
         }
 
+        /// <summary>
+        /// Actualiza el total cuando se cambia el medio de pago
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmb_medioDePago_SelectedIndexChanged(object sender, EventArgs e)
         {
             // actualizo txt_total
             txt_total.Text = CalcularTotal(listaTuplaCarrito).ToString();
         }
+
+        /// <summary>
+        /// Instancia el Form Historial de Facturas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void llb_historialDeFacturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Frm_HistorialDeFacturas frm_historial = new Frm_HistorialDeFacturas();
             frm_historial.ShowDialog();
         }
 
+        /// <summary>
+        /// Cierra la ventana y abre una ventana de Login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Frm_Login frm_Login = new Frm_Login();
+            frm_Login.Show();
+        }
+
+        #endregion
+
         #region METODOS LÓGICA
+
+
+        /// <summary>
+        /// Revisa si hay stock suficiente del producto para la cantidad ingresada
+        /// </summary>
+        /// <param name="auxProducto"></param>
+        /// <param name="listaTuplaCarrito"></param>
+        /// <returns></returns>
+        private bool ExisteStockDeProducto(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
+        {
+            decimal cantidad = nud_cantidad.Value;
+            decimal cantidadCargadaEnCarrito = 0;
+            int indiceProductoEnCarrito = ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito);
+
+            if (indiceProductoEnCarrito != -1)
+            {
+                cantidadCargadaEnCarrito = listaTuplaCarrito[indiceProductoEnCarrito].Item2;
+            }
+            if (auxProducto.CantidadStock >= (cantidad + cantidadCargadaEnCarrito))
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         private void LimpiarCampos()
         {
@@ -196,6 +248,11 @@ namespace UI
             lst_carrito.DisplayMember = "Item3";
         }
 
+        /// <summary>
+        /// Calcula el valor total de los Productos en la lista Carrito
+        /// </summary>
+        /// <param name="listaTuplaCarrito"></param>
+        /// <returns></returns>
         private decimal CalcularTotal(List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             decimal subtotal = 0;
@@ -216,6 +273,12 @@ namespace UI
             return total;
         }
 
+        /// <summary>
+        /// Devuelve true si el producto ya existe en el carrito
+        /// </summary>
+        /// <param name="auxProducto"></param>
+        /// <param name="listaTuplaCarrito"></param>
+        /// <returns></returns>
         private bool ExisteProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             if(ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito) != -1)
@@ -225,6 +288,13 @@ namespace UI
 
             return false;
         }
+
+        /// <summary>
+        /// Devuelve el índice del producto en la lista Carrito, si no existe devuelve -1
+        /// </summary>
+        /// <param name="auxProducto"></param>
+        /// <param name="listaTuplaCarrito"></param>
+        /// <returns></returns>
         private int ObtenerIndiceProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             for (int i = 0; i < listaTuplaCarrito.Count; i++)
@@ -237,18 +307,35 @@ namespace UI
             return -1;
         }
 
+        /// <summary>
+        /// Actualiza la cantidad del producto en la lista Carrito cuando se agrega un producto que ya estaba.
+        /// </summary>
+        /// <param name="indice"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="listaTuplaCarrito"></param>
+        /// <param name="auxProducto"></param>
         private void ActualizarProductoEnCarrito(int indice, decimal cantidad, List<Tuple<Producto, decimal, string>> listaTuplaCarrito, Producto auxProducto)
         {
             cantidad += this.listaTuplaCarrito[indice].Item2;
             this.listaTuplaCarrito[indice] = Tuple.Create(auxProducto, cantidad, FormatearProductoEnCarrito(auxProducto, cantidad));
         }
 
+        /// <summary>
+        /// Formatea el string para que aparezca en la ListBox
+        /// </summary>
+        /// <param name="auxProducto"></param>
+        /// <param name="cantidad"></param>
+        /// <returns></returns>
         private string FormatearProductoEnCarrito(Producto auxProducto, decimal cantidad)
         {
             //return $"{auxProducto, -20}  {cantidad, 20}";
             return String.Format("{0, -30}  {1, 80}", auxProducto, cantidad);
         }
 
+        /// <summary>
+        /// Reproduce un sonido
+        /// </summary>
+        /// <param name="sonido"></param>
         public void Sonido(string sonido)
         {
             string path = "../../../../media/" + sonido;
@@ -261,11 +348,5 @@ namespace UI
 
         #endregion
 
-        private void btn_Salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Frm_Login frm_Login = new Frm_Login();
-            frm_Login.Show();
-        }
     }
 }

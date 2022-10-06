@@ -211,7 +211,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_ModificarProducto";
-            this.Text = "Frm_ModificarProducto";
             this.Load += new System.EventHandler(this.Frm_ModificarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_precio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadStock)).EndInit();

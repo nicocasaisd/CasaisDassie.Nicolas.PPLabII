@@ -129,7 +129,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_AdminInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_AdminInventario";
+            this.Text = "Administrador de inventario";
             this.Load += new System.EventHandler(this.Frm_AdminInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();
             this.ResumeLayout(false);

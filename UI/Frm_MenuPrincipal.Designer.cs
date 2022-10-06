@@ -36,6 +36,7 @@
             // 
             // btn_inventario
             // 
+            this.btn_inventario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_inventario.Location = new System.Drawing.Point(106, 105);
             this.btn_inventario.Name = "btn_inventario";
             this.btn_inventario.Size = new System.Drawing.Size(155, 120);
@@ -46,9 +47,10 @@
             // 
             // btn_ventas
             // 
-            this.btn_ventas.Location = new System.Drawing.Point(394, 105);
+            this.btn_ventas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_ventas.Location = new System.Drawing.Point(348, 105);
             this.btn_ventas.Name = "btn_ventas";
-            this.btn_ventas.Size = new System.Drawing.Size(184, 120);
+            this.btn_ventas.Size = new System.Drawing.Size(154, 120);
             this.btn_ventas.TabIndex = 1;
             this.btn_ventas.Text = "Ventas";
             this.btn_ventas.UseVisualStyleBackColor = true;
@@ -58,7 +60,7 @@
             // 
             this.lbl_nombreUsuario.AutoSize = true;
             this.lbl_nombreUsuario.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nombreUsuario.Location = new System.Drawing.Point(62, 24);
+            this.lbl_nombreUsuario.Location = new System.Drawing.Point(12, 23);
             this.lbl_nombreUsuario.Name = "lbl_nombreUsuario";
             this.lbl_nombreUsuario.Size = new System.Drawing.Size(94, 40);
             this.lbl_nombreUsuario.TabIndex = 2;
@@ -68,13 +70,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(660, 298);
             this.Controls.Add(this.lbl_nombreUsuario);
             this.Controls.Add(this.btn_ventas);
             this.Controls.Add(this.btn_inventario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_MenuPrincipal";
-            this.Text = "Frm_MenuPrincipal";
+            this.Text = "Menú principal";
             this.Load += new System.EventHandler(this.Frm_MenuPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

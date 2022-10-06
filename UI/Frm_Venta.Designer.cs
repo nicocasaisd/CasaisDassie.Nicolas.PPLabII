@@ -372,7 +372,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Venta";
-            this.Text = "Frm_Venta";
+            this.Text = "Administrador de Venta";
             this.Load += new System.EventHandler(this.Frm_Venta_Load);
             this.gpb_detalle.ResumeLayout(false);
             this.gpb_detalle.PerformLayout();

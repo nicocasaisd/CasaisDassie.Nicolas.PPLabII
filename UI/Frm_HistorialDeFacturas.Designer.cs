@@ -58,7 +58,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_HistorialDeFacturas";
-            this.Text = "Frm_HistorialDeFacturas";
+            this.Text = "Historial de Facturas";
             this.Load += new System.EventHandler(this.Frm_HistorialDeFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historialDeFacturas)).EndInit();
             this.ResumeLayout(false);

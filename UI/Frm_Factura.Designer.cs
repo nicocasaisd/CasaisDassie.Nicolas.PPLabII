@@ -296,7 +296,7 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Factura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Factura";
+            this.Text = "Modal de Factura";
             this.Load += new System.EventHandler(this.Frm_Factura_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -60,6 +60,7 @@ namespace UI
 
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
+                this.Text = "Modificar Producto";
                 // no enabled
                 txt_id.Enabled = false;
                 txt_nombre.Enabled = false;
@@ -78,7 +79,7 @@ namespace UI
             }
             else if(this.opcion == eModificarProductoOpcion.AgregarProducto)
             {
-
+                this.Text = "Agregar Producto";
             }
             
         }

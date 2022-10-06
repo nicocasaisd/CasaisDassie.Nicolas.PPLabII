@@ -36,9 +36,10 @@ namespace UI
             }
             else if (LoguearContador(this.txt_usuario.Text, this.txt_password.Text))
             {
-                Frm_Venta frm_Venta = new Frm_Venta();
-                frm_Venta.Show();
-                this.Close();
+                //Frm_Venta frm_Venta = new Frm_Venta();
+                //frm_Venta.Show();
+                //this.Close();
+                MessageBox.Show("Contador");
             }
         }
 

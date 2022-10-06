@@ -181,6 +181,7 @@ namespace Entidades
             HardcodearVendedores();
             HardcodearDuenios();
             HardcodearProductos();
+            HardcodearContadores();
         }
 
         private static void HardcodearProductos()

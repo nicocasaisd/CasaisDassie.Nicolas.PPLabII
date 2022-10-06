@@ -14,6 +14,7 @@ namespace UI
     public partial class Frm_Estadisticas : Form
     {
         int totalVentas;
+        decimal totalGanacia = 0;
         
 
 
@@ -45,7 +46,22 @@ namespace UI
         private void CalcularDatos()
         {
             CalcularTotalVentas();
+            CalcularTotalGanancia();
+            CalcularMasVendido();
+        }
 
+        private void CalcularMasVendido()
+        {
+            
+        }
+
+        private void CalcularTotalGanancia()
+        {
+            foreach(Factura item in TiendaElectronica.ListaFacturas)
+            {
+                totalGanacia += item.Total;
+            }
+            txt_totalGanancia.Text = totalGanacia.ToString();
         }
 
         private void CalcularTotalVentas()

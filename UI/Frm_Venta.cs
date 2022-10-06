@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -67,6 +68,7 @@ namespace UI
                 // me fijo si ya existe y lo agrego a la lista
                 if(!ExisteStockDeProducto(auxProducto, this.listaTuplaCarrito))
                 {
+                    Sonido("chord.wav");
                     MessageBox.Show("No hay stock suficiente del producto que quiere agregar.", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
@@ -79,6 +81,7 @@ namespace UI
                 {
                     this.listaTuplaCarrito.Add(Tuple.Create(auxProducto, cantidad, FormatearProductoEnCarrito(auxProducto, cantidad)));
                 }
+                
                 // actualiza el DataSource de lst_carrito para que muestre los valores
                 ActualizarLista();
             }
@@ -144,6 +147,7 @@ namespace UI
                 Factura nuevaFactura = new Factura(cliente, fecha, puntoDeVenta, nroDeFactura, medioDePago, total, this.listaTuplaCarrito);
                 // instancio un Frm_Factura
                 Frm_Factura frm_Factura = new Frm_Factura(nuevaFactura);
+                Sonido("add.wav");
                 frm_Factura.Show();
                 // limpio los datos
                 this.LimpiarCampos();
@@ -156,6 +160,11 @@ namespace UI
         {
             // actualizo txt_total
             txt_total.Text = CalcularTotal(listaTuplaCarrito).ToString();
+        }
+        private void llb_historialDeFacturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Frm_HistorialDeFacturas frm_historial = new Frm_HistorialDeFacturas();
+            frm_historial.ShowDialog();
         }
 
         #region METODOS LÓGICA
@@ -236,17 +245,17 @@ namespace UI
             return String.Format("{0, -30}  {1, 80}", auxProducto, cantidad);
         }
 
-
+        public void Sonido(string sonido)
+        {
+            string path = "../../../../media/" + sonido;
+            SoundPlayer spl = new SoundPlayer(path);
+            spl.Play();
+        }
 
 
 
 
         #endregion
 
-        private void llb_historialDeFacturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Frm_HistorialDeFacturas frm_historial = new Frm_HistorialDeFacturas();
-            frm_historial.ShowDialog();
-        }
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -125,7 +126,7 @@ namespace UI
                 // Chequeo respuesta
                 if (frm_Modificar.DialogResult == DialogResult.OK)
                 {
-                    MessageBox.Show("Se ha agregado el producto");
+                    MessageBox.Show("Se ha agregado el producto");    
                 }
                 // Actualizo la lista
                 ActualizarListaInventario();
@@ -167,5 +168,6 @@ namespace UI
             }
 
         }
+
     }
 }

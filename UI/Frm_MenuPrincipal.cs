@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,14 @@ namespace UI
         {
             this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             this.lbl_nombreUsuario.Text = "Bienvenido " + TiendaElectronica.UsuarioLogueado.Email;
+            Sonido("ding.wav");
+        }
+
+        public void Sonido(string sonido)
+        {
+            string path = "../../../../media/" + sonido;
+            SoundPlayer spl = new SoundPlayer(path);
+            spl.Play();
         }
 
         private void btn_ventas_Click(object sender, EventArgs e)

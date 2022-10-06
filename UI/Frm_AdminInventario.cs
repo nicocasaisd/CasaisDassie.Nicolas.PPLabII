@@ -40,72 +40,9 @@ namespace UI
 
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
-            //this.dgv_listaProductos.DataSource = TiendaElectronica.ListaProductos;
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
-            this.dgv_listaProductos.Columns["categoria"].Visible = false;
         }
-
-        //private void lst_listaProductos_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    // lo mismo con dgv
-
-        //    // Obtener el item seleccionado actualmente
-        //    if(lst_listaProductos.SelectedItem != null)
-        //    {
-        //        Producto auxProducto = (Producto) lst_listaProductos.SelectedItem;
-        //        // Seteo valores
-        //        lbl_cantidadProducto.Text = auxProducto.CantidadStock.ToString();
-        //        lbl_precioProducto.Text = auxProducto.Precio.ToString();
-        //        lbl_idProducto.Text = auxProducto.Id.ToString();
-        //    }
-        //    else
-        //    {
-        //        // Seteo valores
-        //        lbl_cantidadProducto.Text = String.Empty;
-        //        lbl_precioProducto.Text = String.Empty;
-        //        lbl_idProducto.Text = String.Empty;
-        //    }
-
-
-
-        //}
-
-        //private void btn_cambiarPrecio_Click(object sender, EventArgs e)
-        //{
-        //    if(lst_listaProductos.SelectedIndex  >= 0)
-        //    {
-        //        // Obtengo el indice del producto seleccionado
-        //        int indexProducto = lst_listaProductos.SelectedIndex;
-        //        // Instancio el form
-        //        Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto, ModificarProductoOpcion.CambiarPrecio);
-        //        frm_Modificar.ShowDialog();
-
-        //        if(frm_Modificar.DialogResult == DialogResult.OK)
-        //        {
-        //            MessageBox.Show("Se ha modificado el precio de un producto");
-        //            lst_listaProductos.ClearSelected();
-        //        }
-        //    }
-        //}
-
-        //private void btn_cambiarCantidad_Click(object sender, EventArgs e)
-        //{
-        //    if (lst_listaProductos.SelectedIndex >= 0)
-        //    {
-        //        // Obtengo el indice del producto seleccionado
-        //        int indexProducto = lst_listaProductos.SelectedIndex;
-        //        // Instancio el form
-        //        Frm_ModificarProducto frm_Modificar = new Frm_ModificarProducto(indexProducto, ModificarProductoOpcion.CambiarCantidad);
-        //        frm_Modificar.ShowDialog();
-        //        // Chequeo respuesta
-        //        if (frm_Modificar.DialogResult == DialogResult.OK)
-        //        {
-        //            MessageBox.Show("Se ha modificado el stock de un producto");
-        //            lst_listaProductos.ClearSelected();
-        //        }
-        //    }
-        //}
 
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)
         {
@@ -170,8 +107,9 @@ namespace UI
         {
             this.listaInventario.Clear();
             this.listaInventario.AddRange(TiendaElectronica.ListaProductos);
-            dgv_listaProductos.DataSource = null;
-            dgv_listaProductos.DataSource = this.listaInventario;
+            this.dgv_listaProductos.DataSource = null;
+            this.dgv_listaProductos.DataSource = this.listaInventario;
+            this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
         }
 
     }

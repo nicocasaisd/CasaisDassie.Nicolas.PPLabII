@@ -49,7 +49,7 @@
             // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Location = new System.Drawing.Point(576, 183);
+            this.btn_aceptar.Location = new System.Drawing.Point(615, 153);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_aceptar.TabIndex = 0;
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 235);
+            this.ClientSize = new System.Drawing.Size(718, 195);
             this.Controls.Add(this.nud_cantidadStock);
             this.Controls.Add(this.nud_precio);
             this.Controls.Add(this.cmb_marca);

@@ -34,6 +34,7 @@
             this.btn_AgregarProducto = new System.Windows.Forms.Button();
             this.cmb_categoria = new System.Windows.Forms.ComboBox();
             this.btn_buscar = new System.Windows.Forms.Button();
+            this.lbl_filtrar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,21 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
+            // lbl_filtrar
+            // 
+            this.lbl_filtrar.AutoSize = true;
+            this.lbl_filtrar.Location = new System.Drawing.Point(439, 11);
+            this.lbl_filtrar.Name = "lbl_filtrar";
+            this.lbl_filtrar.Size = new System.Drawing.Size(113, 15);
+            this.lbl_filtrar.TabIndex = 9;
+            this.lbl_filtrar.Text = "Filtrar por categoría:";
+            // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 337);
+            this.Controls.Add(this.lbl_filtrar);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.cmb_categoria);
             this.Controls.Add(this.btn_AgregarProducto);
@@ -119,6 +130,7 @@
             this.Load += new System.EventHandler(this.Frm_AdminInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -129,5 +141,6 @@
         private Button btn_AgregarProducto;
         private ComboBox cmb_categoria;
         private Button btn_buscar;
+        private Label lbl_filtrar;
     }
 }

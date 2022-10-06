@@ -43,6 +43,15 @@ namespace UI
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
 
+            if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio))
+            {
+               
+            }
+            else if (TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))
+            {
+                btn_AgregarProducto.Visible = false;
+                btn_ModificarProducto.Visible = false;
+            }
         }
 
         private void btn_SeleccionarProducto_Click(object sender, EventArgs e)

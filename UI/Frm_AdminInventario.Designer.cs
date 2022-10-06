@@ -117,7 +117,7 @@
             // 
             // btn_SeleccionarProducto
             // 
-            this.btn_SeleccionarProducto.Location = new System.Drawing.Point(202, 305);
+            this.btn_SeleccionarProducto.Location = new System.Drawing.Point(603, 296);
             this.btn_SeleccionarProducto.Name = "btn_SeleccionarProducto";
             this.btn_SeleccionarProducto.Size = new System.Drawing.Size(149, 33);
             this.btn_SeleccionarProducto.TabIndex = 4;
@@ -146,7 +146,7 @@
             // 
             // btn_ModificarProducto
             // 
-            this.btn_ModificarProducto.Location = new System.Drawing.Point(374, 305);
+            this.btn_ModificarProducto.Location = new System.Drawing.Point(307, 296);
             this.btn_ModificarProducto.Name = "btn_ModificarProducto";
             this.btn_ModificarProducto.Size = new System.Drawing.Size(142, 33);
             this.btn_ModificarProducto.TabIndex = 6;
@@ -156,7 +156,7 @@
             // 
             // btn_AgregarProducto
             // 
-            this.btn_AgregarProducto.Location = new System.Drawing.Point(533, 305);
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(455, 296);
             this.btn_AgregarProducto.Name = "btn_AgregarProducto";
             this.btn_AgregarProducto.Size = new System.Drawing.Size(142, 33);
             this.btn_AgregarProducto.TabIndex = 6;

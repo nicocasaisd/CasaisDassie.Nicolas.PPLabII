@@ -13,7 +13,11 @@ namespace UI
 {
     public partial class Frm_Factura : Form
     {
+        #region ATRIBUTOS
+
         private Factura factura;
+
+        #endregion
 
         #region CONSTRUCTORES
         public Frm_Factura()
@@ -29,6 +33,13 @@ namespace UI
         }
 
         #endregion
+
+
+        /// <summary>
+        /// Completa todos los campos y carga el ListBox carrito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Factura_Load(object sender, EventArgs e)
         {
             txt_importeTotal.Text = this.factura.Total.ToString();
@@ -41,6 +52,11 @@ namespace UI
             lst_carrito.DisplayMember = "Item3";
         }
 
+        /// <summary>
+        /// Genera la venta y agrega la Factura a la lista de Facturas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_generarVenta_Click(object sender, EventArgs e)
         {
             TiendaElectronica.GenerarVenta(this.factura.ListaTuplaCarrito);

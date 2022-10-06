@@ -13,6 +13,8 @@ namespace UI
 {
     public partial class Frm_ModificarProducto : Form
     {
+        #region ATRIBUTOS
+
         int idProducto;
         Producto auxProducto;
         eModificarProductoOpcion opcion;
@@ -21,6 +23,8 @@ namespace UI
         {
             ModificarProducto, AgregarProducto
         }
+
+        #endregion
 
         #region CONSTRUCTORES
         public Frm_ModificarProducto()
@@ -42,19 +46,20 @@ namespace UI
 
         #endregion
 
+        #region METODOS FORM
+
         private void Frm_ModificarProducto_Load(object sender, EventArgs e)
         {
             this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
-            // Agrego data al cmb_categoria
+            // Agrego data a los ComboBox
             Array eCategoria = Enum.GetValues(typeof(eCategoriaProducto));
             cmb_categoria.DataSource = eCategoria;
-            // Agrego data al cmb_tipo
             Array eTipo = Enum.GetValues(typeof(eTipoProducto));
             cmb_tipo.DataSource = eTipo;
-            // Agrego data al cmb_marca
             Array eMarca = Enum.GetValues(typeof(eMarcaProducto));
             cmb_marca.DataSource = eMarca;
 
+            // si el form se usa para Modificar Producto
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
                 this.Text = "Modificar Producto";
@@ -74,13 +79,19 @@ namespace UI
                 nud_cantidadStock.Value = auxProducto.CantidadStock;
 
             }
-            else if(this.opcion == eModificarProductoOpcion.AgregarProducto)
+            // si el form se usa para Agregar Producto
+            else if (this.opcion == eModificarProductoOpcion.AgregarProducto)
             {
                 this.Text = "Agregar Producto";
             }
             
         }
 
+        /// <summary>
+        /// Modifica o agrega un producto y si tiene éxito setea el DialogResult.OK
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
@@ -100,10 +111,15 @@ namespace UI
                 }
                 
             }
-            
-            
         }
 
+        #endregion
+
+        #region METODOS
+        /// <summary>
+        /// Instancia el Producto y lo agrega a la lista estática de productos
+        /// </summary>
+        /// <returns></returns>
         private bool AgregarProducto()
         {
             bool retorno = false;
@@ -128,6 +144,10 @@ namespace UI
             return retorno;
         }
 
+        /// <summary>
+        /// Valida que los campos no sean nulos ni vacíos
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarCampos()
         {
             return !(   String.IsNullOrEmpty(this.txt_nombre.Text)
@@ -136,6 +156,10 @@ namespace UI
                     ||  String.IsNullOrEmpty(this.cmb_marca.Text) );
         }
 
+        /// <summary>
+        /// Modifica los valores del Producto 
+        /// </summary>
+        /// <returns></returns>
         private bool ModificarProducto()
         {
 
@@ -145,6 +169,8 @@ namespace UI
 
             return true; ;
         }
+
+        #endregion
     }
 }
  

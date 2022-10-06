@@ -40,9 +40,9 @@
             // 
             // btn_ingresar
             // 
-            this.btn_ingresar.Location = new System.Drawing.Point(167, 176);
+            this.btn_ingresar.Location = new System.Drawing.Point(99, 168);
             this.btn_ingresar.Name = "btn_ingresar";
-            this.btn_ingresar.Size = new System.Drawing.Size(97, 35);
+            this.btn_ingresar.Size = new System.Drawing.Size(106, 47);
             this.btn_ingresar.TabIndex = 0;
             this.btn_ingresar.Text = "Ingresar";
             this.btn_ingresar.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(167, 65);
+            this.txt_password.Location = new System.Drawing.Point(99, 57);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.PlaceholderText = "Ingrese su contraseña";
@@ -59,7 +59,7 @@
             // 
             // txt_usuario
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(167, 25);
+            this.txt_usuario.Location = new System.Drawing.Point(99, 17);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.PlaceholderText = "Ingrese su email";
             this.txt_usuario.Size = new System.Drawing.Size(129, 23);
@@ -68,7 +68,7 @@
             // lbl_usuario
             // 
             this.lbl_usuario.AutoSize = true;
-            this.lbl_usuario.Location = new System.Drawing.Point(111, 33);
+            this.lbl_usuario.Location = new System.Drawing.Point(12, 20);
             this.lbl_usuario.Name = "lbl_usuario";
             this.lbl_usuario.Size = new System.Drawing.Size(50, 15);
             this.lbl_usuario.TabIndex = 3;
@@ -77,7 +77,7 @@
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
-            this.lbl_password.Location = new System.Drawing.Point(91, 68);
+            this.lbl_password.Location = new System.Drawing.Point(12, 57);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(70, 15);
             this.lbl_password.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             // btn_AutoCompletarDuenio
             // 
-            this.btn_AutoCompletarDuenio.Location = new System.Drawing.Point(126, 112);
+            this.btn_AutoCompletarDuenio.Location = new System.Drawing.Point(72, 104);
             this.btn_AutoCompletarDuenio.Name = "btn_AutoCompletarDuenio";
             this.btn_AutoCompletarDuenio.Size = new System.Drawing.Size(75, 45);
             this.btn_AutoCompletarDuenio.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // btn_AutoCompletarVendedor
             // 
-            this.btn_AutoCompletarVendedor.Location = new System.Drawing.Point(221, 112);
+            this.btn_AutoCompletarVendedor.Location = new System.Drawing.Point(153, 104);
             this.btn_AutoCompletarVendedor.Name = "btn_AutoCompletarVendedor";
             this.btn_AutoCompletarVendedor.Size = new System.Drawing.Size(75, 47);
             this.btn_AutoCompletarVendedor.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 251);
+            this.ClientSize = new System.Drawing.Size(283, 251);
             this.Controls.Add(this.btn_AutoCompletarVendedor);
             this.Controls.Add(this.btn_AutoCompletarDuenio);
             this.Controls.Add(this.lbl_password);

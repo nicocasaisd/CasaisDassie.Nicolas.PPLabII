@@ -107,6 +107,7 @@ namespace UI
                 }
                 // Actualizo la lista
                 ActualizarListaInventario();
+                ActualizarDataGridList();
 
             }
         }
@@ -125,6 +126,7 @@ namespace UI
                 }
                 // Actualizo la lista
                 ActualizarListaInventario();
+                ActualizarDataGridList();
 
             }
         }
@@ -133,6 +135,11 @@ namespace UI
         {
             this.listaInventario.Clear();
             this.listaInventario.AddRange(TiendaElectronica.ListaProductos);
+
+        }
+
+        private void ActualizarDataGridList()
+        {
             this.dgv_listaProductos.DataSource = null;
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
@@ -140,6 +147,21 @@ namespace UI
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
+            // limpio la lista actual
+            this.listaInventario.Clear();
+
+            // valido
+            if(cmb_categoria.SelectedItem is not null)
+            {
+                foreach(Producto item in TiendaElectronica.ListaProductos)
+                {
+                    if(item.Categoria == (eCategoriaProducto) cmb_categoria.SelectedItem)
+                    {
+                        this.listaInventario.Add(item);
+                    }
+                }
+                ActualizarDataGridList();
+            }
 
         }
     }

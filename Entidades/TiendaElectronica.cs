@@ -5,6 +5,9 @@ using System.Runtime.CompilerServices;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase Estática sobre la que se construye toda la aplicación
+    /// </summary>
     public static class TiendaElectronica
     {
         #region ATRIBUTOS
@@ -189,6 +192,11 @@ namespace Entidades
             listaDuenios.Add(new Duenio("fernando@electronicacasais.com", "asd123"));
         }
 
+        /// <summary>
+        /// Devuelve el indice del Producto en la lista de productos a partir de su ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static int ObtenerIndexProducto(int id)
         {
             int index = -1;
@@ -206,12 +214,22 @@ namespace Entidades
             return index;
         }
 
+        /// <summary>
+        /// Devuelve el Producto a partir de su ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Producto ObtenerProductoPorId(int id)
         {
             int index = ObtenerIndexProducto(id);
             return listaProductos[index];
         }
 
+        /// <summary>
+        /// Recibe una "lista carrito" y genera la venta restando la cantidad en el stock
+        /// </summary>
+        /// <param name="carrito"></param>
+        /// <returns></returns>
         public static bool GenerarVenta(List<Tuple<Producto, decimal, string>> carrito)
         {
             //recorro el carrito
@@ -231,6 +249,10 @@ namespace Entidades
             return false;
         }
 
+        /// <summary>
+        ///  Devuelve el color de fondo de la ventana correspondiente al tipo de Usuario
+        /// </summary>
+        /// <returns></returns>
         public static Color ObtenerColorDeUsuario()
         {
             if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))

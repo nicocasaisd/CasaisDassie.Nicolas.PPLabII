@@ -124,7 +124,7 @@ namespace UI
                 Frm_Factura frm_Factura = new Frm_Factura(nuevaFactura);
                 frm_Factura.Show();
                 // limpio los datos
-                this.LimpiarCampos();
+                //this.LimpiarCampos();
 
             }
 

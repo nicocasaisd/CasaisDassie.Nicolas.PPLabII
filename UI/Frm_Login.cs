@@ -11,14 +11,11 @@ namespace UI
 
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
-            string usuario = this.txt_usuario.Text;
-            string pass = this.txt_password.Text;
-            int indexDuenio = TiendaElectronica.ValidarLoginDuenio(usuario, pass);
-            Duenio auxDuenio;
+            int indexDuenio = TiendaElectronica.ValidarLoginDuenio(this.txt_usuario.Text, this.txt_password.Text);
 
             if( indexDuenio> -1)
             {
-                auxDuenio = TiendaElectronica.ObtenerDuenio(indexDuenio);
+                Duenio auxDuenio = TiendaElectronica.ObtenerDuenio(indexDuenio);
                 Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal(auxDuenio);
                 menuPrincipal.Show();
                 this.Hide();

@@ -55,9 +55,6 @@ namespace UI
             Array eMarca = Enum.GetValues(typeof(eMarcaProducto));
             cmb_marca.DataSource = eMarca;
 
-            
-            //if(typeof(TiendaElectronica.UsuarioLogueado))
-
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
                 this.Text = "Modificar Producto";

@@ -107,7 +107,6 @@ namespace UI
                 if (frm_Modificar.DialogResult == DialogResult.OK)
                 {
                     MessageBox.Show("Se ha modificado el producto");
-                    //lst_listaProductos.ClearSelected();
                 }
                 // Actualizo la lista
                 ActualizarListaInventario();

@@ -26,10 +26,7 @@
 
 
         public Producto()
-        {
-            // asigno id y aumento en 1 el contador
-            this.id = proximaId;
-            proximaId++;
+        { 
         }
 
         public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio) : this()
@@ -41,6 +38,8 @@
             this.Precio = precio;
             // Valores por defecto
             this.CantidadStock = 0;
+            this.id = proximaId;
+            proximaId++;
         }
 
         public Producto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio, int cantidadStock) :this(nombre, categoria, tipo, marca, precio)

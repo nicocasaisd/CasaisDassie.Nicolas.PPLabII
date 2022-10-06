@@ -58,6 +58,7 @@
             this.lbl_listaCantidad = new System.Windows.Forms.Label();
             this.gpb_carrito = new System.Windows.Forms.GroupBox();
             this.llb_historialDeFacturas = new System.Windows.Forms.LinkLabel();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.gpb_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.gpb_total.SuspendLayout();
@@ -355,11 +356,24 @@
             this.llb_historialDeFacturas.Text = "Historial de facturas";
             this.llb_historialDeFacturas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_historialDeFacturas_LinkClicked);
             // 
+            // btn_Salir
+            // 
+            this.btn_Salir.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_Salir.Location = new System.Drawing.Point(566, 12);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(54, 24);
+            this.btn_Salir.TabIndex = 16;
+            this.btn_Salir.Text = "Salir";
+            this.btn_Salir.UseVisualStyleBackColor = false;
+            this.btn_Salir.Visible = false;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
             // Frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 534);
+            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.llb_historialDeFacturas);
             this.Controls.Add(this.gpb_datosFacturacion);
             this.Controls.Add(this.btn_RemoverProducto);
@@ -419,5 +433,6 @@
         private Label lbl_listaCantidad;
         private GroupBox gpb_carrito;
         private LinkLabel llb_historialDeFacturas;
+        private Button btn_Salir;
     }
 }

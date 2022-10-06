@@ -47,5 +47,11 @@ namespace UI
             spl.Play();
         }
 
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Frm_Login frm_Login = new Frm_Login();
+            frm_Login.Show();
+        }
     }
 }

@@ -32,6 +32,7 @@
             this.btn_inventario = new System.Windows.Forms.Button();
             this.btn_ventas = new System.Windows.Forms.Button();
             this.lbl_nombreUsuario = new System.Windows.Forms.Label();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_inventario
@@ -66,11 +67,23 @@
             this.lbl_nombreUsuario.TabIndex = 2;
             this.lbl_nombreUsuario.Text = "label1";
             // 
+            // btn_Salir
+            // 
+            this.btn_Salir.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_Salir.Location = new System.Drawing.Point(594, 12);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(54, 24);
+            this.btn_Salir.TabIndex = 3;
+            this.btn_Salir.Text = "Salir";
+            this.btn_Salir.UseVisualStyleBackColor = false;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
             // Frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 298);
+            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.lbl_nombreUsuario);
             this.Controls.Add(this.btn_ventas);
             this.Controls.Add(this.btn_inventario);
@@ -88,5 +101,6 @@
         private Button btn_inventario;
         private Button btn_ventas;
         private Label lbl_nombreUsuario;
+        private Button btn_Salir;
     }
 }

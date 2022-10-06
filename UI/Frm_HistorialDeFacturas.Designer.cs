@@ -53,6 +53,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 211);
             this.Controls.Add(this.dgv_historialDeFacturas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Frm_HistorialDeFacturas";
             this.Text = "Frm_HistorialDeFacturas";
             this.Load += new System.EventHandler(this.Frm_HistorialDeFacturas_Load);

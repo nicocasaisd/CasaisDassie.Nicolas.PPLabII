@@ -368,6 +368,7 @@
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.gpb_carrito);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Venta";
             this.Text = "Frm_Venta";
             this.Load += new System.EventHandler(this.Frm_Venta_Load);

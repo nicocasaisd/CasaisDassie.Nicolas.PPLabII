@@ -240,8 +240,13 @@ namespace UI
 
 
 
+
         #endregion
 
-        
+        private void llb_historialDeFacturas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Frm_HistorialDeFacturas frm_historial = new Frm_HistorialDeFacturas();
+            frm_historial.ShowDialog();
+        }
     }
 }

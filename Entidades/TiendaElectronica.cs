@@ -11,6 +11,7 @@ namespace Entidades
 
         private static string nombreTienda;
         private static Usuario usuarioLogueado;
+        private static List<Factura> listaFacturas;
         private static List<Vendedor> listaVendedores;
         private static List<Duenio> listaDuenios;
         private static List<Producto> listaProductos;
@@ -23,6 +24,7 @@ namespace Entidades
             listaVendedores = new List<Vendedor>();
             listaDuenios = new List<Duenio>();
             listaProductos = new List<Producto>();
+            listaFacturas = new List<Factura>();
             HardcodearDatos();
         }
 
@@ -34,6 +36,11 @@ namespace Entidades
         public static List<Producto> ListaProductos
         {
             get { return listaProductos; }
+        }
+
+        public static List<Factura> ListaFacturas
+        {
+            get { return listaFacturas; }
         }
 
         public static Usuario UsuarioLogueado

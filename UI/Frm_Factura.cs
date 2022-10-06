@@ -44,6 +44,7 @@ namespace UI
         private void btn_generarVenta_Click(object sender, EventArgs e)
         {
             TiendaElectronica.GenerarVenta(this.factura.ListaTuplaCarrito);
+            TiendaElectronica.ListaFacturas.Add(this.factura);
             this.Close();
         }
 

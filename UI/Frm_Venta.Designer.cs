@@ -56,6 +56,7 @@
             this.lbl_listaProducto = new System.Windows.Forms.Label();
             this.lbl_listaCantidad = new System.Windows.Forms.Label();
             this.gpb_carrito = new System.Windows.Forms.GroupBox();
+            this.llb_historialDeFacturas = new System.Windows.Forms.LinkLabel();
             this.gpb_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.gpb_total.SuspendLayout();
@@ -74,7 +75,7 @@
             // 
             // btn_Aceptar
             // 
-            this.btn_Aceptar.Location = new System.Drawing.Point(453, 487);
+            this.btn_Aceptar.Location = new System.Drawing.Point(453, 475);
             this.btn_Aceptar.Name = "btn_Aceptar";
             this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_Aceptar.TabIndex = 1;
@@ -84,7 +85,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(534, 487);
+            this.btn_Cancelar.Location = new System.Drawing.Point(534, 475);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 2;
@@ -342,11 +343,23 @@
             this.gpb_carrito.TabStop = false;
             this.gpb_carrito.Text = "Carrito";
             // 
+            // llb_historialDeFacturas
+            // 
+            this.llb_historialDeFacturas.AutoSize = true;
+            this.llb_historialDeFacturas.Location = new System.Drawing.Point(454, 510);
+            this.llb_historialDeFacturas.Name = "llb_historialDeFacturas";
+            this.llb_historialDeFacturas.Size = new System.Drawing.Size(112, 15);
+            this.llb_historialDeFacturas.TabIndex = 15;
+            this.llb_historialDeFacturas.TabStop = true;
+            this.llb_historialDeFacturas.Text = "Historial de facturas";
+            this.llb_historialDeFacturas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_historialDeFacturas_LinkClicked);
+            // 
             // Frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 534);
+            this.Controls.Add(this.llb_historialDeFacturas);
             this.Controls.Add(this.gpb_datosFacturacion);
             this.Controls.Add(this.btn_RemoverProducto);
             this.Controls.Add(this.btn_AgregarProducto);
@@ -368,6 +381,7 @@
             this.gpb_carrito.ResumeLayout(false);
             this.gpb_carrito.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -401,5 +415,6 @@
         private Label lbl_listaProducto;
         private Label lbl_listaCantidad;
         private GroupBox gpb_carrito;
+        private LinkLabel llb_historialDeFacturas;
     }
 }

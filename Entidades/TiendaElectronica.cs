@@ -153,7 +153,7 @@ namespace Entidades
         /// <param name="usuario"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        private bool LoguearUsuario(string usuario, string pass)
+        public bool LoguearUsuario(string usuario, string pass)
         {
             int index = TiendaElectronica.ValidarLoginUsuario(usuario, pass);
             if (index > -1)

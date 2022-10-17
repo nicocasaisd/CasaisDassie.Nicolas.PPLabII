@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Frm_MenuPrincipal : Form
+    public partial class Frm_MenuPrincipal : Frm_Base
     {
-        public Frm_MenuPrincipal()
+        public Frm_MenuPrincipal() :base()
         {
             InitializeComponent();
         }

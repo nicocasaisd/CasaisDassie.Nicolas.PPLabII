@@ -18,5 +18,14 @@ namespace UI
             InitializeComponent();
             this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
         }
+
+        private void btn_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            TiendaElectronica.UsuarioLogueado = null;
+            this.Close();
+            Frm_Login frm_Login = new Frm_Login();
+            frm_Login.Show();
+        }
+
     }
 }

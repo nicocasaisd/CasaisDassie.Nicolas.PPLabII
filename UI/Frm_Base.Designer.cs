@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btn_CerrarSesion = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btn_CerrarSesion
+            // 
+            this.btn_CerrarSesion.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_CerrarSesion.Location = new System.Drawing.Point(12, 12);
+            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
+            this.btn_CerrarSesion.Size = new System.Drawing.Size(92, 24);
+            this.btn_CerrarSesion.TabIndex = 4;
+            this.btn_CerrarSesion.Text = "Cerrar sesión";
+            this.btn_CerrarSesion.UseVisualStyleBackColor = false;
+            this.btn_CerrarSesion.Click += new System.EventHandler(this.btn_CerrarSesion_Click);
+            // 
+            // Frm_Base
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_CerrarSesion);
+            this.Name = "Frm_Base";
             this.Text = "Frm_Base";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Button btn_CerrarSesion;
     }
 }

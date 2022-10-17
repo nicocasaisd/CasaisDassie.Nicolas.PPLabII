@@ -264,16 +264,23 @@ namespace Entidades
         /// <returns></returns>
         public static Color ObtenerColorDeUsuario()
         {
-            if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))
+            if(TiendaElectronica.UsuarioLogueado is not null)
             {
-                return Color.LightGray;
-            }
-            else if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio))
-            {
-                return Color.LightSteelBlue;
+                return UsuarioLogueado.ColorDeFondo;
             }
 
-            return Color.WhiteSmoke;
+            return Color.White;
+
+            //if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))
+            //{
+            //    return Color.LightGray;
+            //}
+            //else if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio))
+            //{
+            //    return Color.LightSteelBlue;
+            //}
+
+            //return Color.WhiteSmoke;
         }
         
     }

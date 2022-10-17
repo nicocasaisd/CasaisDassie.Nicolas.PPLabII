@@ -12,7 +12,7 @@ namespace Entidades
         // CLASE ABSTRACTA de la que van a heredar Vendedor y Duenio
         private string email;
         private string password;
-        private Color colorDeFondo;
+        private Color colorDeFondo = Color.WhiteSmoke;
 
         public Usuario()
         {
@@ -35,6 +35,7 @@ namespace Entidades
         public Color ColorDeFondo
         {
             get { return this.colorDeFondo; }
+            set { this.colorDeFondo = value; }
         }
 
         /// <summary>

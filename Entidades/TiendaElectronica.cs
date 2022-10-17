@@ -15,10 +15,10 @@ namespace Entidades
         private static string nombreTienda;
         private static Usuario usuarioLogueado;
         private static List<Factura> listaFacturas;
-        private static List<Vendedor> listaVendedores;
-        private static List<Duenio> listaDuenios;
+        //private static List<Vendedor> listaVendedores;
+        //private static List<Duenio> listaDuenios;
         private static List<Producto> listaProductos;
-        private static List<Contador> listaContadores;
+        //private static List<Contador> listaContadores;
         private static List<Usuario> listaUsuarios;
 
         #endregion
@@ -30,11 +30,11 @@ namespace Entidades
         static TiendaElectronica()
         {
             nombreTienda = "Electrónica Casais";
-            listaVendedores = new List<Vendedor>();
-            listaDuenios = new List<Duenio>();
+            //listaVendedores = new List<Vendedor>();
+            //listaDuenios = new List<Duenio>();
             listaProductos = new List<Producto>();
             listaFacturas = new List<Factura>();
-            listaContadores = new List<Contador>();
+            //listaContadores = new List<Contador>();
             listaUsuarios = new List<Usuario>();
             HardcodearDatos();
         }
@@ -55,11 +55,6 @@ namespace Entidades
         public static List<Factura> ListaFacturas
         {
             get { return listaFacturas; }
-        }
-
-        public static List<Contador> ListaContadores
-        {
-            get { return listaContadores; }
         }
 
         public static List<Usuario> ListaUsuarios
@@ -270,17 +265,6 @@ namespace Entidades
             }
 
             return Color.White;
-
-            //if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))
-            //{
-            //    return Color.LightGray;
-            //}
-            //else if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Duenio))
-            //{
-            //    return Color.LightSteelBlue;
-            //}
-
-            //return Color.WhiteSmoke;
         }
         
     }

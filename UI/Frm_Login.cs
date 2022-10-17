@@ -22,7 +22,15 @@ namespace UI
         /// <param name="e"></param>
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
-            if(LoguearDuenio(this.txt_usuario.Text, this.txt_password.Text))
+            if (TiendaElectronica.LoguearUsuario(this.txt_usuario.Text, this.txt_password.Text))
+            {
+                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide();
+            }
+
+
+            if (LoguearDuenio(this.txt_usuario.Text, this.txt_password.Text))
             {
                 Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
                 menuPrincipal.Show();
@@ -57,23 +65,7 @@ namespace UI
 
         #region METODOS
 
-        /// <summary>
-        /// Si puede loguear el Duenio devuelve true y asigna el indice de lista Duenio a su atributo
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
-        private bool LoguearDuenio(string usuario, string pass)
-        {
-            int indexDuenio = TiendaElectronica.ValidarLoginDuenio(this.txt_usuario.Text, this.txt_password.Text);
-            if (indexDuenio > -1)
-            {
-                Duenio auxDuenio = TiendaElectronica.ObtenerDuenio(indexDuenio);
-                TiendaElectronica.AsignarUsuarioLogueado(auxDuenio);
-                return true;
-            }
-            return false;
-        }
+
 
         /// <summary>
         /// Si puede loguear el Vendedor devuelve true y asigna el indice de lista Vendedor a su atributo

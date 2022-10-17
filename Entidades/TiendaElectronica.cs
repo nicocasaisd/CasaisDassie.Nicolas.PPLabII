@@ -62,6 +62,11 @@ namespace Entidades
             get { return listaContadores; }
         }
 
+        public static List<Usuario> ListaUsuarios
+        {
+            get { return listaUsuarios; }
+        }
+
         public static Usuario UsuarioLogueado
         {
             get { return usuarioLogueado; }
@@ -78,13 +83,13 @@ namespace Entidades
         /// <param name="email"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        public static int ValidarLoginDuenio(string email, string pass)
+        public static int ValidarLoginUsuario(string email, string pass)
         {
             int index = 0;
 
-            foreach(Duenio auxDuenio in listaDuenios)
+            foreach (Usuario auxUsuario in TiendaElectronica.listaUsuarios)
             {
-                if(auxDuenio.ValidarDuenio(email, pass))
+                if (auxUsuario.ValidarLogin(email, pass))
                 {
                     return index;
                 }
@@ -94,45 +99,13 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Devuelve el índice del vendedor a loguear, en caso de que no exista devuelve -1.
+        /// Devuelve el objeto Duenio de la lista de dueños.
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="pass"></param>
+        /// <param name="index"></param>
         /// <returns></returns>
-        public static int ValidarLoginVendedor(string email, string pass)
+        public static Usuario ObtenerUsuario(int index)
         {
-            int index = 0;
-
-            foreach (Vendedor auxVendedor in listaVendedores)
-            {
-                if (auxVendedor.ValidarVendedor(email, pass))
-                {
-                    return index;
-                }
-                index++;
-            }
-            return -1;
-        }
-
-        /// <summary>
-        /// Devuelve el índice del vendedor a loguear, en caso de que no exista devuelve -1.
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
-        public static int ValidarLoginContador(string email, string pass)
-        {
-            int index = 0;
-
-            foreach (Contador auxContador in listaContadores)
-            {
-                if (auxContador.ValidarContador(email, pass))
-                {
-                    return index;
-                }
-                index++;
-            }
-            return -1;
+            return listaUsuarios[index];
         }
 
         /// <summary>
@@ -173,6 +146,26 @@ namespace Entidades
         {
             UsuarioLogueado = usuario;
         }
+
+        /// <summary>
+        /// Si puede loguear el Duenio devuelve true y asigna el indice de lista Duenio a su atributo
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        private bool LoguearUsuario(string usuario, string pass)
+        {
+            int index = TiendaElectronica.ValidarLoginUsuario(usuario, pass);
+            if (index > -1)
+            {
+                Usuario auxUsuario = TiendaElectronica.ObtenerUsuario(index);
+                TiendaElectronica.AsignarUsuarioLogueado(auxUsuario);
+                return true;
+            }
+            return false;
+        }
+
+
 
 
         /// <summary>

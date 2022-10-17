@@ -43,5 +43,15 @@ namespace Entidades
             }
             return false;
         }
+
+        public bool ValidarLogin(string usuario, string pass)
+        {
+            if (this.Email == usuario)
+            {
+                return this.ValidarPassword(pass);
+            }
+            return false;
+        }
+
     }
 }

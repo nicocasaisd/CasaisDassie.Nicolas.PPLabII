@@ -19,6 +19,7 @@ namespace Entidades
         private static List<Duenio> listaDuenios;
         private static List<Producto> listaProductos;
         private static List<Contador> listaContadores;
+        private static List<Usuario> listaUsuarios;
 
         #endregion
 
@@ -34,6 +35,7 @@ namespace Entidades
             listaProductos = new List<Producto>();
             listaFacturas = new List<Factura>();
             listaContadores = new List<Contador>();
+            listaUsuarios = new List<Usuario>();
             HardcodearDatos();
         }
 

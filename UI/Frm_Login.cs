@@ -2,9 +2,9 @@ using Entidades;
 
 namespace UI
 {
-    public partial class Frm_Login : Form
+    public partial class Frm_Login : Frm_Base
     {
-        public Frm_Login()
+        public Frm_Login() : base()
         {
             InitializeComponent();
         }

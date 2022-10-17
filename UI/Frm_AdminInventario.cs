@@ -13,7 +13,7 @@ using static UI.Frm_ModificarProducto;
 
 namespace UI
 {
-    public partial class Frm_AdminInventario : Form
+    public partial class Frm_AdminInventario : Frm_Base
     {
         #region ATRIBUTOS
 
@@ -32,7 +32,7 @@ namespace UI
 
         #region CONSTRUCTORES
 
-        public Frm_AdminInventario()
+        public Frm_AdminInventario() : base()
         {
             InitializeComponent();
             this.auxProducto = new Producto();
@@ -59,7 +59,7 @@ namespace UI
 
         private void Frm_AdminInventario_Load(object sender, EventArgs e)
         {
-            this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
+            //this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             this.dgv_listaProductos.DataSource = this.listaInventario;
             this.dgv_listaProductos.Columns["nombreLista"].Visible = false;
 

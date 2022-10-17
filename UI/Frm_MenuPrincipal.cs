@@ -49,6 +49,7 @@ namespace UI
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
+            TiendaElectronica.UsuarioLogueado = null;
             this.Close();
             Frm_Login frm_Login = new Frm_Login();
             frm_Login.Show();

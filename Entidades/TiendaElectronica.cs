@@ -109,36 +109,6 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Devuelve el objeto Duenio de la lista de dueños.
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public static Duenio ObtenerDuenio(int index)
-        {
-            return listaDuenios[index];
-        }
-
-        /// <summary>
-        /// Devuelve el objeto Vendedor de la lista de vendedores.
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public static Vendedor ObtenerVendedor(int index)
-        {
-            return listaVendedores[index];
-        }
-
-        /// <summary>
-        /// Devuelve el objeto Vendedor de la lista de vendedores.
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public static Contador ObtenerContador(int index)
-        {
-            return listaContadores[index];
-        }
-
-        /// <summary>
         /// Asigna el Usuario al atributo estático usuarioLogueado
         /// </summary>
         /// <param name="usuario"></param>
@@ -153,7 +123,7 @@ namespace Entidades
         /// <param name="usuario"></param>
         /// <param name="pass"></param>
         /// <returns></returns>
-        public bool LoguearUsuario(string usuario, string pass)
+        public static bool LoguearUsuario(string usuario, string pass)
         {
             int index = TiendaElectronica.ValidarLoginUsuario(usuario, pass);
             if (index > -1)
@@ -217,18 +187,18 @@ namespace Entidades
 
         private static void HardcodearVendedores()
         {
-            listaVendedores.Add(new Vendedor("nicolas@electronicacasais.com", "asd123"));
-            listaVendedores.Add(new Vendedor("julieta@electronicacasais.com", "pepe12"));
+            listaUsuarios.Add(new Vendedor("nicolas@electronicacasais.com", "asd123"));
+            listaUsuarios.Add(new Vendedor("julieta@electronicacasais.com", "pepe12"));
         }
 
         private static void HardcodearDuenios()
         {
-            listaDuenios.Add(new Duenio("fernando@electronicacasais.com", "asd123"));
+            listaUsuarios.Add(new Duenio("fernando@electronicacasais.com", "asd123"));
         }
 
         private static void HardcodearContadores()
         {
-            listaContadores.Add(new Contador("contador@electronicacasais.com", "asd123"));
+            listaUsuarios.Add(new Contador("contador@electronicacasais.com", "asd123"));
         }
 
         /// <summary>

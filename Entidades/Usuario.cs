@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Entidades
         // CLASE ABSTRACTA de la que van a heredar Vendedor y Duenio
         private string email;
         private string password;
+        private Color colorDeFondo;
 
         public Usuario()
         {
@@ -28,6 +30,11 @@ namespace Entidades
         public string Email
         {
             get { return email; }
+        }
+
+        public Color ColorDeFondo
+        {
+            get { return this.colorDeFondo; }
         }
 
         /// <summary>

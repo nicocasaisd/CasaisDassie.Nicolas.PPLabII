@@ -24,30 +24,23 @@ namespace UI
         {
             if (TiendaElectronica.LoguearUsuario(this.txt_usuario.Text, this.txt_password.Text))
             {
-                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
-                menuPrincipal.Show();
+                // de acuerdo al tipo de usuario logueado
+                if(TiendaElectronica.UsuarioLogueado is Duenio)
+                {
+                    Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
+                    menuPrincipal.Show();
+                }
+                else if(TiendaElectronica.UsuarioLogueado is Vendedor)
+                {
+                    Frm_Venta frm_Venta = new Frm_Venta();
+                    frm_Venta.Show();
+                }
+                else if(TiendaElectronica.UsuarioLogueado is Contador)
+                {
+                    Frm_Estadisticas frm_Venta = new Frm_Estadisticas();
+                    frm_Venta.Show();
+                }
                 this.Hide();
-            }
-
-
-            if (LoguearDuenio(this.txt_usuario.Text, this.txt_password.Text))
-            {
-                Frm_MenuPrincipal menuPrincipal = new Frm_MenuPrincipal();
-                menuPrincipal.Show();
-                this.Hide();
-            }
-            else if(LoguearVendedor(this.txt_usuario.Text, this.txt_password.Text))
-            {
-                Frm_Venta frm_Venta = new Frm_Venta();
-                frm_Venta.Show();
-                this.Hide();
-            }
-            else if (LoguearContador(this.txt_usuario.Text, this.txt_password.Text))
-            {
-                Frm_Estadisticas frm_Estadisticas = new Frm_Estadisticas();
-                frm_Estadisticas.Show();
-                this.Hide();
-                //MessageBox.Show("Contador");
             }
         }
 
@@ -62,47 +55,5 @@ namespace UI
             txt_usuario.Text = "nicolas@electronicacasais.com";
             txt_password.Text = "asd123";
         }
-
-        #region METODOS
-
-
-
-        /// <summary>
-        /// Si puede loguear el Vendedor devuelve true y asigna el indice de lista Vendedor a su atributo
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
-        private bool LoguearVendedor(string usuario, string pass)
-        {
-            int indexVendedor = TiendaElectronica.ValidarLoginVendedor(this.txt_usuario.Text, this.txt_password.Text);
-            if (indexVendedor > -1)
-            {
-                Vendedor auxVendedor = TiendaElectronica.ObtenerVendedor(indexVendedor);
-                TiendaElectronica.AsignarUsuarioLogueado(auxVendedor);
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Si puede loguear el Vendedor devuelve true y asigna el indice de lista Vendedor a su atributo
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <param name="pass"></param>
-        /// <returns></returns>
-        private bool LoguearContador(string usuario, string pass)
-        {
-            int indexContador = TiendaElectronica.ValidarLoginContador(this.txt_usuario.Text, this.txt_password.Text);
-            if (indexContador > -1)
-            {
-                Contador auxContador = TiendaElectronica.ObtenerContador(indexContador);
-                TiendaElectronica.AsignarUsuarioLogueado(auxContador);
-                return true;
-            }
-            return false;
-        }
-
-        #endregion
     }
 }

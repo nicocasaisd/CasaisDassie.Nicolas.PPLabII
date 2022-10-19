@@ -12,5 +12,10 @@ namespace Entidades
         {
 
         }
+
+        public override string ObtenerDescripcion()
+        {
+            return "Usuario Contador - " + this.Email;
+        }
     }
 }

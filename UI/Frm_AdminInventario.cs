@@ -15,6 +15,7 @@ namespace UI
 {
     public partial class Frm_AdminInventario : Frm_Base
     {
+
         #region ATRIBUTOS
 
         int idProducto = -1;

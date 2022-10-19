@@ -191,7 +191,7 @@
             this.Controls.Add(this.gpb_datosCategoria);
             this.Controls.Add(this.gpb_ventasTotales);
             this.Name = "Frm_Estadisticas";
-            this.Text = "Frm_Estadisticas";
+            this.Text = "Estadísticas";
             this.Load += new System.EventHandler(this.Frm_Estadisticas_Load);
             this.Controls.SetChildIndex(this.gpb_ventasTotales, 0);
             this.Controls.SetChildIndex(this.gpb_datosCategoria, 0);

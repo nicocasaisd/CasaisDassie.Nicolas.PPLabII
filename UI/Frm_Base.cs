@@ -14,10 +14,17 @@ namespace UI
 {
     public partial class Frm_Base : Form
     {
+
         public Frm_Base()
         {
             InitializeComponent();
+            
+        }
+
+        private void Frm_Base_Load(object sender, EventArgs e)
+        {
             ObtenerColorDeUsuario();
+            AsignarTitulo();
         }
 
         public void btn_CerrarSesion_Click(object sender, EventArgs e)
@@ -51,6 +58,15 @@ namespace UI
             SoundPlayer spl = new SoundPlayer(path);
             spl.Play();
         }
+
+        public void AsignarTitulo()
+        {
+            if(TiendaElectronica.UsuarioLogueado is not null)
+            {
+                this.Text += " - " + TiendaElectronica.UsuarioLogueado.ObtenerDescripcion();
+            }
+        }
+
 
     }
 }

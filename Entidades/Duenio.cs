@@ -9,5 +9,9 @@ namespace Entidades
             this.ColorDeFondo = Color.LightSteelBlue;
         }
 
+        public override string ObtenerDescripcion()
+        {
+            return "Usuario Dueño - " + this.Email;
+        }
     }
 }

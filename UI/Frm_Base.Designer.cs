@@ -51,6 +51,7 @@
             this.Controls.Add(this.btn_CerrarSesion);
             this.Name = "Frm_Base";
             this.Text = "Frm_Base";
+            this.Load += new System.EventHandler(this.Frm_Base_Load);
             this.ResumeLayout(false);
 
         }

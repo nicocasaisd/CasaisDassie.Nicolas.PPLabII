@@ -61,5 +61,10 @@ namespace Entidades
             return false;
         }
 
+        public virtual string ObtenerDescripcion()
+        {
+            return "No User";
+        }
+
     }
 }

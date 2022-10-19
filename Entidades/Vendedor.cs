@@ -8,5 +8,10 @@ namespace Entidades
         {
             this.ColorDeFondo = Color.LightGray;
         }
+
+        public override string ObtenerDescripcion()
+        {
+            return "Usuario Vendedor - " + this.Email;
+        }
     }
 }

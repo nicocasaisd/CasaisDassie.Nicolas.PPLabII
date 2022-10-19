@@ -100,6 +100,28 @@
             return !(a == b);
         }
 
+        public static int operator +(Producto a, Producto b)
+        {
+            return a.CantidadStock + b.CantidadStock;
+        }
+
+        public static int operator -(Producto a, Producto b)
+        {
+            return a.CantidadStock - b.CantidadStock;
+        }
+
+        public static int operator +(Producto a, int entero)
+        {
+            return a.CantidadStock + entero;
+        }
+
+        public static int operator -(Producto a, int entero)
+        {
+            return a.CantidadStock - entero;
+        }
+
+
+
         #endregion
 
 

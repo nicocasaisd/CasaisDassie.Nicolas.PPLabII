@@ -243,9 +243,10 @@ namespace Entidades
                 for(int i=0; i<ListaProductos.Count; i++)
                 {
                     Producto producto = ListaProductos[i];
-                    if (item.Item1.Id == producto.Id)
+                    if (item.Item1 == producto)
                     {
-                        producto.CantidadStock -= (int)item.Item2;
+                        //producto.CantidadStock -= (int)item.Item2;
+                        producto.CantidadStock = producto - (int)item.Item2;
                     }
                 }
             }

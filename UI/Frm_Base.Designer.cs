@@ -40,6 +40,7 @@
             this.btn_CerrarSesion.TabIndex = 4;
             this.btn_CerrarSesion.Text = "Cerrar sesión";
             this.btn_CerrarSesion.UseVisualStyleBackColor = false;
+            this.btn_CerrarSesion.Visible = false;
             this.btn_CerrarSesion.Click += new System.EventHandler(this.btn_CerrarSesion_Click);
             // 
             // Frm_Base

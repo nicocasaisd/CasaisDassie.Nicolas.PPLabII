@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Frm_Venta : Form
+    public partial class Frm_Venta : Frm_Base
     {
         #region ATRIBUTOS
         const decimal recargoCredito = 0.10M;

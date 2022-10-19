@@ -61,7 +61,7 @@
             // 
             this.lbl_nombreUsuario.AutoSize = true;
             this.lbl_nombreUsuario.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nombreUsuario.Location = new System.Drawing.Point(12, 23);
+            this.lbl_nombreUsuario.Location = new System.Drawing.Point(12, 49);
             this.lbl_nombreUsuario.Name = "lbl_nombreUsuario";
             this.lbl_nombreUsuario.Size = new System.Drawing.Size(94, 40);
             this.lbl_nombreUsuario.TabIndex = 2;
@@ -91,6 +91,10 @@
             this.Name = "Frm_MenuPrincipal";
             this.Text = "Menú principal";
             this.Load += new System.EventHandler(this.Frm_MenuPrincipal_Load);
+            this.Controls.SetChildIndex(this.btn_inventario, 0);
+            this.Controls.SetChildIndex(this.btn_ventas, 0);
+            this.Controls.SetChildIndex(this.lbl_nombreUsuario, 0);
+            this.Controls.SetChildIndex(this.btn_Salir, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

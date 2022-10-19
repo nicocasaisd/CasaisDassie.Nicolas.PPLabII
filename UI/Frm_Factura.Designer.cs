@@ -52,6 +52,8 @@
             this.lst_carrito = new System.Windows.Forms.ListBox();
             this.btn_generarVenta = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.txt_vuelto = new System.Windows.Forms.TextBox();
+            this.lbl_vuelto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -89,6 +91,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txt_vuelto);
+            this.panel3.Controls.Add(this.lbl_vuelto);
             this.panel3.Controls.Add(this.txt_medioDePago);
             this.panel3.Controls.Add(this.txt_cliente);
             this.panel3.Controls.Add(this.label6);
@@ -101,7 +105,7 @@
             // txt_medioDePago
             // 
             this.txt_medioDePago.Enabled = false;
-            this.txt_medioDePago.Location = new System.Drawing.Point(136, 103);
+            this.txt_medioDePago.Location = new System.Drawing.Point(136, 66);
             this.txt_medioDePago.Name = "txt_medioDePago";
             this.txt_medioDePago.Size = new System.Drawing.Size(226, 23);
             this.txt_medioDePago.TabIndex = 1;
@@ -126,7 +130,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 106);
+            this.label5.Location = new System.Drawing.Point(19, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 15);
             this.label5.TabIndex = 0;
@@ -149,7 +153,7 @@
             // txt_fecha
             // 
             this.txt_fecha.Enabled = false;
-            this.txt_fecha.Location = new System.Drawing.Point(157, 106);
+            this.txt_fecha.Location = new System.Drawing.Point(157, 114);
             this.txt_fecha.Name = "txt_fecha";
             this.txt_fecha.Size = new System.Drawing.Size(232, 23);
             this.txt_fecha.TabIndex = 1;
@@ -173,7 +177,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 106);
+            this.label4.Location = new System.Drawing.Point(25, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 15);
             this.label4.TabIndex = 0;
@@ -278,6 +282,23 @@
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
+            // txt_vuelto
+            // 
+            this.txt_vuelto.Enabled = false;
+            this.txt_vuelto.Location = new System.Drawing.Point(136, 117);
+            this.txt_vuelto.Name = "txt_vuelto";
+            this.txt_vuelto.Size = new System.Drawing.Size(226, 23);
+            this.txt_vuelto.TabIndex = 3;
+            // 
+            // lbl_vuelto
+            // 
+            this.lbl_vuelto.AutoSize = true;
+            this.lbl_vuelto.Location = new System.Drawing.Point(19, 120);
+            this.lbl_vuelto.Name = "lbl_vuelto";
+            this.lbl_vuelto.Size = new System.Drawing.Size(44, 15);
+            this.lbl_vuelto.TabIndex = 2;
+            this.lbl_vuelto.Text = "Vuelto:";
+            // 
             // Frm_Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -337,5 +358,7 @@
         private ListBox lst_carrito;
         private Button btn_generarVenta;
         private Button btn_Cancelar;
+        private TextBox txt_vuelto;
+        private Label lbl_vuelto;
     }
 }

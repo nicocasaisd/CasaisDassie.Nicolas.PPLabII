@@ -141,6 +141,10 @@ namespace UI
             {
                 MessageBox.Show("Debe completar todos los campos y el carrito no puede estar vacío.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if(nud_dineroCliente.Value < CalcularTotal(listaTuplaCarrito))
+            {
+                MessageBox.Show("El dinero ingresado no es suficiente para abonar el total.", "Dinero insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 // asigno los campos del formulario

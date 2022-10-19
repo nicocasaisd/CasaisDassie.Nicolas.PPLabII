@@ -58,11 +58,14 @@
             this.lbl_listaCantidad = new System.Windows.Forms.Label();
             this.gpb_carrito = new System.Windows.Forms.GroupBox();
             this.llb_historialDeFacturas = new System.Windows.Forms.LinkLabel();
+            this.lbl_pagaCon = new System.Windows.Forms.Label();
+            this.nud_dineroCliente = new System.Windows.Forms.NumericUpDown();
             this.gpb_detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.gpb_total.SuspendLayout();
             this.gpb_datosFacturacion.SuspendLayout();
             this.gpb_carrito.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_dineroCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // lst_carrito
@@ -71,12 +74,12 @@
             this.lst_carrito.ItemHeight = 15;
             this.lst_carrito.Location = new System.Drawing.Point(15, 34);
             this.lst_carrito.Name = "lst_carrito";
-            this.lst_carrito.Size = new System.Drawing.Size(513, 184);
+            this.lst_carrito.Size = new System.Drawing.Size(513, 169);
             this.lst_carrito.TabIndex = 0;
             // 
             // btn_Aceptar
             // 
-            this.btn_Aceptar.Location = new System.Drawing.Point(453, 504);
+            this.btn_Aceptar.Location = new System.Drawing.Point(453, 495);
             this.btn_Aceptar.Name = "btn_Aceptar";
             this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_Aceptar.TabIndex = 1;
@@ -86,7 +89,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(534, 504);
+            this.btn_Cancelar.Location = new System.Drawing.Point(534, 495);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 2;
@@ -97,7 +100,7 @@
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(269, 22);
+            this.lbl_total.Location = new System.Drawing.Point(224, 23);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(44, 15);
             this.lbl_total.TabIndex = 3;
@@ -106,7 +109,7 @@
             // txt_total
             // 
             this.txt_total.Enabled = false;
-            this.txt_total.Location = new System.Drawing.Point(319, 19);
+            this.txt_total.Location = new System.Drawing.Point(274, 20);
             this.txt_total.Name = "txt_total";
             this.txt_total.Size = new System.Drawing.Size(100, 23);
             this.txt_total.TabIndex = 4;
@@ -176,13 +179,15 @@
             // 
             // gpb_total
             // 
+            this.gpb_total.Controls.Add(this.nud_dineroCliente);
+            this.gpb_total.Controls.Add(this.lbl_pagaCon);
             this.gpb_total.Controls.Add(this.lbl_medioDePago);
             this.gpb_total.Controls.Add(this.cmb_medioDePago);
             this.gpb_total.Controls.Add(this.lbl_total);
             this.gpb_total.Controls.Add(this.txt_total);
-            this.gpb_total.Location = new System.Drawing.Point(22, 497);
+            this.gpb_total.Location = new System.Drawing.Point(22, 480);
             this.gpb_total.Name = "gpb_total";
-            this.gpb_total.Size = new System.Drawing.Size(425, 60);
+            this.gpb_total.Size = new System.Drawing.Size(425, 86);
             this.gpb_total.TabIndex = 8;
             this.gpb_total.TabStop = false;
             this.gpb_total.Text = "Total";
@@ -190,7 +195,7 @@
             // lbl_medioDePago
             // 
             this.lbl_medioDePago.AutoSize = true;
-            this.lbl_medioDePago.Location = new System.Drawing.Point(30, 23);
+            this.lbl_medioDePago.Location = new System.Drawing.Point(6, 23);
             this.lbl_medioDePago.Name = "lbl_medioDePago";
             this.lbl_medioDePago.Size = new System.Drawing.Size(87, 15);
             this.lbl_medioDePago.TabIndex = 6;
@@ -199,7 +204,7 @@
             // cmb_medioDePago
             // 
             this.cmb_medioDePago.FormattingEnabled = true;
-            this.cmb_medioDePago.Location = new System.Drawing.Point(123, 20);
+            this.cmb_medioDePago.Location = new System.Drawing.Point(99, 20);
             this.cmb_medioDePago.Name = "cmb_medioDePago";
             this.cmb_medioDePago.Size = new System.Drawing.Size(109, 23);
             this.cmb_medioDePago.TabIndex = 5;
@@ -236,9 +241,9 @@
             this.gpb_datosFacturacion.Controls.Add(this.lbl_fecha);
             this.gpb_datosFacturacion.Controls.Add(this.lbl_nombreCliente);
             this.gpb_datosFacturacion.Controls.Add(this.txt_nombreCliente);
-            this.gpb_datosFacturacion.Location = new System.Drawing.Point(27, 41);
+            this.gpb_datosFacturacion.Location = new System.Drawing.Point(22, 38);
             this.gpb_datosFacturacion.Name = "gpb_datosFacturacion";
-            this.gpb_datosFacturacion.Size = new System.Drawing.Size(508, 92);
+            this.gpb_datosFacturacion.Size = new System.Drawing.Size(539, 92);
             this.gpb_datosFacturacion.TabIndex = 11;
             this.gpb_datosFacturacion.TabStop = false;
             this.gpb_datosFacturacion.Text = "Datos de facturación";
@@ -248,7 +253,7 @@
             this.cmb_puntoDeVenta.FormattingEnabled = true;
             this.cmb_puntoDeVenta.Items.AddRange(new object[] {
             "Alem 723"});
-            this.cmb_puntoDeVenta.Location = new System.Drawing.Point(332, 17);
+            this.cmb_puntoDeVenta.Location = new System.Drawing.Point(365, 17);
             this.cmb_puntoDeVenta.Name = "cmb_puntoDeVenta";
             this.cmb_puntoDeVenta.Size = new System.Drawing.Size(158, 23);
             this.cmb_puntoDeVenta.TabIndex = 7;
@@ -256,7 +261,7 @@
             // lbl_puntoDeVenta
             // 
             this.lbl_puntoDeVenta.AutoSize = true;
-            this.lbl_puntoDeVenta.Location = new System.Drawing.Point(218, 25);
+            this.lbl_puntoDeVenta.Location = new System.Drawing.Point(251, 25);
             this.lbl_puntoDeVenta.Name = "lbl_puntoDeVenta";
             this.lbl_puntoDeVenta.Size = new System.Drawing.Size(87, 15);
             this.lbl_puntoDeVenta.TabIndex = 6;
@@ -265,7 +270,7 @@
             // txt_nroDeFactura
             // 
             this.txt_nroDeFactura.Enabled = false;
-            this.txt_nroDeFactura.Location = new System.Drawing.Point(332, 53);
+            this.txt_nroDeFactura.Location = new System.Drawing.Point(365, 53);
             this.txt_nroDeFactura.Name = "txt_nroDeFactura";
             this.txt_nroDeFactura.Size = new System.Drawing.Size(156, 23);
             this.txt_nroDeFactura.TabIndex = 5;
@@ -273,7 +278,7 @@
             // lbl_nroDeFactura
             // 
             this.lbl_nroDeFactura.AutoSize = true;
-            this.lbl_nroDeFactura.Location = new System.Drawing.Point(219, 56);
+            this.lbl_nroDeFactura.Location = new System.Drawing.Point(252, 56);
             this.lbl_nroDeFactura.Name = "lbl_nroDeFactura";
             this.lbl_nroDeFactura.Size = new System.Drawing.Size(107, 15);
             this.lbl_nroDeFactura.TabIndex = 4;
@@ -339,7 +344,7 @@
             this.gpb_carrito.Controls.Add(this.lst_carrito);
             this.gpb_carrito.Location = new System.Drawing.Point(22, 258);
             this.gpb_carrito.Name = "gpb_carrito";
-            this.gpb_carrito.Size = new System.Drawing.Size(544, 233);
+            this.gpb_carrito.Size = new System.Drawing.Size(544, 216);
             this.gpb_carrito.TabIndex = 14;
             this.gpb_carrito.TabStop = false;
             this.gpb_carrito.Text = "Carrito";
@@ -347,7 +352,7 @@
             // llb_historialDeFacturas
             // 
             this.llb_historialDeFacturas.AutoSize = true;
-            this.llb_historialDeFacturas.Location = new System.Drawing.Point(454, 539);
+            this.llb_historialDeFacturas.Location = new System.Drawing.Point(454, 530);
             this.llb_historialDeFacturas.Name = "llb_historialDeFacturas";
             this.llb_historialDeFacturas.Size = new System.Drawing.Size(112, 15);
             this.llb_historialDeFacturas.TabIndex = 15;
@@ -355,11 +360,32 @@
             this.llb_historialDeFacturas.Text = "Historial de facturas";
             this.llb_historialDeFacturas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_historialDeFacturas_LinkClicked);
             // 
+            // lbl_pagaCon
+            // 
+            this.lbl_pagaCon.AutoSize = true;
+            this.lbl_pagaCon.Location = new System.Drawing.Point(200, 56);
+            this.lbl_pagaCon.Name = "lbl_pagaCon";
+            this.lbl_pagaCon.Size = new System.Drawing.Size(68, 15);
+            this.lbl_pagaCon.TabIndex = 7;
+            this.lbl_pagaCon.Text = "Paga con: $";
+            // 
+            // nud_dineroCliente
+            // 
+            this.nud_dineroCliente.Location = new System.Drawing.Point(274, 54);
+            this.nud_dineroCliente.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nud_dineroCliente.Name = "nud_dineroCliente";
+            this.nud_dineroCliente.Size = new System.Drawing.Size(100, 23);
+            this.nud_dineroCliente.TabIndex = 9;
+            // 
             // Frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 565);
+            this.ClientSize = new System.Drawing.Size(632, 578);
             this.Controls.Add(this.llb_historialDeFacturas);
             this.Controls.Add(this.gpb_datosFacturacion);
             this.Controls.Add(this.btn_RemoverProducto);
@@ -392,6 +418,7 @@
             this.gpb_datosFacturacion.PerformLayout();
             this.gpb_carrito.ResumeLayout(false);
             this.gpb_carrito.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_dineroCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,5 +455,7 @@
         private Label lbl_listaCantidad;
         private GroupBox gpb_carrito;
         private LinkLabel llb_historialDeFacturas;
+        private Label lbl_pagaCon;
+        private NumericUpDown nud_dineroCliente;
     }
 }

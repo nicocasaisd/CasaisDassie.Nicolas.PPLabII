@@ -19,6 +19,7 @@ namespace Entidades
         private int nroDeFactura;
         private eMedioDePago medioDePago;
         private decimal total;
+        private decimal vuelto;
         private List<Tuple<Producto, decimal, string>> listaTuplaCarrito;
 
         #endregion
@@ -28,7 +29,7 @@ namespace Entidades
         public Factura()
         {
         }
-        public Factura(string cliente, DateTime fecha, string puntoDeVenta, int nroDeFactura, eMedioDePago medioDePago, decimal total, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
+        public Factura(string cliente, DateTime fecha, string puntoDeVenta, int nroDeFactura, eMedioDePago medioDePago, decimal total, decimal vuelto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
         {
             this.cliente = cliente;
             this.fecha = fecha;
@@ -36,6 +37,7 @@ namespace Entidades
             this.nroDeFactura = nroDeFactura;
             this.medioDePago = medioDePago;
             this.total = total;
+            this.vuelto = vuelto;
             this.listaTuplaCarrito = listaTuplaCarrito;
             // aumenta el nro de factura
             Factura.ProximoNroDeFactura++;
@@ -79,6 +81,11 @@ namespace Entidades
         public decimal Total
         {
             get { return this.total;  }
+        }
+
+        public decimal Vuelto
+        {
+            get { return this.vuelto; }
         }
 
         public List<Tuple<Producto, decimal, string>> ListaTuplaCarrito

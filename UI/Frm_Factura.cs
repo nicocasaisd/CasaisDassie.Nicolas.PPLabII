@@ -45,6 +45,7 @@ namespace UI
             txt_importeTotal.Text = this.factura.Total.ToString();
             txt_cliente.Text = this.factura.Cliente;
             txt_medioDePago.Text = this.factura.MedioDePago.ToString();
+            txt_vuelto.Text = this.factura.Vuelto.ToString();
             txt_puntoDeVenta.Text = this.factura.PuntoDeVenta;
             txt_nroDeFactura.Text = this.factura.NroDeFactura.ToString("D8");
             txt_fecha.Text = this.factura.Fecha.ToShortDateString();

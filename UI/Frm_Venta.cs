@@ -153,9 +153,10 @@ namespace UI
                 string puntoDeVenta = cmb_puntoDeVenta.Text;
                 int nroDeFactura = int.Parse(txt_nroDeFactura.Text);
                 eMedioDePago medioDePago = (eMedioDePago)cmb_medioDePago.SelectedItem;
-                decimal total = CalcularTotal(this.listaTuplaCarrito); 
+                decimal total = CalcularTotal(this.listaTuplaCarrito);
+                decimal vuelto = nud_dineroCliente.Value - total;
                 // instancio el objeto factura
-                Factura nuevaFactura = new Factura(cliente, fecha, puntoDeVenta, nroDeFactura, medioDePago, total, this.listaTuplaCarrito);
+                Factura nuevaFactura = new Factura(cliente, fecha, puntoDeVenta, nroDeFactura, medioDePago, total, vuelto, this.listaTuplaCarrito);
                 // instancio un Frm_Factura
                 Frm_Factura frm_Factura = new Frm_Factura(nuevaFactura);
                 Sonido("add.wav");

@@ -84,6 +84,23 @@
             return $"{this.Id}, {this.Nombre}, {this.Marca}";
         }
 
+        /// <summary>
+        /// Modifica los valores del Producto 
+        /// </summary>
+        /// <returns></returns>
+        public bool ModificarProducto(decimal precio, int cantidadStock, eCategoriaProducto categoria)
+        {
+            if(precio > 0 && cantidadStock > 0)
+            {
+                this.Precio = precio;
+                this.CantidadStock = cantidadStock;
+                this.Categoria = categoria;
+
+                return true;
+            }
+
+            return false;
+        }
 
         #endregion
 

@@ -95,7 +95,7 @@ namespace UI
         {
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
-                if(ModificarProducto())
+                if (auxProducto.ModificarProducto(nud_precio.Value, (int)nud_cantidadStock.Value, (eCategoriaProducto)cmb_categoria.SelectedIndex))
                 {
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -153,20 +153,6 @@ namespace UI
                     ||  String.IsNullOrEmpty(this.cmb_categoria.Text) 
                     ||  String.IsNullOrEmpty(this.cmb_tipo.Text)
                     ||  String.IsNullOrEmpty(this.cmb_marca.Text) );
-        }
-
-        /// <summary>
-        /// Modifica los valores del Producto 
-        /// </summary>
-        /// <returns></returns>
-        private bool ModificarProducto()
-        {
-
-            auxProducto.Precio = nud_precio.Value;
-            auxProducto.CantidadStock = (int) nud_cantidadStock.Value;
-            auxProducto.Categoria = (eCategoriaProducto)cmb_categoria.SelectedIndex;
-
-            return true; ;
         }
 
         #endregion

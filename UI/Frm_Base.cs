@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,6 +43,13 @@ namespace UI
         public void HabilitarBotonCerrarSesion()
         {
             this.btn_CerrarSesion.Visible = true;
+        }
+
+        public void Sonido(string sonido)
+        {
+            string path = "../../../../media/" + sonido;
+            SoundPlayer spl = new SoundPlayer(path);
+            spl.Play();
         }
 
     }

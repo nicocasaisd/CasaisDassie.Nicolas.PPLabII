@@ -183,18 +183,6 @@ namespace UI
             frm_historial.ShowDialog();
         }
 
-        /// <summary>
-        /// Cierra la ventana y abre una ventana de Login
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_Salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Frm_Login frm_Login = new Frm_Login();
-            frm_Login.Show();
-        }
-
         #endregion
 
         #region METODOS LÓGICA
@@ -330,20 +318,6 @@ namespace UI
             //return $"{auxProducto, -20}  {cantidad, 20}";
             return String.Format("{0, -30}  {1, 80}", auxProducto, cantidad);
         }
-
-        /// <summary>
-        /// Reproduce un sonido
-        /// </summary>
-        /// <param name="sonido"></param>
-        public void Sonido(string sonido)
-        {
-            string path = "../../../../media/" + sonido;
-            SoundPlayer spl = new SoundPlayer(path);
-            spl.Play();
-        }
-
-
-
 
         #endregion
 

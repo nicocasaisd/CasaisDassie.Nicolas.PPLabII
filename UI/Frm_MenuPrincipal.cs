@@ -24,7 +24,7 @@ namespace UI
         {
             this.HabilitarBotonCerrarSesion();
             this.lbl_nombreUsuario.Text = "Bienvenido " + TiendaElectronica.UsuarioLogueado.Email;
-            Sonido("ding.wav");
+            this.Sonido("ding.wav");
         }
 
 
@@ -40,19 +40,6 @@ namespace UI
             frm_AdminInventario.ShowDialog();
         }
 
-        public void Sonido(string sonido)
-        {
-            string path = "../../../../media/" + sonido;
-            SoundPlayer spl = new SoundPlayer(path);
-            spl.Play();
-        }
-
-        private void btn_Salir_Click(object sender, EventArgs e)
-        {
-            TiendaElectronica.UsuarioLogueado = null;
-            this.Close();
-            Frm_Login frm_Login = new Frm_Login();
-            frm_Login.Show();
-        }
+        
     }
 }

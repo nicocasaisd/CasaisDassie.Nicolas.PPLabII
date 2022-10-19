@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Salir = new System.Windows.Forms.Button();
             this.gpb_ventasTotales = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_ventasTotales = new System.Windows.Forms.TextBox();
@@ -47,17 +46,6 @@
             this.gpb_datosCategoria.SuspendLayout();
             this.gpb_totalGanancia.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_Salir
-            // 
-            this.btn_Salir.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_Salir.Location = new System.Drawing.Point(475, 21);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(54, 24);
-            this.btn_Salir.TabIndex = 4;
-            this.btn_Salir.Text = "Salir";
-            this.btn_Salir.UseVisualStyleBackColor = false;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // gpb_ventasTotales
             // 
@@ -202,10 +190,13 @@
             this.Controls.Add(this.gpb_totalGanancia);
             this.Controls.Add(this.gpb_datosCategoria);
             this.Controls.Add(this.gpb_ventasTotales);
-            this.Controls.Add(this.btn_Salir);
             this.Name = "Frm_Estadisticas";
             this.Text = "Frm_Estadisticas";
             this.Load += new System.EventHandler(this.Frm_Estadisticas_Load);
+            this.Controls.SetChildIndex(this.gpb_ventasTotales, 0);
+            this.Controls.SetChildIndex(this.gpb_datosCategoria, 0);
+            this.Controls.SetChildIndex(this.gpb_totalGanancia, 0);
+            this.Controls.SetChildIndex(this.btn_calcular, 0);
             this.gpb_ventasTotales.ResumeLayout(false);
             this.gpb_ventasTotales.PerformLayout();
             this.gpb_datosCategoria.ResumeLayout(false);
@@ -217,8 +208,6 @@
         }
 
         #endregion
-
-        private Button btn_Salir;
         private GroupBox gpb_ventasTotales;
         private TextBox txt_ventasTotales;
         private Label label1;

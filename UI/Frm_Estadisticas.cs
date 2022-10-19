@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Frm_Estadisticas : Form
+    public partial class Frm_Estadisticas : Frm_Base
     {
         //int totalVentas;
         //decimal totalGanacia = 0;
@@ -26,15 +26,9 @@ namespace UI
             InitializeComponent();
         }
 
-        private void btn_Salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Frm_Login frm_Login = new Frm_Login();
-            frm_Login.Show();
-        }
-
         private void Frm_Estadisticas_Load(object sender, EventArgs e)
         {
+            this.HabilitarBotonCerrarSesion();
             // cmb
             Array eCategoria = Enum.GetValues(typeof(eCategoriaProducto));
             cmb_categoria.DataSource = eCategoria;

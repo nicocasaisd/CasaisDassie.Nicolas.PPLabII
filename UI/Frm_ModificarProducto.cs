@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Frm_ModificarProducto : Form
+    public partial class Frm_ModificarProducto : Frm_Base
     {
         #region ATRIBUTOS
 

@@ -34,7 +34,7 @@
             // btn_CerrarSesion
             // 
             this.btn_CerrarSesion.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(12, 12);
+            this.btn_CerrarSesion.Location = new System.Drawing.Point(8, 8);
             this.btn_CerrarSesion.Name = "btn_CerrarSesion";
             this.btn_CerrarSesion.Size = new System.Drawing.Size(92, 24);
             this.btn_CerrarSesion.TabIndex = 4;

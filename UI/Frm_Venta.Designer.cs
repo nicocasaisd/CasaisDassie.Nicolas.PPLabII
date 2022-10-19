@@ -77,7 +77,7 @@
             // 
             // btn_Aceptar
             // 
-            this.btn_Aceptar.Location = new System.Drawing.Point(453, 475);
+            this.btn_Aceptar.Location = new System.Drawing.Point(453, 504);
             this.btn_Aceptar.Name = "btn_Aceptar";
             this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_Aceptar.TabIndex = 1;
@@ -87,7 +87,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(534, 475);
+            this.btn_Cancelar.Location = new System.Drawing.Point(534, 504);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancelar.TabIndex = 2;
@@ -137,7 +137,7 @@
             this.gpb_detalle.Controls.Add(this.txt_codigo);
             this.gpb_detalle.Controls.Add(this.lbl_codigo);
             this.gpb_detalle.Controls.Add(this.lbl_cantidad);
-            this.gpb_detalle.Location = new System.Drawing.Point(22, 123);
+            this.gpb_detalle.Location = new System.Drawing.Point(22, 152);
             this.gpb_detalle.Name = "gpb_detalle";
             this.gpb_detalle.Size = new System.Drawing.Size(307, 100);
             this.gpb_detalle.TabIndex = 7;
@@ -181,7 +181,7 @@
             this.gpb_total.Controls.Add(this.cmb_medioDePago);
             this.gpb_total.Controls.Add(this.lbl_total);
             this.gpb_total.Controls.Add(this.txt_total);
-            this.gpb_total.Location = new System.Drawing.Point(22, 468);
+            this.gpb_total.Location = new System.Drawing.Point(22, 497);
             this.gpb_total.Name = "gpb_total";
             this.gpb_total.Size = new System.Drawing.Size(425, 60);
             this.gpb_total.TabIndex = 8;
@@ -209,7 +209,7 @@
             // btn_AgregarProducto
             // 
             this.btn_AgregarProducto.Enabled = false;
-            this.btn_AgregarProducto.Location = new System.Drawing.Point(341, 143);
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(341, 172);
             this.btn_AgregarProducto.Name = "btn_AgregarProducto";
             this.btn_AgregarProducto.Size = new System.Drawing.Size(75, 23);
             this.btn_AgregarProducto.TabIndex = 9;
@@ -219,7 +219,7 @@
             // 
             // btn_RemoverProducto
             // 
-            this.btn_RemoverProducto.Location = new System.Drawing.Point(341, 181);
+            this.btn_RemoverProducto.Location = new System.Drawing.Point(341, 210);
             this.btn_RemoverProducto.Name = "btn_RemoverProducto";
             this.btn_RemoverProducto.Size = new System.Drawing.Size(75, 23);
             this.btn_RemoverProducto.TabIndex = 10;
@@ -237,7 +237,7 @@
             this.gpb_datosFacturacion.Controls.Add(this.lbl_fecha);
             this.gpb_datosFacturacion.Controls.Add(this.lbl_nombreCliente);
             this.gpb_datosFacturacion.Controls.Add(this.txt_nombreCliente);
-            this.gpb_datosFacturacion.Location = new System.Drawing.Point(27, 12);
+            this.gpb_datosFacturacion.Location = new System.Drawing.Point(27, 41);
             this.gpb_datosFacturacion.Name = "gpb_datosFacturacion";
             this.gpb_datosFacturacion.Size = new System.Drawing.Size(508, 92);
             this.gpb_datosFacturacion.TabIndex = 11;
@@ -338,7 +338,7 @@
             this.gpb_carrito.Controls.Add(this.lbl_listaProducto);
             this.gpb_carrito.Controls.Add(this.lbl_listaCantidad);
             this.gpb_carrito.Controls.Add(this.lst_carrito);
-            this.gpb_carrito.Location = new System.Drawing.Point(22, 229);
+            this.gpb_carrito.Location = new System.Drawing.Point(22, 258);
             this.gpb_carrito.Name = "gpb_carrito";
             this.gpb_carrito.Size = new System.Drawing.Size(544, 233);
             this.gpb_carrito.TabIndex = 14;
@@ -348,7 +348,7 @@
             // llb_historialDeFacturas
             // 
             this.llb_historialDeFacturas.AutoSize = true;
-            this.llb_historialDeFacturas.Location = new System.Drawing.Point(454, 510);
+            this.llb_historialDeFacturas.Location = new System.Drawing.Point(454, 539);
             this.llb_historialDeFacturas.Name = "llb_historialDeFacturas";
             this.llb_historialDeFacturas.Size = new System.Drawing.Size(112, 15);
             this.llb_historialDeFacturas.TabIndex = 15;
@@ -372,7 +372,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 534);
+            this.ClientSize = new System.Drawing.Size(632, 565);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.llb_historialDeFacturas);
             this.Controls.Add(this.gpb_datosFacturacion);
@@ -388,6 +388,16 @@
             this.Name = "Frm_Venta";
             this.Text = "Administrador de Venta";
             this.Load += new System.EventHandler(this.Frm_Venta_Load);
+            this.Controls.SetChildIndex(this.gpb_carrito, 0);
+            this.Controls.SetChildIndex(this.btn_Aceptar, 0);
+            this.Controls.SetChildIndex(this.btn_Cancelar, 0);
+            this.Controls.SetChildIndex(this.gpb_detalle, 0);
+            this.Controls.SetChildIndex(this.gpb_total, 0);
+            this.Controls.SetChildIndex(this.btn_AgregarProducto, 0);
+            this.Controls.SetChildIndex(this.btn_RemoverProducto, 0);
+            this.Controls.SetChildIndex(this.gpb_datosFacturacion, 0);
+            this.Controls.SetChildIndex(this.llb_historialDeFacturas, 0);
+            this.Controls.SetChildIndex(this.btn_Salir, 0);
             this.gpb_detalle.ResumeLayout(false);
             this.gpb_detalle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).EndInit();

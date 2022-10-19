@@ -16,15 +16,32 @@ namespace UI
         public Frm_Base()
         {
             InitializeComponent();
-            this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
+            ObtenerColorDeUsuario();
         }
 
-        private void btn_CerrarSesion_Click(object sender, EventArgs e)
+        public void btn_CerrarSesion_Click(object sender, EventArgs e)
         {
             TiendaElectronica.UsuarioLogueado = null;
             this.Close();
             Frm_Login frm_Login = new Frm_Login();
             frm_Login.Show();
+        }
+
+        public void ObtenerColorDeUsuario()
+        {
+            if (TiendaElectronica.UsuarioLogueado is not null)
+            {
+                this.BackColor = TiendaElectronica.UsuarioLogueado.ColorDeFondo;
+            }
+            else
+            {
+                this.BackColor = Color.White;
+            }
+        }
+
+        public void HabilitarBotonCerrarSesion()
+        {
+            this.btn_CerrarSesion.Visible = true;
         }
 
     }

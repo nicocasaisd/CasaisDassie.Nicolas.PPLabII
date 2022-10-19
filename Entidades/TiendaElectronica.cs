@@ -252,21 +252,6 @@ namespace Entidades
 
             return false;
         }
-
-        /// <summary>
-        ///  Devuelve el color de fondo de la ventana correspondiente al tipo de Usuario
-        /// </summary>
-        /// <returns></returns>
-        public static Color ObtenerColorDeUsuario()
-        {
-            if(TiendaElectronica.UsuarioLogueado is not null)
-            {
-                return UsuarioLogueado.ColorDeFondo;
-            }
-
-            return Color.White;
-        }
-        
     }
 
     #endregion

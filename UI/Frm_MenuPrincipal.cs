@@ -22,7 +22,6 @@ namespace UI
 
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
-            this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             this.lbl_nombreUsuario.Text = "Bienvenido " + TiendaElectronica.UsuarioLogueado.Email;
             Sonido("ding.wav");
         }

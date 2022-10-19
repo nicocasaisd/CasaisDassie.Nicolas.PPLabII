@@ -33,10 +33,9 @@ namespace UI
 
         private void Frm_Venta_Load(object sender, EventArgs e)
         {
-            this.BackColor = TiendaElectronica.ObtenerColorDeUsuario();
             if(TiendaElectronica.UsuarioLogueado.GetType() == typeof(Vendedor))
             {
-                btn_Salir.Visible = true;
+                this.HabilitarBotonCerrarSesion();
             }
             // Cargo el nro de factura
             txt_nroDeFactura.Text = Factura.ProximoNroDeFactura.ToString("D8");

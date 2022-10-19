@@ -64,18 +64,44 @@
 
 
 
+
+
         #endregion
 
         #region METODOS
 
-        // Override de ToString
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
         public override string ToString()
         {
-            return $"{this.Id}, {this.Nombre}, {this.Marca}" ;
+            return $"{this.Id}, {this.Nombre}, {this.Marca}";
         }
 
 
         #endregion
+
+        #region SOBRECARGA DE OPERADORES
+
+
+        public static bool operator==(Producto a, Producto b)
+        {
+            return a.Id == b.Id;
+        }
+
+        public static bool operator !=(Producto a, Producto b)
+        {
+            return !(a == b);
+        }
+
+        #endregion
+
 
     }
 }

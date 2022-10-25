@@ -15,10 +15,7 @@ namespace Entidades
         private static string nombreTienda;
         private static Usuario usuarioLogueado;
         private static List<Factura> listaFacturas;
-        //private static List<Vendedor> listaVendedores;
-        //private static List<Duenio> listaDuenios;
         private static List<Producto> listaProductos;
-        //private static List<Contador> listaContadores;
         private static List<Usuario> listaUsuarios;
 
         #endregion
@@ -30,11 +27,8 @@ namespace Entidades
         static TiendaElectronica()
         {
             nombreTienda = "Electrónica Casais";
-            //listaVendedores = new List<Vendedor>();
-            //listaDuenios = new List<Duenio>();
             listaProductos = new List<Producto>();
             listaFacturas = new List<Factura>();
-            //listaContadores = new List<Contador>();
             listaUsuarios = new List<Usuario>();
             HardcodearDatos();
         }
@@ -141,62 +135,7 @@ namespace Entidades
             Vendedor.HardcodearEntradas();
             Duenio.HardcodearEntradas();
             Contador.HardcodearEntradas();
-            //HardcodearVendedores();
-            //HardcodearDuenios();
-            HardcodearProductos();
-            //HardcodearContadores();
-        }
-
-        private static void HardcodearProductos()
-        {
-            listaProductos.Add(new Producto(
-                "Parlante Bluetooth", eCategoriaProducto.Audio, eTipoProducto.Parlante,
-                eMarcaProducto.JBL, 17500, 20
-                ));
-            listaProductos.Add(new Producto(
-                "Teclado inalámbrico", eCategoriaProducto.Computacion, eTipoProducto.Teclado,
-                eMarcaProducto.Lenovo, 1270, 10
-                ));
-            listaProductos.Add(new Producto(
-                "Monitor 19\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
-                eMarcaProducto.Lenovo, 1270, 10
-                ));
-            listaProductos.Add(new Producto(
-                "Notebook I7 8gb RAM", eCategoriaProducto.Computacion, eTipoProducto.Notebook,
-                eMarcaProducto.Dell, 123300, 5
-                ));
-            listaProductos.Add(new Producto(
-                "Impresora Profesional", eCategoriaProducto.Impresion, eTipoProducto.Impresora,
-                eMarcaProducto.Epson, 45070, 6
-                ));
-            listaProductos.Add(new Producto(
-                "Play Station 5", eCategoriaProducto.Gaming, eTipoProducto.ConsolaGaming,
-                eMarcaProducto.PlayStation, 16580, 4
-                ));
-            listaProductos.Add(new Producto(
-                "Micrófono Condenser", eCategoriaProducto.Audio, eTipoProducto.Microfono,
-                eMarcaProducto.DyB, 43200, 16
-                ));
-            listaProductos.Add(new Producto(
-                "Monitor 14\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
-                eMarcaProducto.HP, 35200, 3
-                ));
-        }
-
-        private static void HardcodearVendedores()
-        {
-            listaUsuarios.Add(new Vendedor("nicolas@electronicacasais.com", "asd123"));
-            listaUsuarios.Add(new Vendedor("julieta@electronicacasais.com", "pepe12"));
-        }
-
-        private static void HardcodearDuenios()
-        {
-            listaUsuarios.Add(new Duenio("fernando@electronicacasais.com", "asd123"));
-        }
-
-        private static void HardcodearContadores()
-        {
-            listaUsuarios.Add(new Contador("contador@electronicacasais.com", "asd123"));
+            Producto.HardcodearProductos();
         }
 
         /// <summary>

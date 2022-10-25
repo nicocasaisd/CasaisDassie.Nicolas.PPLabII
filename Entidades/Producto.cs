@@ -70,6 +70,41 @@
 
         #region METODOS
 
+        public static void HardcodearProductos()
+        {
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Parlante Bluetooth", eCategoriaProducto.Audio, eTipoProducto.Parlante,
+                eMarcaProducto.JBL, 17500, 20
+                ));
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Teclado inalámbrico", eCategoriaProducto.Computacion, eTipoProducto.Teclado,
+                eMarcaProducto.Lenovo, 1270, 10
+                ));
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Monitor 19\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
+                eMarcaProducto.Lenovo, 1270, 10
+                ));
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Notebook I7 8gb RAM", eCategoriaProducto.Computacion, eTipoProducto.Notebook,
+                eMarcaProducto.Dell, 123300, 5
+                ));
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Impresora Profesional", eCategoriaProducto.Impresion, eTipoProducto.Impresora,
+                eMarcaProducto.Epson, 45070, 6
+                ));
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Play Station 5", eCategoriaProducto.Gaming, eTipoProducto.ConsolaGaming,
+                eMarcaProducto.PlayStation, 16580, 4
+                ));
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Micrófono Condenser", eCategoriaProducto.Audio, eTipoProducto.Microfono,
+                eMarcaProducto.DyB, 43200, 16
+                ));
+            TiendaElectronica.ListaProductos.Add(new Producto(
+                "Monitor 14\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
+                eMarcaProducto.HP, 35200, 3
+                ));
+        }
         public override bool Equals(object obj)
         {
             return base.Equals(obj);

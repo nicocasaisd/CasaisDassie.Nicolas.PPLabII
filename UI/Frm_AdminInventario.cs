@@ -163,6 +163,25 @@ namespace UI
             }
         }
 
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            // limpio la lista actual
+            this.listaInventario.Clear();
+
+            // valido
+            if (cmb_categoria.SelectedItem is not null)
+            {
+                foreach (Producto item in TiendaElectronica.ListaProductos)
+                {
+                    if (item.Categoria == (eCategoriaProducto)cmb_categoria.SelectedItem)
+                    {
+                        this.listaInventario.Add(item);
+                    }
+                }
+                ActualizarDataGridList();
+            }
+        }
+
         #endregion
 
         #region METODOS
@@ -186,24 +205,7 @@ namespace UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_buscar_Click(object sender, EventArgs e)
-        {
-            // limpio la lista actual
-            this.listaInventario.Clear();
 
-            // valido
-            if(cmb_categoria.SelectedItem is not null)
-            {
-                foreach(Producto item in TiendaElectronica.ListaProductos)
-                {
-                    if(item.Categoria == (eCategoriaProducto) cmb_categoria.SelectedItem)
-                    {
-                        this.listaInventario.Add(item);
-                    }
-                }
-                ActualizarDataGridList();
-            }
-        }
 
         #endregion
     }

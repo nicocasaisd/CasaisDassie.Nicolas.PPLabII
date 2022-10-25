@@ -123,18 +123,21 @@
         /// Modifica los valores del Producto 
         /// </summary>
         /// <returns></returns>
-        public bool ModificarProducto(decimal precio, int cantidadStock, eCategoriaProducto categoria)
+        public void ModificarProducto(decimal precio, int cantidadStock, eCategoriaProducto categoria)
         {
-            if(precio > 0 && cantidadStock > 0)
-            {
-                this.Precio = precio;
-                this.CantidadStock = cantidadStock;
-                this.Categoria = categoria;
+            this.Precio = precio;
+            this.CantidadStock = cantidadStock;
+            this.Categoria = categoria;
+        }
 
-                return true;
-            }
-
-            return false;
+        /// <summary>
+        /// Instancia el Producto y lo agrega a la lista estática de productos
+        /// </summary>
+        /// <returns></returns>
+        public static void AgregarProducto(string nombre, eCategoriaProducto categoria, eTipoProducto tipo, eMarcaProducto marca, decimal precio, int cantidad)
+        {
+            Producto auxProducto = new Producto(nombre, categoria, tipo, marca, precio, cantidad);
+            TiendaElectronica.ListaProductos.Add(auxProducto);  
         }
 
         #endregion

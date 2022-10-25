@@ -95,53 +95,39 @@ namespace UI
         {
             if (this.opcion == eModificarProductoOpcion.ModificarProducto)
             {
-                if (auxProducto.ModificarProducto(nud_precio.Value, (int)nud_cantidadStock.Value, (eCategoriaProducto)cmb_categoria.SelectedIndex))
-                {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+                auxProducto.ModificarProducto(nud_precio.Value, (int)nud_cantidadStock.Value, (eCategoriaProducto)cmb_categoria.SelectedIndex);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else if (this.opcion == eModificarProductoOpcion.AgregarProducto)
             {
-                if(AgregarProducto())
+                if(ValidarCampos())
                 {
+                    Producto.AgregarProducto(
+                        txt_nombre.Text,
+                        (eCategoriaProducto)cmb_categoria.SelectedItem,
+                        (eTipoProducto)cmb_tipo.SelectedItem,
+                        (eMarcaProducto)cmb_marca.SelectedItem,
+                        nud_precio.Value,
+                        (int)nud_cantidadStock.Value
+                        );
+                    
                     this.DialogResult = DialogResult.OK;
                     this.Close();
+                    
                 }
-                
+                else
+                {
+                    MessageBox.Show("Error. Se ingresaron datos no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
             }
         }
 
         #endregion
 
         #region METODOS
-        /// <summary>
-        /// Instancia el Producto y lo agrega a la lista estática de productos
-        /// </summary>
-        /// <returns></returns>
-        private bool AgregarProducto()
-        {
-            bool retorno = false;
-            if(ValidarCampos())
-            {
-                Producto auxProducto = new Producto(
-                    txt_nombre.Text, 
-                    (eCategoriaProducto) cmb_categoria.SelectedItem, 
-                    (eTipoProducto) cmb_tipo.SelectedItem, 
-                    (eMarcaProducto) cmb_marca.SelectedItem, 
-                    nud_precio.Value,
-                    (int) nud_cantidadStock.Value);
-
-                TiendaElectronica.ListaProductos.Add(auxProducto);
-
-                retorno = true;
-            }
-            else
-            {
-                MessageBox.Show("Error. Se ingresaron datos no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return retorno;
-        }
 
         /// <summary>
         /// Valida que los campos no sean nulos ni vacíos
@@ -152,7 +138,7 @@ namespace UI
             return !(   String.IsNullOrEmpty(this.txt_nombre.Text)
                     ||  String.IsNullOrEmpty(this.cmb_categoria.Text) 
                     ||  String.IsNullOrEmpty(this.cmb_tipo.Text)
-                    ||  String.IsNullOrEmpty(this.cmb_marca.Text) );
+                    ||  String.IsNullOrEmpty(this.cmb_marca.Text));
         }
 
         #endregion

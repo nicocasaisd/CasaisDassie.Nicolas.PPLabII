@@ -13,5 +13,10 @@ namespace Entidades
         {
             return "Usuario Dueño - " + this.Email;
         }
+
+        public static void HardcodearEntradas()
+        {
+            TiendaElectronica.ListaUsuarios.Add(new Duenio("fernando@electronicacasais.com", "asd123"));
+        }
     }
 }

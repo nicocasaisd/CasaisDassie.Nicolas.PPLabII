@@ -17,5 +17,10 @@ namespace Entidades
         {
             return "Usuario Contador - " + this.Email;
         }
+
+        public static void HardcodearEntradas()
+        {
+            TiendaElectronica.ListaUsuarios.Add(new Contador("contador@electronicacasais.com", "asd123"));
+        }
     }
 }

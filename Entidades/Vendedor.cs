@@ -13,5 +13,11 @@ namespace Entidades
         {
             return "Usuario Vendedor - " + this.Email;
         }
+
+        public static void HardcodearEntradas()
+        {
+            TiendaElectronica.ListaUsuarios.Add(new Vendedor("nicolas@electronicacasais.com", "asd123"));
+            TiendaElectronica.ListaUsuarios.Add(new Vendedor("julieta@electronicacasais.com", "pepe12"));
+        }
     }
 }

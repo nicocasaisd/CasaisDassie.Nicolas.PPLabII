@@ -138,10 +138,13 @@ namespace Entidades
         /// </summary>
         private static void HardcodearDatos()
         {
-            HardcodearVendedores();
-            HardcodearDuenios();
+            Vendedor.HardcodearEntradas();
+            Duenio.HardcodearEntradas();
+            Contador.HardcodearEntradas();
+            //HardcodearVendedores();
+            //HardcodearDuenios();
             HardcodearProductos();
-            HardcodearContadores();
+            //HardcodearContadores();
         }
 
         private static void HardcodearProductos()

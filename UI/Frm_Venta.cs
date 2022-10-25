@@ -142,7 +142,7 @@ namespace UI
             {
                 MessageBox.Show("Debe completar todos los campos y el carrito no puede estar vacío.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(nud_dineroCliente.Value < CalcularTotal())
+            else if(nud_dineroCliente.Value < Manager_Carrito.CalcularTotal((eMedioDePago)cmb_medioDePago.SelectedItem))
             {
                 MessageBox.Show("El dinero ingresado no es suficiente para abonar el total.", "Dinero insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -154,7 +154,7 @@ namespace UI
                 string puntoDeVenta = cmb_puntoDeVenta.Text;
                 int nroDeFactura = int.Parse(txt_nroDeFactura.Text);
                 eMedioDePago medioDePago = (eMedioDePago)cmb_medioDePago.SelectedItem;
-                decimal total = CalcularTotal();
+                decimal total = Manager_Carrito.CalcularTotal((eMedioDePago)cmb_medioDePago.SelectedItem);
                 decimal vuelto = nud_dineroCliente.Value - total;
                 // instancio el objeto factura
                 Factura nuevaFactura = new Factura(cliente, fecha, puntoDeVenta, nroDeFactura, medioDePago, total, vuelto, Manager_Carrito.ListaTuplaCarrito);
@@ -175,7 +175,7 @@ namespace UI
         private void cmb_medioDePago_SelectedIndexChanged(object sender, EventArgs e)
         {
             // actualizo txt_total
-            txt_total.Text = CalcularTotal().ToString();
+            txt_total.Text = Manager_Carrito.CalcularTotal((eMedioDePago)cmb_medioDePago.SelectedItem).ToString();
         }
 
         /// <summary>
@@ -238,92 +238,9 @@ namespace UI
             lst_carrito.DataSource = null;
             lst_carrito.DataSource = Manager_Carrito.ListaTuplaCarrito;
             // actualizo txt_total
-            txt_total.Text = CalcularTotal().ToString();
+            txt_total.Text = Manager_Carrito.CalcularTotal((eMedioDePago)cmb_medioDePago.SelectedItem).ToString();
             lst_carrito.DisplayMember = "Item3";
         }
-
-        /// <summary>
-        /// Calcula el valor total de los Productos en la lista Carrito
-        /// </summary>
-        /// <param name="listaTuplaCarrito"></param>
-        /// <returns></returns>
-        private decimal CalcularTotal()
-        {
-            decimal subtotal = 0;
-            decimal total = 0;
-            foreach (Tuple<Producto, decimal, string> item in Manager_Carrito.ListaTuplaCarrito)
-            {
-                subtotal = item.Item2 * (decimal)item.Item1.Precio;
-
-                total += subtotal;
-
-            }
-            // recargo por Crédito
-            if (cmb_medioDePago.SelectedItem.Equals(eMedioDePago.Crédito))
-            {
-                total += total * recargoCredito;
-            }
-
-            return total;
-        }
-
-        /// <summary>
-        /// Devuelve true si el producto ya existe en el carrito
-        /// </summary>
-        /// <param name="auxProducto"></param>
-        /// <param name="listaTuplaCarrito"></param>
-        /// <returns></returns>
-        //private bool ExisteProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
-        //{
-        //    if(ObtenerIndiceProductoEnCarrito(auxProducto, listaTuplaCarrito) != -1)
-        //    {
-        //        return true;
-        //    }
-
-        //    return false;
-        //}
-
-        /// <summary>
-        /// Devuelve el índice del producto en la lista Carrito, si no existe devuelve -1
-        /// </summary>
-        /// <param name="auxProducto"></param>
-        /// <param name="listaTuplaCarrito"></param>
-        /// <returns></returns>
-        //private int ObtenerIndiceProductoEnCarrito(Producto auxProducto, List<Tuple<Producto, decimal, string>> listaTuplaCarrito)
-        //{
-        //    for (int i = 0; i < listaTuplaCarrito.Count; i++)
-        //    {
-        //        if (listaTuplaCarrito[i].Item1.Id == auxProducto.Id)
-        //        {
-        //            return i;
-        //        }
-        //    }
-        //    return -1;
-        //}
-
-        /// <summary>
-        /// Actualiza la cantidad del producto en la lista Carrito cuando se agrega un producto que ya estaba.
-        /// </summary>
-        /// <param name="indice"></param>
-        /// <param name="cantidad"></param>
-        /// <param name="listaTuplaCarrito"></param>
-        /// <param name="auxProducto"></param>
-        //private void ActualizarProductoEnCarrito(int indice, decimal cantidad, List<Tuple<Producto, decimal, string>> listaTuplaCarrito, Producto auxProducto)
-        //{
-        //    cantidad += this.listaTuplaCarrito[indice].Item2;
-        //    this.listaTuplaCarrito[indice] = Tuple.Create(auxProducto, cantidad, FormatearProductoEnCarrito(auxProducto, cantidad));
-        //}
-
-        /// <summary>
-        /// Formatea el string para que aparezca en la ListBox
-        /// </summary>
-        /// <param name="auxProducto"></param>
-        /// <param name="cantidad"></param>
-        /// <returns></returns>
-        //private string FormatearProductoEnCarrito(Producto auxProducto, decimal cantidad)
-        //{
-        //    return String.Format("{0, -30}  {1, 80}", auxProducto, cantidad);
-        //}
 
         #endregion
 

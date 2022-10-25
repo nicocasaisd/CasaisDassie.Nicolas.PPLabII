@@ -6,7 +6,7 @@ namespace Managers
 {
     public static class Manager_Carrito
     {
-
+        const decimal RECARGO_CREDITO = 0.10M;
         private static List<Tuple<Producto, decimal, string>> listaTuplaCarrito;
 
 
@@ -86,6 +86,31 @@ namespace Managers
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Calcula el valor total de los Productos en la lista Carrito
+        /// </summary>
+        /// <param name="listaTuplaCarrito"></param>
+        /// <returns></returns>
+        public static decimal CalcularTotal(eMedioDePago medio)
+        {
+            decimal subtotal = 0;
+            decimal total = 0;
+            foreach (Tuple<Producto, decimal, string> item in Manager_Carrito.ListaTuplaCarrito)
+            {
+                subtotal = item.Item2 * (decimal)item.Item1.Precio;
+
+                total += subtotal;
+
+            }
+            // recargo por Crédito
+            if (medio == eMedioDePago.Crédito)
+            {
+                total += total * RECARGO_CREDITO;
+            }
+
+            return total;
         }
 
     }

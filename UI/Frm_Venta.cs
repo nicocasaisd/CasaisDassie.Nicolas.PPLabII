@@ -15,17 +15,12 @@ namespace UI
 {
     public partial class Frm_Venta : Frm_Base
     {
-        #region ATRIBUTOS
-        const decimal recargoCredito = 0.10M;
-        //List<Tuple<Producto, decimal, string>> listaTuplaCarrito;
-        #endregion
 
         #region CONSTRUCTORES
 
         public Frm_Venta()
         {
             InitializeComponent();
-            //listaTuplaCarrito = new List<Tuple<Producto, decimal, string>>();
         }
 
         #endregion
@@ -88,7 +83,7 @@ namespace UI
                 int indexProducto = TiendaElectronica.ObtenerIndexProducto(int.Parse(txt_codigo.Text));
                 auxProducto = TiendaElectronica.ListaProductos[indexProducto];
                 // me fijo si ya existe y lo agrego a la lista
-                if(!ExisteStockDeProducto(auxProducto))
+                if(!Manager_Carrito.ExisteStockDeProducto(auxProducto, nud_cantidad.Value))
                 {
                     Sonido("chord.wav");
                     MessageBox.Show("No hay stock suficiente del producto que quiere agregar.", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -187,35 +182,6 @@ namespace UI
         {
             Frm_HistorialDeFacturas frm_historial = new Frm_HistorialDeFacturas();
             frm_historial.ShowDialog();
-        }
-
-        #endregion
-
-        #region METODOS LÓGICA
-
-
-        /// <summary>
-        /// Revisa si hay stock suficiente del producto para la cantidad ingresada
-        /// </summary>
-        /// <param name="auxProducto"></param>
-        /// <param name="listaTuplaCarrito"></param>
-        /// <returns></returns>
-        private bool ExisteStockDeProducto(Producto auxProducto)
-        {
-            decimal cantidad = nud_cantidad.Value;
-            decimal cantidadCargadaEnCarrito = 0;
-            int indiceProductoEnCarrito = Manager_Carrito.ObtenerIndiceProductoEnCarrito(auxProducto);
-
-            if (indiceProductoEnCarrito != -1)
-            {
-                cantidadCargadaEnCarrito = Manager_Carrito.ListaTuplaCarrito[indiceProductoEnCarrito].Item2;
-            }
-            if (auxProducto.CantidadStock >= (cantidad + cantidadCargadaEnCarrito))
-            {
-                return true;
-            }
-
-            return false;
         }
 
         private void LimpiarCampos()

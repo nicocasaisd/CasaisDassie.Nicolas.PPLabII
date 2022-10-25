@@ -113,5 +113,28 @@ namespace Managers
             return total;
         }
 
+        /// <summary>
+        /// Revisa si hay stock suficiente del producto para la cantidad ingresada
+        /// </summary>
+        /// <param name="auxProducto"></param>
+        /// <param name="listaTuplaCarrito"></param>
+        /// <returns></returns>
+        public static bool ExisteStockDeProducto(Producto auxProducto, decimal cantidad)
+        {
+            decimal cantidadCargadaEnCarrito = 0;
+            int indiceProductoEnCarrito = Manager_Carrito.ObtenerIndiceProductoEnCarrito(auxProducto);
+
+            if (indiceProductoEnCarrito != -1)
+            {
+                cantidadCargadaEnCarrito = Manager_Carrito.ListaTuplaCarrito[indiceProductoEnCarrito].Item2;
+            }
+            if (auxProducto.CantidadStock >= (cantidad + cantidadCargadaEnCarrito))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
     }
 }

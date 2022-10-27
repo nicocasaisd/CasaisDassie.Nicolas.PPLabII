@@ -10,7 +10,7 @@ namespace Entidades
     {
         string nombre;
         string cuil;
-        List<Producto> listaProductos;
+        List<Producto> listaProductos = new List<Producto>();
 
 
         public Proveedor()

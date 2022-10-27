@@ -31,6 +31,7 @@ namespace Entidades
             listaProductos = new List<Producto>();
             listaFacturas = new List<Factura>();
             listaUsuarios = new List<Usuario>();
+            listaProveedores = new List<Proveedor>();
             HardcodearDatos();
         }
 
@@ -142,6 +143,8 @@ namespace Entidades
             Duenio.HardcodearEntradas();
             Contador.HardcodearEntradas();
             Producto.HardcodearProductos();
+            Proveedor.HardcodearProveedores();
+            Proveedor.HardcodearListaProductos();
         }
 
         /// <summary>

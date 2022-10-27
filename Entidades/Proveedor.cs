@@ -28,6 +28,11 @@ namespace Entidades
             get { return this.listaProductos; }
         }
 
+        public string Nombre
+        {
+            get { return this.nombre; }
+        }
+
 
         public static void HardcodearProveedores()
         {

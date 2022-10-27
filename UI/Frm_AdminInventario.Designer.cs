@@ -36,6 +36,7 @@
             this.cmb_categoria = new System.Windows.Forms.ComboBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.lbl_filtrar = new System.Windows.Forms.Label();
+            this.btn_Ordenar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +116,22 @@
             this.lbl_filtrar.TabIndex = 9;
             this.lbl_filtrar.Text = "Filtrar por categoría:";
             // 
+            // btn_Ordenar
+            // 
+            this.btn_Ordenar.Location = new System.Drawing.Point(159, 296);
+            this.btn_Ordenar.Name = "btn_Ordenar";
+            this.btn_Ordenar.Size = new System.Drawing.Size(142, 33);
+            this.btn_Ordenar.TabIndex = 10;
+            this.btn_Ordenar.Text = "Ordenar producto";
+            this.btn_Ordenar.UseVisualStyleBackColor = true;
+            this.btn_Ordenar.Click += new System.EventHandler(this.btn_Ordenar_Click);
+            // 
             // Frm_AdminInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 337);
+            this.Controls.Add(this.btn_Ordenar);
             this.Controls.Add(this.lbl_filtrar);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.cmb_categoria);
@@ -140,6 +152,7 @@
             this.Controls.SetChildIndex(this.cmb_categoria, 0);
             this.Controls.SetChildIndex(this.btn_buscar, 0);
             this.Controls.SetChildIndex(this.lbl_filtrar, 0);
+            this.Controls.SetChildIndex(this.btn_Ordenar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,5 +167,6 @@
         private ComboBox cmb_categoria;
         private Button btn_buscar;
         private Label lbl_filtrar;
+        private Button btn_Ordenar;
     }
 }

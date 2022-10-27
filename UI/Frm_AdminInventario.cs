@@ -208,5 +208,12 @@ namespace UI
 
 
         #endregion
+
+        private void btn_Ordenar_Click(object sender, EventArgs e)
+        {
+            // Instancio el form
+            Frm_OrdenCompra frm_Orden = new Frm_OrdenCompra();
+            frm_Orden.ShowDialog();
+        }
     }
 }

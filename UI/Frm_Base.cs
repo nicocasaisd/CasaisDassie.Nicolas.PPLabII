@@ -35,6 +35,14 @@ namespace UI
             frm_Login.Show();
         }
 
+        public void HabilitarBotonCerrarSesion()
+        {
+            this.btn_CerrarSesion.Visible = true;
+        }
+
+        /// <summary>
+        /// Asigna el color de fondo de acuerdo al tipo de usuario logueado
+        /// </summary>
         public void ObtenerColorDeUsuario()
         {
             if (TiendaElectronica.UsuarioLogueado is not null)
@@ -47,10 +55,7 @@ namespace UI
             }
         }
 
-        public void HabilitarBotonCerrarSesion()
-        {
-            this.btn_CerrarSesion.Visible = true;
-        }
+        
 
         public void Sonido(string sonido)
         {
@@ -59,6 +64,9 @@ namespace UI
             spl.Play();
         }
 
+        /// <summary>
+        /// Asigna el titulo de la ventana de acuerdo al Usuario Logueado
+        /// </summary>
         public void AsignarTitulo()
         {
             if(TiendaElectronica.UsuarioLogueado is not null)

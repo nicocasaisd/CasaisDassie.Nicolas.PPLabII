@@ -22,7 +22,8 @@ namespace UI
         {
             InitializeComponent();
             this.auxProducto = new Producto();
-            auxProveedor = (Proveedor)cmb_listaProveedores.SelectedItem;
+            this.auxProveedor = new Proveedor();
+            //auxProveedor = (Proveedor)cmb_listaProveedores.SelectedItem;
             this.listaInventario = new List<Producto>();
             ActualizarListaInventario();
         }

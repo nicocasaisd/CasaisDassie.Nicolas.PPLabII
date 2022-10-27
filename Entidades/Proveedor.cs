@@ -47,7 +47,7 @@ namespace Entidades
             foreach(Proveedor prov in TiendaElectronica.ListaProveedores)
             {
                 prov.ListaProductos.Add(new Producto(
-                "Monitor 14\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
+                "Pancho 14\"", eCategoriaProducto.Video, eTipoProducto.Monitor,
                 eMarcaProducto.HP, 35200, 3
                 ));
 
@@ -57,6 +57,7 @@ namespace Entidades
                 ));
             }
         }
+
 
     }
 }

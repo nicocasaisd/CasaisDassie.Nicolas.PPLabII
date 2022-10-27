@@ -13,15 +13,17 @@ namespace UI
 {
     public partial class Frm_OrdenCompra : Form
     {
-
+        int idProducto;
+        Producto auxProducto;
         List<Producto> listaInventario;
         Proveedor auxProveedor;
 
         public Frm_OrdenCompra()
         {
             InitializeComponent();
-            this.listaInventario = new List<Producto>();
+            this.auxProducto = new Producto();
             auxProveedor = (Proveedor)cmb_listaProveedores.SelectedItem;
+            this.listaInventario = new List<Producto>();
             ActualizarListaInventario();
         }
 
@@ -49,8 +51,38 @@ namespace UI
 
         private void cmb_listaProveedores_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.listaInventario.Clear();
+
             auxProveedor = (Proveedor)cmb_listaProveedores.SelectedItem;
+
+            foreach (Producto item in auxProveedor.ListaProductos)
+            {
+                
+                this.listaInventario.Add(item);
+                
+            }
             ActualizarDataGridList();
+        }
+
+        private void btn_comprar_Click(object sender, EventArgs e)
+        {
+            if (auxProducto is not null)
+            {
+                //this.idProducto = auxProducto.Id;
+                //MessageBox.Show(auxProducto.Id.ToString());
+                MessageBox.Show(auxProducto.NombreLista);
+            }
+            
+        }
+
+        private void dgv_listaProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_listaProductos.SelectedRows.Count > 0)
+            {
+                this.auxProducto = (Producto)dgv_listaProductos.SelectedRows[0].DataBoundItem;
+            }
+            // seteo la id
+            //this.idProducto = auxProducto.Id;
         }
     }
 }

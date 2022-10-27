@@ -31,7 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_listaProveedores = new System.Windows.Forms.ComboBox();
             this.dgv_listaProductos = new System.Windows.Forms.DataGridView();
+            this.nud_cantidad = new System.Windows.Forms.NumericUpDown();
+            this.btn_comprar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,11 +72,29 @@
             this.dgv_listaProductos.Size = new System.Drawing.Size(739, 201);
             this.dgv_listaProductos.TabIndex = 6;
             // 
+            // nud_cantidad
+            // 
+            this.nud_cantidad.Location = new System.Drawing.Point(376, 406);
+            this.nud_cantidad.Name = "nud_cantidad";
+            this.nud_cantidad.Size = new System.Drawing.Size(120, 23);
+            this.nud_cantidad.TabIndex = 7;
+            // 
+            // btn_comprar
+            // 
+            this.btn_comprar.Location = new System.Drawing.Point(580, 407);
+            this.btn_comprar.Name = "btn_comprar";
+            this.btn_comprar.Size = new System.Drawing.Size(75, 23);
+            this.btn_comprar.TabIndex = 8;
+            this.btn_comprar.Text = "Comprar";
+            this.btn_comprar.UseVisualStyleBackColor = true;
+            // 
             // Frm_OrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_comprar);
+            this.Controls.Add(this.nud_cantidad);
             this.Controls.Add(this.dgv_listaProductos);
             this.Controls.Add(this.cmb_listaProveedores);
             this.Controls.Add(this.label1);
@@ -81,6 +102,7 @@
             this.Text = "Frm_OrdenCompra";
             this.Load += new System.EventHandler(this.Frm_OrdenCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,5 +113,7 @@
         private Label label1;
         private ComboBox cmb_listaProveedores;
         private DataGridView dgv_listaProductos;
+        private NumericUpDown nud_cantidad;
+        private Button btn_comprar;
     }
 }

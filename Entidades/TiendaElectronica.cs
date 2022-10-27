@@ -17,6 +17,7 @@ namespace Entidades
         private static List<Factura> listaFacturas;
         private static List<Producto> listaProductos;
         private static List<Usuario> listaUsuarios;
+        private static List<Proveedor> listaProveedores;
 
         #endregion
 
@@ -56,6 +57,11 @@ namespace Entidades
             get { return listaUsuarios; }
         }
 
+
+        public static List<Proveedor> ListaProveedores
+        {
+            get { return listaProveedores; }
+        }
         public static Usuario UsuarioLogueado
         {
             get { return usuarioLogueado; }

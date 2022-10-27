@@ -60,6 +60,7 @@
             this.dgv_listaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listaProductos.Location = new System.Drawing.Point(12, 89);
             this.dgv_listaProductos.Name = "dgv_listaProductos";
+            this.dgv_listaProductos.ReadOnly = true;
             this.dgv_listaProductos.RowTemplate.Height = 25;
             this.dgv_listaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listaProductos.Size = new System.Drawing.Size(739, 201);
@@ -132,6 +133,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrador de inventario";
             this.Load += new System.EventHandler(this.Frm_AdminInventario_Load);
+            this.Controls.SetChildIndex(this.btn_SeleccionarProducto, 0);
+            this.Controls.SetChildIndex(this.dgv_listaProductos, 0);
+            this.Controls.SetChildIndex(this.btn_ModificarProducto, 0);
+            this.Controls.SetChildIndex(this.btn_AgregarProducto, 0);
+            this.Controls.SetChildIndex(this.cmb_categoria, 0);
+            this.Controls.SetChildIndex(this.btn_buscar, 0);
+            this.Controls.SetChildIndex(this.lbl_filtrar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

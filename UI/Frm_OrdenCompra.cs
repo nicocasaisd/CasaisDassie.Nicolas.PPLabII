@@ -46,8 +46,8 @@ namespace UI
 
         private void Frm_OrdenCompra_Load(object sender, EventArgs e)
         {
-            this.dgv_listaProductos.DataSource = this.listaInventario;
-            cmb_listaProveedores.DataSource = TiendaElectronica.ListaProveedores;
+            //this.dgv_listaProductos.DataSource = this.listaInventario;
+            cmb_listaProveedores.DataSource = TiendaElectronica.ListaProveedores; //.ToArray();
         }
 
         private void cmb_listaProveedores_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace UI
         }
 
 
-        private void dgv_listaProductos_SelectionChanged_1(object sender, EventArgs e)
+        private void dgv_listaProductos_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_listaProductos.SelectedRows.Count > 0)
             {

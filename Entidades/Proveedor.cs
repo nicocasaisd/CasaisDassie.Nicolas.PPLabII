@@ -58,6 +58,11 @@ namespace Entidades
             }
         }
 
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
+
 
     }
 }

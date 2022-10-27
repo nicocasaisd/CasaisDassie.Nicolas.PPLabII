@@ -13,7 +13,7 @@ namespace UI
 {
     public partial class Frm_OrdenCompra : Form
     {
-        int idProducto;
+        //int idProducto;
         Producto auxProducto;
         List<Producto> listaInventario;
         Proveedor auxProveedor;
@@ -75,14 +75,13 @@ namespace UI
             
         }
 
-        private void dgv_listaProductos_SelectionChanged(object sender, EventArgs e)
+
+        private void dgv_listaProductos_SelectionChanged_1(object sender, EventArgs e)
         {
             if (dgv_listaProductos.SelectedRows.Count > 0)
             {
-                this.auxProducto = (Producto)dgv_listaProductos.SelectedRows[0].DataBoundItem;
+                //this.auxProducto = (Producto)dgv_listaProductos.SelectedRows[0].DataBoundItem;
             }
-            // seteo la id
-            //this.idProducto = auxProducto.Id;
         }
     }
 }

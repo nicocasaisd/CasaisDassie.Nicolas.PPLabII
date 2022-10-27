@@ -211,9 +211,18 @@ namespace UI
 
         private void btn_Ordenar_Click(object sender, EventArgs e)
         {
-            // Instancio el form
-            Frm_OrdenCompra frm_Orden = new Frm_OrdenCompra();
-            frm_Orden.ShowDialog();
+            try
+            {
+                // Instancio el form
+                Frm_OrdenCompra frm_Orden = new Frm_OrdenCompra();
+                frm_Orden.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+            
         }
     }
 }

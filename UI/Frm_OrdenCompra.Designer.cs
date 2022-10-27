@@ -71,6 +71,7 @@
             this.dgv_listaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listaProductos.Size = new System.Drawing.Size(739, 201);
             this.dgv_listaProductos.TabIndex = 6;
+            this.dgv_listaProductos.SelectionChanged += new System.EventHandler(this.dgv_listaProductos_SelectionChanged_1);
             // 
             // nud_cantidad
             // 
